@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BA AUDIT — Auditoria & Consultoria</title>
+  <meta name="description" content="BA AUDIT: Auditoria financeira, consultoria, fiscalidade e melhoria de processos para PME em Portugal. Profissionalismo, qualidade e cumprimento de prazos." />
+
+  <link rel="icon" type="image/x-icon" href="BA_AUDIT_logo.ico" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { ba: { blue: '#183F68', gray: '#4A4A4A', off: '#F9F9F7' } },
+          fontFamily: { sans: ['Inter','Helvetica','Arial','ui-sans-serif','system-ui'] },
+          boxShadow: { soft: '0 10px 25px rgba(0,0,0,.07)' }
+        }
+      }
+    }
+  </script>
+  <style>
+    @font-face { font-family: Inter; src: local('Arial'); }
+  </style>
+</head>
+<body class="bg-ba-off text-ba-gray font-sans antialiased scroll-smooth">
+
+  <!-- Top bar -->
+  <div class="w-full bg-white/70 backdrop-blur border-b border-gray-100 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <div class="flex items-center justify-between h-16">
+        <a href="#home" class="flex items-center gap-3">
+          <img src="BA_AUDIT_logo_transparent.png" alt="BA AUDIT" class="h-8 w-auto"/>
+          <span class="text-ba-blue font-semibold tracking-wide" data-i18n="brand">BA&nbsp;AUDIT</span>
+        </a>
+        <div class="flex items-center gap-2">
+          <button id="navBtn" class="md:hidden p-2 rounded hover:bg-gray-100" aria-label="Menu">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+          </button>
+          <!-- Language switch -->
+          <div class="hidden md:flex items-center gap-1 text-sm">
+            <button id="lang-pt" class="px-2 py-1 rounded hover:bg-gray-100 font-medium">PT</button>
+            <span class="text-gray-300">|</span>
+            <button id="lang-en" class="px-2 py-1 rounded hover:bg-gray-100">EN</button>
+          </div>
+        </div>
+      </div>
+      <nav id="nav" class="hidden md:flex items-center gap-8 pb-4 md:pb-0">
+        <a href="#servicos" class="hover:text-ba-blue" data-i18n="nav.services">Serviços</a>
+        <a href="#setores" class="hover:text-ba-blue" data-i18n="nav.sectors">Setores</a>
+        <a href="#metodologia" class="hover:text-ba-blue" data-i18n="nav.methodology">Metodologia</a>
+        <a href="#equipa" class="hover:text-ba-blue" data-i18n="nav.about">Quem somos</a>
+        <a href="#contactos" class="px-4 py-2 rounded-xl bg-ba-blue text-white hover:opacity-90 shadow-soft" data-i18n="nav.contacts">Contactos</a>
+      </nav>
+      <div id="mobileNav" class="hidden md:hidden border-t border-gray-100 py-3">
+        <div class="flex flex-col gap-2">
+          <div class="flex items-center gap-2 pb-2">
+            <button id="mlang-pt" class="px-2 py-1 rounded hover:bg-gray-100 font-medium">PT</button>
+            <span class="text-gray-300">|</span>
+            <button id="mlang-en" class="px-2 py-1 rounded hover:bg-gray-100">EN</button>
+          </div>
+          <a href="#servicos" class="py-2" data-i18n="nav.services">Serviços</a>
+          <a href="#setores" class="py-2" data-i18n="nav.sectors">Setores</a>
+          <a href="#metodologia" class="py-2" data-i18n="nav.methodology">Metodologia</a>
+          <a href="#equipa" class="py-2" data-i18n="nav.about">Quem somos</a>
+          <a href="#contactos" class="py-2" data-i18n="nav.contacts">Contactos</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section id="home" class="bg-white">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-10 items-center py-16">
+      <div>
+        <h1 class="text-3xl md:text-5xl font-semibold leading-tight text-ba-blue" data-i18n="hero.title">Auditoria e Consultoria que criam confiança e valor</h1>
+        <p class="mt-5 text-lg text-gray-600" data-i18n="hero.subtitle">Apoiamos as empresas com serviços de auditoria financeira, fiscalidade e melhoria de processos — com qualidade, com cumprimento de prazos  e com preços competitivos.</p>
+        <div class="mt-8 flex gap-3">
+          <a href="#contactos" class="px-6 py-3 rounded-xl bg-ba-blue text-white hover:opacity-90 shadow-soft" data-i18n="hero.cta1">Solicitar contacto</a>
+          <a href="#servicos" class="px-6 py-3 rounded-xl border border-gray-300 hover:border-ba-blue" data-i18n="hero.cta2">Ver serviços</a>
+        </div>
+        <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-6 text-sm">
+          <div><div class="text-3xl font-semibold text-ba-blue">20+</div><div data-i18n="hero.stat1">Anos de experiência</div></div>
+          <div><div class="text-3xl font-semibold text-ba-blue">100%</div><div data-i18n="hero.stat2">Prazos cumpridos</div></div>
+          <div><div class="text-3xl font-semibold text-ba-blue">ISA / SNC</div><div data-i18n="hero.stat3">Conformidade</div></div>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="rounded-3xl bg-ba-off border shadow-soft p-8">
+          <img src="BA_AUDIT_logo_transparent.png" alt="BA AUDIT" class="mx-auto h-32 w-auto"/>
+          <ul class="mt-6 space-y-3 text-gray-700">
+            <li data-i18n="hero.list1">• Revisão Legal das Contas & Auditorias voluntárias</li>
+            <li data-i18n="hero.list2">• Consultoria contabilística e reorganização de processos</li>
+            <li data-i18n="hero.list3">• Fiscalidade: apoio ao cumprimento, due diligence, consultoria fiscal</li>
+            <li data-i18n="hero.list4">• Formação executiva (Contabilidade, Impostos e Controlo interno)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Serviços -->
+  <section id="servicos" class="py-20">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <h2 class="text-2xl md:text-4xl font-semibold text-ba-blue" data-i18n="services.title">Serviços</h2>
+      <p class="mt-3 text-gray-600 max-w-3xl" data-i18n="services.subtitle">Competência técnica em auditoria, contabilidade, fiscalidade e organização interna da empresa.</p>
+
+      <div class="mt-10 grid md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-2xl p-6 border shadow-soft">
+          <h3 class="text-xl font-semibold text-ba-blue" data-i18n="services.audit.title">Auditoria</h3>
+          <p class="mt-2 text-gray-600" data-i18n="services.audit.text">Revisão Legal das Contas, auditorias voluntárias, procedimentos acordados, auditorias a subsídios e projetos, revisão de controlos internos (ISA 315).</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 border shadow-soft">
+          <h3 class="text-xl font-semibold text-ba-blue" data-i18n="services.consulting.title">Consultoria</h3>
+          <p class="mt-2 text-gray-600" data-i18n="services.consulting.text">Mapeamento e otimização de processos, encerramento contabilístico e fiscal mensal, políticas e manuais.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 border shadow-soft">
+          <h3 class="text-xl font-semibold text-ba-blue" data-i18n="services.tax.title">Fiscalidade</h3>
+          <p class="mt-2 text-gray-600" data-i18n="services.tax.text">Apoio ao cumprimento declarativo, revisão fiscal, due diligence, consultoria em IVA, IRC e preços de transferência.</p>
+        </div>
+      </div>
+
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-2xl p-6 border shadow-soft">
+          <h3 class="text-xl font-semibold text-ba-blue" data-i18n="services.training.title">Formação</h3>
+          <p class="mt-2 text-gray-600" data-i18n="services.training.text">Workshops práticos para CFO/contabilidade: SNC, IFRS, Impostos IRC e IVA, fecho contabilístico mensal e anual e controlo interno.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 border shadow-soft">
+          <h3 class="text-xl font-semibold text-ba-blue" data-i18n="services.transactions.title">Transações</h3>
+          <p class="mt-2 text-gray-600" data-i18n="services.transactions.text">Due diligence financeira e fiscal, avaliações, apoio a M&A e reorganizações societárias.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 border shadow-soft">
+          <h3 class="text-xl font-semibold text-ba-blue" data-i18n="services.analytics.title">Analytics & Automação</h3>
+          <p class="mt-2 text-gray-600" data-i18n="services.analytics.text">Ferramentas em Excel/Power Query/Power BI para reconciliações e data analytics.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Setores -->
+  <section id="setores" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <h2 class="text-2xl md:text-4xl font-semibold text-ba-blue" data-i18n="sectors.title">Setores de atuação</h2>
+      <p class="mt-3 text-gray-600 max-w-3xl" data-i18n="sectors.subtitle">Experiência com grupos nacionais e internacionais em diversos setores de atividade.</p>
+      <div class="mt-10 grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div class="p-5 border rounded-2xl bg-ba-off" data-i18n="sectors.item1">Hotéis & Turismo</div>
+        <div class="p-5 border rounded-2xl bg-ba-off" data-i18n="sectors.item2">Retalho & e‑Commerce</div>
+        <div class="p-5 border rounded-2xl bg-ba-off" data-i18n="sectors.item3">Serviços & Tecnologias</div>
+        <div class="p-5 border rounded-2xl bg-ba-off" data-i18n="sectors.item4">Indústria & Logística</div>
+        <div class="p-5 border rounded-2xl bg-ba-off" data-i18n="sectors.item5">Saúde & Educação</div>
+        <div class="p-5 border rounded-2xl bg-ba-off" data-i18n="sectors.item6">Entidades do Setor Não‑Lucrativo</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Metodologia -->
+  <section id="metodologia" class="py-20">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <h2 class="text-2xl md:text-4xl font-semibold text-ba-blue" data-i18n="method.title">A nossa Metodologia</h2>
+      <div class="mt-8 grid md:grid-cols-4 gap-6">
+        <div class="bg-white rounded-2xl p-6 border shadow-soft">
+          <div class="text-ba-blue font-semibold" data-i18n="method.step1.title">1. Entendimento & Riscos</div>
+          <p class="mt-2 text-gray-600" data-i18n="method.step1.text">Compreensão do negócio e identificação de riscos significativos (ISA 315) para planear procedimentos eficientes.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 border shadow-soft">
+          <div class="text-ba-blue font-semibold" data-i18n="method.step2.title">2. Controlos & Analytics</div>
+          <p class="mt-2 text-gray-600" data-i18n="method.step2.text">Testes a controlos chave e análises substantivas com recurso a dados (data analytics, amostragem, outliers, tendências).</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 border shadow-soft">
+          <div class="text-ba-blue font-semibold" data-i18n="method.step3.title">3. Evidência & Conclusões</div>
+          <p class="mt-2 text-gray-600" data-i18n="method.step3.text">Documentação clara de evidência, papéis de trabalho e conclusões alinhadas com as Normas internacionais de auditoria (ISA) e o normativo contabilístico nacional (SNC) e internacional (IFRS).</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 border shadow-soft">
+          <div class="text-ba-blue font-semibold" data-i18n="method.step4.title">4. Recomendações</div>
+          <p class="mt-2 text-gray-600" data-i18n="method.step4.text">Relatórios com oportunidades de melhoria, cumprimento dos prazos, priorizando a eficiência e o compliance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Equipa / Quem somos -->
+  <section id="equipa" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <h2 class="text-2xl md:text-4xl font-semibold text-ba-blue" data-i18n="about.title">Quem somos</h2>
+      <p class="mt-3 text-gray-600 max-w-6xl" data-i18n="about.p1">A BA-Audit é uma firma de auditoria que reúne profissionais experientes e multidisciplinares, com competências complementares nas áreas financeira, tecnológica e fiscal. A nossa missão é elevar a qualidade e a eficiência das auditorias, assegurando que cada projeto conta com especialistas em tecnologias de informação, avaliação, fiscalidade e outras áreas críticas.</p>
+      <p class="mt-3 text-gray-600 max-w-6xl" data-i18n="about.p2">Combinamos rigor técnico, flexibilidade e preços competitivos numa abordagem orientada para resultados e para a proximidade com os nossos clientes, prestando serviços de auditoria e consultoria de elevado valor acrescentado.</p>
+      <p class="mt-3 text-gray-600 max-w-6xl" data-i18n="about.p3">Os nossos profissionais possuem larga experiência em Revisão Legal das Contas, Consultoria Financeira, Contabilística e Fiscal, tendo desenvolvido as suas carreiras em firmas multinacionais de auditoria e consultoria.</p>
+      <p class="mt-3 text-gray-600 max-w-6xl" data-i18n="about.p4">A BA-Audit representa uma nova geração de soluções, sustentada em mais de duas décadas de experiência em auditoria, revisão de contas e consultoria a entidades nacionais e internacionais, em diversos setores e contextos de internacionalização.</p>
+      <p class="mt-3 text-gray-600 max-w-6xl" data-i18n="about.p5">O nosso compromisso é claro: colocar a experiência acumulada ao longo dos anos ao serviço dos nossos clientes, transformando o conhecimento técnico e setorial em valor e crescimento sustentável.</p>
+      <p class="mt-3 text-gray-600 max-w-6xl" data-i18n="about.p6">A nossa atuação pauta-se pela identificação de soluções ajustadas à realidade de cada cliente, mantendo sempre uma opinião independente e fundamentada nas melhores práticas do mercado.</p>
+
+      <div class="mt-10 grid sm:grid-cols-2 md:grid-cols-1 gap-6">
+        <div class="bg-white rounded-3xl p-6 border text-left">
+          <img src="Foto_MB.png" alt="Partner BA AUDIT" class="mx-auto w-full max-w-xs h-88 object-cover rounded-2xl shadow-soft border-2 border-ba-blue">
+          <div class="mt-4 font-semibold text-ba-blue text-lg" data-i18n="about.partner.name">Manuel Borges</div>
+          <div class="mt-0 font-semibold text-ba-blue text-lg" data-i18n="about.partner.title">Partner / Revisor Oficial de Contas</div>
+          <div class="text-sm text-gray-600" data-i18n="about.partner.subtitle">Auditoria & Consultoria</div>
+          <p class="mt-3 text-gray-600 max-w-6xl" data-i18n="about.partner.bio">O Manuel é responsável pelo escritório de Lisboa e é Revisor Oficial de Contas (ROC) e Contabilista Certificado desde 2001 em Portugal. Conta com mais de 20 anos de experiência em auditoria, contabilidade e fiscalidade, tendo sido Senior Executive numa firma multinacional de auditoria e consultoria. Sectores: imobiliário, distribuição e comércio, FMCG, telecomunicações, navegação e logística integrada, oïl & gas, hospitality & leisure e ainda em diversas empresas públicas. Mais de 20 anos de experiência em diversas funções na área financeira, desde assistente junior até senior manager numa multinacional de auditoria e consultoria, com maior enfoque nas áreas da contabilidade e auditoria, com responsabilidades de gestor executivo em diversos engagements de grande dimensão em instituições do sector público e privado em Portugal e em Angola. Vasta experiência na área financeira, em Portugal e em Angola, em auditorias e assessorias a importantes empresas privadas de diversos sectores de atividade.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to action -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <div class="rounded-3xl bg-ba-blue text-white p-8 md:p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <div>
+          <h3 class="text-2xl font-semibold" data-i18n="cta.title">Vamos falar sobre a sua empresa e projeto!</h3>
+          <p class="mt-2 text-white/90" data-i18n="cta.text">Envie-nos os seus dados e entraremos em contacto.</p>
+        </div>
+        <a href="#contactos" class="px-6 py-3 rounded-xl bg-white text-ba-blue font-semibold hover:opacity-90" data-i18n="cta.button">Solicitar contacto</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contactos -->
+  <section id="contactos" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <h2 class="text-2xl md:text-4xl font-semibold text-ba-blue" data-i18n="contact.title">Contactos</h2>
+      <div class="mt-10 grid md:grid-cols-2 gap-8">
+        <form id="contactForm" class="bg-ba-off border rounded-2xl p-6 shadow-soft">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm mb-1" data-i18n="contact.name">Nome</label>
+              <input required name="user_name" type="text" class="w-full rounded-xl border px-3 py-2"/>
+            </div>
+            <div>
+              <label class="block text-sm mb-1" data-i18n="contact.email">Email</label>
+              <input required name="user_email" type="email" class="w-full rounded-xl border px-3 py-2"/>
+            </div>
+            <div class="sm:col-span-2">
+              <label class="block text-sm mb-1" data-i18n="contact.company">Empresa</label>
+              <input name="company" type="text" class="w-full rounded-xl border px-3 py-2"/>
+            </div>
+            <div class="sm:col-span-2">
+              <label class="block text-sm mb-1" data-i18n="contact.message">Mensagem</label>
+              <textarea required name="message" rows="4" class="w-full rounded-xl border px-3 py-2"></textarea>
+            </div>
+            <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off"/>
+          </div>
+          <button id="submitBtn" class="mt-4 px-6 py-3 rounded-xl bg-ba-blue text-white hover:opacity-90" data-i18n="contact.send">Enviar</button>
+          <p id="formStatus" class="mt-3 text-sm text-gray-600"></p>
+          <p class="mt-1 text-xs text-gray-500" data-i18n="contact.privacy">Ao enviar, concorda com a nossa política de privacidade.</p>
+        </form>
+        <div class="bg-white rounded-2xl p-6 border shadow-soft">
+          <h3 class="text-xl font-semibold text-ba-blue">BA AUDIT</h3>
+          <p class="mt-2 text-gray-600" data-i18n="contact.location">Lisboa, Portugal</p>
+          <p class="mt-2"><a class="text-ba-blue underline" href="mailto:info@ba-audit.pt">info@ba-audit.pt</a></p>
+          <p class="mt-1"><a class="text-ba-blue" href="tel:+351917647323">+351 917 647 323</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-10 border-t bg-ba-off">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 flex flex-col md:flex-row gap-6 md:items-center md:justify-between">
+      <div class="flex items-center gap-3">
+        <img src="BA_AUDIT_logo_transparent.png" class="h-7" alt="BA AUDIT"/>
+        <span class="text-sm">© <span id="y"></span> <span data-i18n="footer.copy"> BA AUDIT. Todos os direitos reservados.</span></span>
+      </div>
+      <div class="flex gap-6 text-sm">
+        <a href="https://www.iubenda.com/privacy-policy/47280304" class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe" title="Política de Privacidade" data-i18n="footer.privacy">Política de Privacidade</a>
+        <a href="https://www.iubenda.com/privacy-policy/47280304/cookie-policy" class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe" title="Política de Cookies" data-i18n="footer.cookies">Política de Cookies</a>
+        <a href="#contactos" data-i18n="nav.contacts">Contactos</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    // Mantidas as tuas credenciais atuais
+    const EMAILJS_PUBLIC_KEY = 'w35C0KhkGwWBsIjtU';
+    const EMAILJS_SERVICE_ID = 'service_ekvjxb1';
+    const EMAILJS_TEMPLATE_ID = 'template_h8zdn7k';
+
+    emailjs.init(EMAILJS_PUBLIC_KEY);
+
+    const form = document.getElementById('contactForm');
+    const btn = document.getElementById('submitBtn');
+    const statusEl = document.getElementById('formStatus');
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      if (form.website && form.website.value) { return; }
+      btn.disabled = true; btn.textContent = i18n[currentLang]['contact.sending'];
+      statusEl.textContent = '';
+      emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, '#contactForm')
+        .then(() => { form.reset(); statusEl.textContent = i18n[currentLang]['contact.ok']; })
+        .catch(() => { statusEl.textContent = i18n[currentLang]['contact.err']; })
+        .finally(() => { btn.disabled = false; btn.textContent = i18n[currentLang]['contact.send']; });
+    });
+  </script>
+
+  <!-- i18n -->
+  <script>
+    const i18n = {
+      pt: {
+        brand: 'BA AUDIT',
+        'nav.services': 'Serviços',
+        'nav.sectors': 'Setores',
+        'nav.methodology': 'Metodologia',
+        'nav.about': 'Quem somos',
+        'nav.contacts': 'Contactos',
+        'hero.title': 'Auditoria e Consultoria que criam confiança e valor',
+        'hero.subtitle': 'Apoiamos as empresas com serviços de auditoria financeira, fiscalidade e melhoria de processos — com qualidade, com cumprimento de prazos  e com preços competitivos.',
+        'hero.cta1': 'Solicitar contacto',
+        'hero.cta2': 'Ver serviços',
+        'hero.stat1': 'Anos de experiência',
+        'hero.stat2': 'Prazos cumpridos',
+        'hero.stat3': 'Conformidade',
+        'hero.list1': '• Revisão Legal das Contas & Auditorias voluntárias',
+        'hero.list2': '• Consultoria contabilística e reorganização de processos',
+        'hero.list3': '• Fiscalidade: apoio ao cumprimento, due diligence, consultoria fiscal',
+        'hero.list4': '• Formação executiva (Contabilidade, Impostos e Controlo interno)',
+        'services.title': 'Serviços',
+        'services.subtitle': 'Competência técnica em auditoria, contabilidade, fiscalidade e organização interna da empresa.',
+        'services.audit.title': 'Auditoria',
+        'services.audit.text': 'Revisão Legal das Contas, auditorias voluntárias, procedimentos acordados, auditorias a subsídios e projetos, revisão de controlos internos (ISA 315).',
+        'services.consulting.title': 'Consultoria',
+        'services.consulting.text': 'Mapeamento e otimização de processos, encerramento contabilístico e fiscal mensal, políticas e manuais.',
+        'services.tax.title': 'Fiscalidade',
+        'services.tax.text': 'Apoio ao cumprimento declarativo, revisão fiscal, due diligence, consultoria em IVA, IRC e preços de transferência.',
+        'services.training.title': 'Formação',
+        'services.training.text': 'Workshops práticos para CFO/contabilidade: SNC, IFRS, Impostos IRC e IVA, fecho contabilístico mensal e anual e controlo interno.',
+        'services.transactions.title': 'Transações',
+        'services.transactions.text': 'Due diligence financeira e fiscal, avaliações, apoio a M&A e reorganizações societárias.',
+        'services.analytics.title': 'Analytics & Automação',
+        'services.analytics.text': 'Ferramentas em Excel/Power Query/Power BI para reconciliações e data analytics.',
+        'sectors.title': 'Setores de atuação',
+        'sectors.subtitle': 'Experiência com grupos nacionais e internacionais em diversos setores de atividade.',
+        'sectors.item1': 'Hotéis & Turismo',
+        'sectors.item2': 'Retalho & e‑Commerce',
+        'sectors.item3': 'Serviços & Tecnologias',
+        'sectors.item4': 'Indústria & Logística',
+        'sectors.item5': 'Saúde & Educação',
+        'sectors.item6': 'Entidades do Setor Não‑Lucrativo',
+        'method.title': 'A nossa Metodologia',
+        'method.step1.title': '1. Entendimento & Riscos',
+        'method.step1.text': 'Compreensão do negócio e identificação de riscos significativos (ISA 315) para planear procedimentos eficientes.',
+        'method.step2.title': '2. Controlos & Analytics',
+        'method.step2.text': 'Testes a controlos chave e análises substantivas com recurso a dados (data analytics, amostragem, outliers, tendências).',
+        'method.step3.title': '3. Evidência & Conclusões',
+        'method.step3.text': 'Documentação clara de evidência, papéis de trabalho e conclusões alinhadas com as Normas internacionais de auditoria (ISA) e o normativo contabilístico nacional (SNC) e internacional (IFRS).',
+        'method.step4.title': '4. Recomendações',
+        'method.step4.text': 'Relatórios com oportunidades de melhoria, cumprimento dos prazos, priorizando a eficiência e o compliance.',
+        'about.title': 'Quem somos',
+        'about.p1': 'A BA-Audit é uma firma de auditoria que reúne profissionais experientes e multidisciplinares, com competências complementares nas áreas financeira, tecnológica e fiscal. A nossa missão é elevar a qualidade e a eficiência das auditorias, assegurando que cada projeto conta com especialistas em tecnologias de informação, avaliação, fiscalidade e outras áreas críticas.',
+        'about.p2': 'Combinamos rigor técnico, flexibilidade e preços competitivos numa abordagem orientada para resultados e para a proximidade com os nossos clientes, prestando serviços de auditoria e consultoria de elevado valor acrescentado.',
+        'about.p3': 'Os nossos profissionais possuem larga experiência em Revisão Legal das Contas, Consultoria Financeira, Contabilística e Fiscal, tendo desenvolvido as suas carreiras em firmas multinacionais de auditoria e consultoria.',
+        'about.p4': 'A BA-Audit representa uma nova geração de soluções, sustentada em mais de duas décadas de experiência em auditoria, revisão de contas e consultoria a entidades nacionais e internacionais, em diversos setores e contextos de internacionalização.',
+        'about.p5': 'O nosso compromisso é claro: colocar a experiência acumulada ao longo dos anos ao serviço dos nossos clientes, transformando o conhecimento técnico e setorial em valor e crescimento sustentável.',
+        'about.p6': 'A nossa atuação pauta-se pela identificação de soluções ajustadas à realidade de cada cliente, mantendo sempre uma opinião independente e fundamentada nas melhores práticas do mercado.',
+        'about.partner.name': 'Manuel Borges',
+        'about.partner.title': 'Partner / Revisor Oficial de Contas',
+        'about.partner.subtitle': 'Auditoria & Consultoria',
+        'about.partner.bio': 'O Manuel é responsável pelo escritório de Lisboa e é Revisor Oficial de Contas (ROC) e Contabilista Certificado desde 2001 em Portugal. Conta com mais de 20 anos de experiência em auditoria, contabilidade e fiscalidade, tendo sido Senior Executive numa firma multinacional de auditoria e consultoria. Sectores: imobiliário, distribuição e comércio, FMCG, telecomunicações, navegação e logística integrada, oïl & gas, hospitality & leisure e ainda em diversas empresas públicas. Mais de 20 anos de experiência em diversas funções na área financeira, desde assistente junior até senior manager numa multinacional de auditoria e consultoria, com maior enfoque nas áreas da contabilidade e auditoria, com responsabilidades de gestor executivo em diversos engagements de grande dimensão em instituições do sector público e privado em Portugal e em Angola. Vasta experiência na área financeira, em Portugal e em Angola, em auditorias e assessorias a importantes empresas privadas de diversos sectores de atividade.',
+        'cta.title': 'Vamos falar sobre a sua empresa e projeto!',
+        'cta.text': 'Envie-nos os seus dados e entraremos em contacto.',
+        'cta.button': 'Solicitar contacto',
+        'contact.title': 'Contactos',
+        'contact.name': 'Nome',
+        'contact.email': 'Email',
+        'contact.company': 'Empresa',
+        'contact.message': 'Mensagem',
+        'contact.send': 'Enviar',
+        'contact.sending': 'A enviar...',
+        'contact.ok': 'Obrigado! Recebemos a sua mensagem.',
+        'contact.err': 'Lamentamos, ocorreu um erro. Tente novamente.',
+        'contact.privacy': 'Ao enviar, concorda com a nossa política de privacidade.',
+        'contact.location': 'Lisboa, Portugal',
+        'footer.copy': ' BA AUDIT. Todos os direitos reservados.',
+        'footer.privacy': 'Política de Privacidade',
+        'footer.cookies': 'Política de Cookies'
+      },
+      en: {
+        brand: 'BA AUDIT',
+        'nav.services': 'Services',
+        'nav.sectors': 'Sectors',
+        'nav.methodology': 'Methodology',
+        'nav.about': 'About',
+        'nav.contacts': 'Contact',
+        'hero.title': 'Audit & Consulting that build trust and value',
+        'hero.subtitle': 'We support companies with financial audit, tax and process improvement — delivering quality, on-time and at competitive prices.',
+        'hero.cta1': 'Request contact',
+        'hero.cta2': 'View services',
+        'hero.stat1': 'Years of experience',
+        'hero.stat2': 'Deadlines met',
+        'hero.stat3': 'Compliance',
+        'hero.list1': '• Statutory Audit & Voluntary audits',
+        'hero.list2': '• Accounting advisory and process re‑design',
+        'hero.list3': '• Tax: compliance support, due diligence, tax advisory',
+        'hero.list4': '• Executive training (Accounting, Tax and Internal Control)',
+        'services.title': 'Services',
+        'services.subtitle': 'Technical expertise in audit, accounting, tax and internal organization.',
+        'services.audit.title': 'Audit',
+        'services.audit.text': 'Statutory audits, voluntary audits, agreed-upon procedures, grants/projects audits, and internal controls review (ISA 315).',
+        'services.consulting.title': 'Consulting',
+        'services.consulting.text': 'Process mapping & optimization, monthly accounting & tax close, policies and manuals.',
+        'services.tax.title': 'Tax',
+        'services.tax.text': 'Declarative compliance support, tax review, due diligence, VAT/CIT and transfer pricing advisory.',
+        'services.training.title': 'Training',
+        'services.training.text': 'Practical workshops for CFO/Accounting: SNC, IFRS, VAT/CIT, monthly & year‑end close and internal control.',
+        'services.transactions.title': 'Transactions',
+        'services.transactions.text': 'Financial & tax due diligence, valuations, M&A and reorganizations support.',
+        'services.analytics.title': 'Analytics & Automation',
+        'services.analytics.text': 'Excel/Power Query/Power BI tools for reconciliations and data analytics.',
+        'sectors.title': 'Sectors',
+        'sectors.subtitle': 'Experience with national and international groups across multiple industries.',
+        'sectors.item1': 'Hotels & Tourism',
+        'sectors.item2': 'Retail & e‑Commerce',
+        'sectors.item3': 'Services & Technology',
+        'sectors.item4': 'Industry & Logistics',
+        'sectors.item5': 'Healthcare & Education',
+        'sectors.item6': 'Non‑profit Organizations',
+        'method.title': 'Our Methodology',
+        'method.step1.title': '1. Understanding & Risks',
+        'method.step1.text': 'Understanding the business and identifying significant risks (ISA 315) to plan efficient procedures.',
+        'method.step2.title': '2. Controls & Analytics',
+        'method.step2.text': 'Testing key controls and performing substantive analytics (data analytics, sampling, outliers, trends).',
+        'method.step3.title': '3. Evidence & Conclusions',
+        'method.step3.text': 'Clear documentation of evidence, working papers and conclusions aligned with ISAs and with SNC/IFRS frameworks.',
+        'method.step4.title': '4. Recommendations',
+        'method.step4.text': 'Reports with improvement opportunities, meeting deadlines, prioritising efficiency and compliance.',
+        'about.title': 'About',
+        'about.p1': 'BA‑Audit is an audit firm that brings together experienced and multidisciplinary professionals, with complementary skills in finance, technology and tax. Our mission is to raise audit quality and efficiency, ensuring each project includes specialists in IT, valuation, tax and other critical areas.',
+        'about.p2': 'We combine technical rigour, flexibility and competitive pricing in a results‑oriented approach, close to our clients, delivering high‑value audit and consulting services.',
+        'about.p3': 'Our professionals have extensive experience in Statutory Audit, Financial, Accounting and Tax Advisory, having developed their careers in multinational audit and consulting firms.',
+        'about.p4': 'BA‑Audit represents a new generation of solutions, supported by more than two decades of experience in audit, review and consulting to national and international entities across a variety of sectors and internationalisation contexts.',
+        'about.p5': 'Our commitment is clear: to put our accumulated experience at the service of our clients, turning technical and sector knowledge into value and sustainable growth.',
+        'about.p6': 'Our work is guided by tailored solutions to each client, always maintaining an independent opinion based on best market practices.',
+        'about.partner.name': 'Manuel Borges',
+        'about.partner.title': 'Partner / CPA',
+        'about.partner.subtitle': 'Audit & Consulting',
+        'about.partner.bio': 'Manuel leads the Lisbon office and is a Portuguese Chartered Auditor (ROC) and Certified Accountant since 2001. He has 20+ years of experience in audit, accounting and tax, having served as Senior Executive at a multinational audit & consulting firm. Sectors: real estate, distribution & retail, FMCG, telecommunications, shipping & integrated logistics, oil & gas, hospitality & leisure, as well as public enterprises. Broad financial experience in Portugal and Angola, from junior assistant to senior manager on large engagements in both public and private institutions.',
+        'cta.title': "Let's talk about your company and project!",
+        'cta.text': 'Send us your details and we will get back to you.',
+        'cta.button': 'Request contact',
+        'contact.title': 'Contact',
+        'contact.name': 'Name',
+        'contact.email': 'Email',
+        'contact.company': 'Company',
+        'contact.message': 'Message',
+        'contact.send': 'Send',
+        'contact.sending': 'Sending...',
+        'contact.ok': 'Thank you! We have received your message.',
+        'contact.err': 'Sorry, an error occurred. Please try again.',
+        'contact.privacy': 'By sending, you agree to our privacy policy.',
+        'contact.location': 'Lisbon, Portugal',
+        'footer.copy': ' BA AUDIT. All rights reserved.',
+        'footer.privacy': 'Privacy Policy',
+        'footer.cookies': 'Cookie Policy'
+      }
+    };
+
+    let currentLang = 'pt';
+
+    function applyI18n(lang){
+      currentLang = lang;
+      document.documentElement.setAttribute('lang', lang);
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if(i18n[lang][key] !== undefined){ el.innerHTML = i18n[lang][key]; }
+      });
+      // Toggle button emphasis
+      document.getElementById('lang-pt')?.classList.toggle('font-bold', lang==='pt');
+      document.getElementById('lang-en')?.classList.toggle('font-bold', lang==='en');
+      document.getElementById('mlang-pt')?.classList.toggle('font-bold', lang==='pt');
+      document.getElementById('mlang-en')?.classList.toggle('font-bold', lang==='en');
+    }
+
+    // Init
+    window.addEventListener('DOMContentLoaded', () => {
+      applyI18n('pt');
+      const btn = document.getElementById('navBtn');
+      const mobile = document.getElementById('mobileNav');
+      btn?.addEventListener('click', () => mobile.classList.toggle('hidden'));
+      document.getElementById('y').textContent = new Date().getFullYear();
+      // language buttons
+      document.getElementById('lang-pt')?.addEventListener('click', ()=>applyI18n('pt'));
+      document.getElementById('lang-en')?.addEventListener('click', ()=>applyI18n('en'));
+      document.getElementById('mlang-pt')?.addEventListener('click', ()=>applyI18n('pt'));
+      document.getElementById('mlang-en')?.addEventListener('click', ()=>applyI18n('en'));
+    });
+  </script>
+
+  <!-- Iubenda scripts (opcional, iguais aos teus) -->
+  <script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement('script'), tag = d.getElementsByTagName('script')[0]; s.src='https://cdn.iubenda.com/iubenda.js'; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener('load', loader, false);}else if(w.attachEvent){w.attachEvent('onload', loader);}else{w.onload = loader;}})(window, document);</script>
+
+</body>
+</html>
