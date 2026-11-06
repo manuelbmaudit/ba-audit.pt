@@ -302,19 +302,27 @@
           <div id="sib-container">
           <form id="sib-form" method="POST" action="https://59b6c8af.sibforms.com/serve/MUIFAK5a-EF7HmrLDG8DuGi6jnGtjt-aag9Rbja0nBKYjwsRTNfhMpO-gfI6zw47jfExJuCTAgWzwAcGVGqVhs4-ttCWohj5k1LUggTKQrEM_I6oL0w1p6rh2TwCtya-3xArW3naQR1SKecXiuw_4tJKA37OnEzfhH8xbff1mGMdl1l_PCucDoBzqeZz-BzkHHRoO1OJS4ALUTtPAQ==" data-type="subscription" target="_self">
             <p style="margin:0 0 8px;font-family:Georgia,'Times New Roman',serif;font-size:18px;font-weight:400;color:#0E2744;" data-i18n="nlf.title">Newsletter mensal BA AUDIT</p>
-            <div class="form__entry" style="display:flex;flex-wrap:wrap;gap:8px;">
+            <div class="form__entry" style="margin-bottom:8px;">
               <input id="FIRSTNAME" name="FIRSTNAME" type="text" maxlength="200" autocomplete="given-name" placeholder="O seu nome (facultativo)" data-i18n-placeholder="nlf.name_placeholder" data-i18n-aria="nlf.name_aria" aria-label="Nome (facultativo)"
-                style="flex:1 1 100%;box-sizing:border-box;padding:10px 12px;border:1px solid #C4A574;border-radius:3px;font-size:14px;background:#fff;">
-              <input id="EMAIL" name="EMAIL" type="email" required autocomplete="email" placeholder="O seu email" data-i18n-placeholder="nlf.placeholder" aria-label="Email"
-                style="flex:1 1 200px;padding:10px 12px;border:1px solid #C4A574;border-radius:3px;font-size:14px;background:#fff;">
+                style="box-sizing:border-box;width:100%;padding:10px 12px;border:1px solid #C4A574;border-radius:3px;font-size:14px;background:#fff;">
+              <label class="entry__error entry__error--primary"></label>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:flex-start;">
+              <div class="form__entry" style="flex:1 1 200px;min-width:0;">
+                <input id="EMAIL" name="EMAIL" type="email" required autocomplete="email" placeholder="O seu email" data-i18n-placeholder="nlf.placeholder" aria-label="Email"
+                  style="box-sizing:border-box;width:100%;padding:10px 12px;border:1px solid #C4A574;border-radius:3px;font-size:14px;background:#fff;">
+                <label class="entry__error entry__error--primary"></label>
+              </div>
               <button type="submit" style="background:#0E2744;color:#fff;border:0;border-radius:3px;padding:10px 16px;font-size:14px;cursor:pointer;" data-i18n="nlf.submit">Subscrever</button>
               <svg class="loader" style="display:none;width:22px;height:22px;vertical-align:middle" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="#C4A574" stroke-width="3" stroke-dasharray="42 20"><animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="0.9s" repeatCount="indefinite"/></circle></svg>
-              <label class="entry__error entry__error--primary" style="flex-basis:100%"></label>
             </div>
-            <label style="display:flex;gap:8px;align-items:flex-start;font-size:12px;color:#5E6A78;margin-top:8px;line-height:1.45;">
-              <input type="checkbox" name="OPT_IN" value="1" required style="margin-top:2px;">
-              <span data-i18n="nlf.consent">Aceito receber por email a newsletter mensal e comunicações informativas pontuais da BA AUDIT sobre auditoria, contabilidade e fiscalidade. Posso cancelar a qualquer momento através da ligação em cada envio. <a href="https://www.iubenda.com/privacy-policy/47280304" target="_blank" rel="noopener" style="color:#0E2744;">Política de Privacidade</a>.</span>
-            </label>
+            <div class="form__entry" style="margin-top:8px;">
+              <label style="display:flex;gap:8px;align-items:flex-start;font-size:12px;color:#5E6A78;line-height:1.45;">
+                <input type="checkbox" name="OPT_IN" value="1" required style="margin-top:2px;">
+                <span data-i18n="nlf.consent">Aceito receber por email a newsletter mensal e comunicações informativas pontuais da BA AUDIT sobre auditoria, contabilidade e fiscalidade. Posso cancelar a subscrição a qualquer momento através da ligação incluída em cada envio. Os meus dados são tratados nos termos da <a href="https://www.iubenda.com/privacy-policy/47280304" target="_blank" rel="noopener" style="color:#0E2744;">Política de Privacidade</a>.</span>
+              </label>
+              <label class="entry__error entry__error--primary"></label>
+            </div>
             <p style="font-size:12px;line-height:1.5;color:#0E2744;margin:8px 0 0;" data-i18n="nlf.note">Vai receber um email para confirmar. A subscrição só fica ativa depois dessa confirmação. Responsável pelo tratamento: Manuel Borges, Revisor Oficial de Contas inscrito na OROC sob o n.º 1067 (BA AUDIT).</p>
             <input type="text" name="email_address_check" value="" class="input--hidden" style="display:none" tabindex="-1" autocomplete="off">
             <input type="hidden" name="locale" value="pt" data-i18n-value="nlf.locale">
@@ -322,34 +330,66 @@
           </div>
         </div>
         <script>
-          window.REQUIRED_CODE_ERROR_MESSAGE = 'Indique um email válido e confirme o consentimento.';
           window.LOCALE = 'pt';
-          window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = 'Indique um email válido e confirme o consentimento.';
-          window.REQUIRED_ERROR_MESSAGE = 'Indique um email válido e confirme o consentimento.';
-          window.GENERIC_INVALID_MESSAGE = 'Indique um email válido e confirme o consentimento.';
+          window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = 'Indique um endereço de email válido.';
+          window.REQUIRED_ERROR_MESSAGE = window.REQUIRED_CODE_ERROR_MESSAGE = window.GENERIC_INVALID_MESSAGE = 'Não foi possível processar o pedido de subscrição. Tente novamente mais tarde.';
           window.translation = { common: { selectedList: '{quantity} list selected', selectedLists: '{quantity} lists selected' } };
           var AUTOHIDE = Boolean(0);
-          // Validação BA (corre antes do main.js da Brevo): email válido e consentimento obrigatório.
-          document.getElementById('sib-form').addEventListener('submit', function (e) {
-            var f = e.target, em = (f.EMAIL.value || '').trim(), ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em);
-            if (!ok || !f.OPT_IN.checked) { e.preventDefault(); e.stopImmediatePropagation(); alert((typeof i18n !== 'undefined' && i18n[currentLang] && i18n[currentLang]['nlf.alert']) || 'Indique um email válido e confirme o consentimento.'); }
-          });
-          // Mensagens: a Brevo pode devolver textos próprios (ex.: pt-BR «Você fez sua assinatura com sucesso.») e o main.js
-          // escreve-os nos painéis e nos erros de campo. Repomos sempre os textos BA (PT/EN; na home segue o idioma ativo).
+          // BA: validação, textos e painéis. Corre antes do main.js da Brevo (defer).
           (function () {
-            var c = document.getElementById('sib-form-container'); if (!c || !window.MutationObserver) return;
-            function tr(k) { try { if (k && typeof i18n !== 'undefined' && i18n[currentLang] && i18n[currentLang][k] !== undefined) return i18n[currentLang][k]; } catch (x) {} return null; }
+            var c = document.getElementById('sib-form-container'), f = document.getElementById('sib-form');
+            if (!c || !f) return;
+            var NAME_FIELD = 'FIRSTNAME';
+            var MSG = { ok: 'Obrigado. Enviámos-lhe um email para confirmar a subscrição. A subscrição só fica ativa depois dessa confirmação.', err: 'Não foi possível processar o pedido de subscrição. Tente novamente mais tarde.', err_email: 'Indique um endereço de email válido.', err_consent: 'Confirme o consentimento para subscrever.', err_name: 'Verifique o nome indicado.' };
+            // Textos BA (na home seguem o idioma ativo através de i18n['nlf.*']).
+            function tr(k) { try { if (typeof i18n !== 'undefined' && i18n[currentLang] && i18n[currentLang]['nlf.' + k] !== undefined) return i18n[currentLang]['nlf.' + k]; } catch (x) {} return MSG[k]; }
+            // Erros de campo: cada erro corresponde ao seu campo (email, consentimento, nome); outro erro: mensagem genérica.
+            function fieldOf(el) { var e = el.closest('.form__entry'), i = e && e.querySelector('input[name]:not([type=hidden])'); return i ? i.name : ''; }
+            function fieldMsg(n) { return n === 'EMAIL' ? tr('err_email') : n === 'OPT_IN' ? tr('err_consent') : (NAME_FIELD && n === NAME_FIELD) ? tr('err_name') : tr('err'); }
+            function errOf(n) { var i = f.querySelector('[name="' + n + '"]'), e = i && i.closest('.form__entry'); return e && e.querySelector('.entry__error'); }
+            // 1. Validação BA: email válido e consentimento obrigatório; mensagem junto de cada campo.
+            f.addEventListener('submit', function (ev) {
+              var bad = [];
+              if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test((f.EMAIL.value || '').trim())) bad.push('EMAIL');
+              if (!f.OPT_IN.checked) bad.push('OPT_IN');
+              ['EMAIL', 'OPT_IN'].forEach(function (n) { var l = errOf(n); if (l) l.textContent = bad.indexOf(n) >= 0 ? fieldMsg(n) : ''; });
+              if (bad.length) { ev.preventDefault(); ev.stopImmediatePropagation(); var x = f.querySelector('[name="' + bad[0] + '"]'); if (x) x.focus(); }
+            });
+            // 2. A Brevo pode devolver textos próprios (ex.: pt-BR) que o main.js escreve nos painéis e nos erros de campo:
+            //    repomos sempre os textos BA.
             function keep(el, want) {
+              if (!el || !window.MutationObserver) return;
               new MutationObserver(function () { var w = want(); if (w !== null && el.textContent !== w) el.textContent = w; })
                 .observe(el, { childList: true, characterData: true, subtree: true });
             }
-            Array.prototype.forEach.call(c.querySelectorAll('.sib-form-message-panel__inner-text'), function (el) {
-              var own = el.textContent;
-              keep(el, function () { return tr(el.getAttribute('data-i18n')) || own; });
+            var okP = c.querySelector('#success-message'), koP = c.querySelector('#error-message'), ON = 'sib-form-message-panel--active';
+            keep(okP.querySelector('.sib-form-message-panel__inner-text'), function () { return tr('ok'); });
+            keep(koP.querySelector('.sib-form-message-panel__inner-text'), function () { return tr('err'); });
+            Array.prototype.forEach.call(f.querySelectorAll('.entry__error'), function (el) {
+              keep(el, function () { return el.textContent.trim() === '' ? null : fieldMsg(fieldOf(el)); });
             });
-            Array.prototype.forEach.call(c.querySelectorAll('.entry__error'), function (el) {
-              keep(el, function () { return el.textContent.trim() === '' ? null : ((typeof i18n !== 'undefined' && i18n[currentLang] && i18n[currentLang]['nlf.alert']) || 'Indique um email válido e confirme o consentimento.'); });
-            });
+            // 3. Painéis: o sucesso só aparece com HTTP 2xx E success:true. Qualquer falha (HTTP fora de 2xx, success:false,
+            //    resposta inválida, erro de rede ou timeout) esconde o sucesso e mostra o erro.
+            var state = null;
+            function show(ok) { state = ok; okP.classList.toggle(ON, ok); koP.classList.toggle(ON, !ok); }
+            if (window.MutationObserver) new MutationObserver(function () { if (state !== true && okP.classList.contains(ON)) okP.classList.remove(ON); })
+              .observe(okP, { attributes: true, attributeFilter: ['class'] });
+            function resetUi() { var b = f.querySelector('button[type=submit]'), l = c.querySelector('.loader'); if (l) l.style.display = 'none'; if (b) { b.style.display = ''; b.removeAttribute('disabled'); } }
+            var action = f.getAttribute('action'), XO = XMLHttpRequest.prototype.open, XS = XMLHttpRequest.prototype.send;
+            XMLHttpRequest.prototype.open = function (m, u) { this.__ba = typeof u === 'string' && u.indexOf(action) === 0; return XO.apply(this, arguments); };
+            XMLHttpRequest.prototype.send = function () {
+              var x = this;
+              if (x.__ba) {
+                state = null; okP.classList.remove(ON); koP.classList.remove(ON);
+                x.timeout = window.BA_SIB_TIMEOUT_MS || 20000;
+                x.addEventListener('loadend', function () {
+                  var ok = false;
+                  if (x.status >= 200 && x.status < 300) { try { ok = JSON.parse(x.responseText).success === true; } catch (e) { ok = false; } }
+                  show(ok); resetUi();
+                });
+              }
+              return XS.apply(this, arguments);
+            };
           })();
         </script>
         <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
@@ -413,13 +453,16 @@
         'nlf.title': 'Newsletter mensal BA AUDIT',
         'nlf.placeholder': 'O seu email',
         'nlf.submit': 'Subscrever',
-        'nlf.consent': 'Aceito receber por email a newsletter mensal e comunicações informativas pontuais da BA AUDIT sobre auditoria, contabilidade e fiscalidade. Posso cancelar a qualquer momento através da ligação em cada envio. <a href="https://www.iubenda.com/privacy-policy/47280304" target="_blank" rel="noopener" style="color:#0E2744;">Política de Privacidade</a>.',
+        'nlf.consent': 'Aceito receber por email a newsletter mensal e comunicações informativas pontuais da BA AUDIT sobre auditoria, contabilidade e fiscalidade. Posso cancelar a subscrição a qualquer momento através da ligação incluída em cada envio. Os meus dados são tratados nos termos da <a href="https://www.iubenda.com/privacy-policy/47280304" target="_blank" rel="noopener" style="color:#0E2744;">Política de Privacidade</a>.',
         'nlf.note': 'Vai receber um email para confirmar. A subscrição só fica ativa depois dessa confirmação. Responsável pelo tratamento: Manuel Borges, Revisor Oficial de Contas inscrito na OROC sob o n.º 1067 (BA AUDIT).',
         'nlf.ok': 'Obrigado. Enviámos-lhe um email para confirmar a subscrição. A subscrição só fica ativa depois dessa confirmação.',
         'nlf.err': 'Não foi possível processar o pedido de subscrição. Tente novamente mais tarde.',
         'nlf.alert': 'Indique um email válido e confirme o consentimento.',
         'nlf.name_placeholder': 'O seu nome (facultativo)',
         'nlf.name_aria': 'Nome (facultativo)',
+        'nlf.err_email': 'Indique um endereço de email válido.',
+        'nlf.err_consent': 'Confirme o consentimento para subscrever.',
+        'nlf.err_name': 'Verifique o nome indicado.',
         'nlf.locale': 'pt',
         'hero.title': 'Auditoria e Consultoria que criam confiança e valor',
         'hero.subtitle': 'Apoiamos as empresas com serviços de auditoria financeira, fiscalidade e melhoria de processos — com qualidade, com cumprimento de prazos  e com preços competitivos.',
@@ -504,13 +547,16 @@
         'nlf.title': 'BA AUDIT monthly newsletter',
         'nlf.placeholder': 'Your email',
         'nlf.submit': 'Subscribe',
-        'nlf.consent': 'I agree to receive by email the monthly newsletter and occasional informative communications from BA AUDIT on audit, accounting and tax. I may unsubscribe at any time using the link in each email. <a href="https://www.iubenda.com/privacy-policy/47280304" target="_blank" rel="noopener" style="color:#0E2744;">Privacy Policy (in Portuguese)</a>. See the <a href="/en/newsletter/privacy-notice/" target="_blank" rel="noopener" style="color:#0E2744;">Newsletter privacy notice (in English)</a>.',
+        'nlf.consent': 'I agree to receive by email the monthly newsletter and occasional informative communications from BA AUDIT on audit, accounting and tax. I may unsubscribe at any time using the link included in each email. My data are processed in accordance with the <a href="https://www.iubenda.com/privacy-policy/47280304" target="_blank" rel="noopener" style="color:#0E2744;">Privacy Policy (in Portuguese)</a>. See the <a href="/en/newsletter/privacy-notice/" target="_blank" rel="noopener" style="color:#0E2744;">Newsletter privacy notice (in English)</a>.',
         'nlf.note': 'You will receive a confirmation email. Your subscription will only become active after you click the confirmation link. Data controller: Manuel Borges, Revisor Oficial de Contas (Statutory Auditor), registered with the Ordem dos Revisores Oficiais de Contas (OROC, the Portuguese institute of statutory auditors) under no. 1067 (BA AUDIT).',
         'nlf.ok': 'Thank you. We have sent you a confirmation email. Your subscription will only become active after you click the confirmation link.',
         'nlf.err': 'We were unable to process your subscription request. Please try again later.',
         'nlf.alert': 'Please enter a valid email address and confirm your consent.',
         'nlf.name_placeholder': 'Your name (optional)',
         'nlf.name_aria': 'Name (optional)',
+        'nlf.err_email': 'Please enter a valid email address.',
+        'nlf.err_consent': 'Please confirm your consent to subscribe.',
+        'nlf.err_name': 'Please check the name entered.',
         'nlf.locale': 'en',
         'hero.title': 'Audit & Consulting that build trust and value',
         'hero.subtitle': 'We support companies with financial audit, tax and process improvement — delivering quality, on-time and at competitive prices.',

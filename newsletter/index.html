@@ -165,10 +165,13 @@
                 <label class="entry__error entry__error--primary"></label>
               </div>
 
-              <label style="display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.5;color:#0E2744;margin-bottom:12px;">
-                <input type="checkbox" name="OPT_IN" value="1" required style="margin-top:3px;">
-                <span>Aceito receber por email a newsletter mensal e comunicações informativas pontuais da BA AUDIT sobre auditoria, contabilidade e fiscalidade. Posso cancelar a subscrição a qualquer momento através da ligação incluída em cada envio. Os meus dados são tratados nos termos da <a href="https://www.iubenda.com/privacy-policy/47280304" target="_blank" rel="noopener" style="color:#0E2744;">Política de Privacidade</a>. *</span>
-              </label>
+              <div class="form__entry" style="margin-bottom:12px;">
+                <label style="display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.5;color:#0E2744;">
+                  <input type="checkbox" name="OPT_IN" value="1" required style="margin-top:3px;">
+                  <span>Aceito receber por email a newsletter mensal e comunicações informativas pontuais da BA AUDIT sobre auditoria, contabilidade e fiscalidade. Posso cancelar a subscrição a qualquer momento através da ligação incluída em cada envio. Os meus dados são tratados nos termos da <a href="https://www.iubenda.com/privacy-policy/47280304" target="_blank" rel="noopener" style="color:#0E2744;">Política de Privacidade</a>. <span aria-hidden="true">*</span></span>
+                </label>
+                <label class="entry__error entry__error--primary"></label>
+              </div>
 
               <p style="font-size:12px;line-height:1.5;color:#0E2744;margin:0 0 16px;">Responsável pelo tratamento: Manuel Borges, Revisor Oficial de Contas inscrito na OROC sob o n.º 1067 (BA AUDIT). A subscrição é facultativa. Para subscrever, só é necessário o endereço de email; o nome é facultativo. Para receber estas comunicações, é também necessário dar o consentimento e confirmar a subscrição através da ligação enviada por email. Sem estes passos, a subscrição não fica ativa.</p>
 
@@ -182,34 +185,66 @@
             </div>
           </div>
           <script>
-            window.REQUIRED_CODE_ERROR_MESSAGE = 'Indique um email válido e confirme o consentimento.';
             window.LOCALE = 'pt';
-            window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = 'Indique um email válido e confirme o consentimento.';
-            window.REQUIRED_ERROR_MESSAGE = 'Indique um email válido e confirme o consentimento.';
-            window.GENERIC_INVALID_MESSAGE = 'Indique um email válido e confirme o consentimento.';
+            window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = 'Indique um endereço de email válido.';
+            window.REQUIRED_ERROR_MESSAGE = window.REQUIRED_CODE_ERROR_MESSAGE = window.GENERIC_INVALID_MESSAGE = 'Não foi possível processar o pedido de subscrição. Tente novamente mais tarde.';
             window.translation = { common: { selectedList: '{quantity} list selected', selectedLists: '{quantity} lists selected' } };
             var AUTOHIDE = Boolean(0);
-            // Validação BA (corre antes do main.js da Brevo): email válido e consentimento obrigatório.
-            document.getElementById('sib-form').addEventListener('submit', function (e) {
-              var f = e.target, em = (f.EMAIL.value || '').trim(), ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em);
-              if (!ok || !f.OPT_IN.checked) { e.preventDefault(); e.stopImmediatePropagation(); alert('Indique um email válido e confirme o consentimento.'); }
-            });
-            // Mensagens: a Brevo pode devolver textos próprios (ex.: pt-BR «Você fez sua assinatura com sucesso.») e o main.js
-            // escreve-os nos painéis e nos erros de campo. Repomos sempre os textos BA (PT/EN; na home segue o idioma ativo).
+            // BA: validação, textos e painéis. Corre antes do main.js da Brevo (defer).
             (function () {
-              var c = document.getElementById('sib-form-container'); if (!c || !window.MutationObserver) return;
-              function tr(k) { try { if (k && typeof i18n !== 'undefined' && i18n[currentLang] && i18n[currentLang][k] !== undefined) return i18n[currentLang][k]; } catch (x) {} return null; }
+              var c = document.getElementById('sib-form-container'), f = document.getElementById('sib-form');
+              if (!c || !f) return;
+              var NAME_FIELD = 'FIRSTNAME';
+              var MSG = { ok: 'Obrigado. Enviámos-lhe um email para confirmar a subscrição. A subscrição só fica ativa depois dessa confirmação.', err: 'Não foi possível processar o pedido de subscrição. Tente novamente mais tarde.', err_email: 'Indique um endereço de email válido.', err_consent: 'Confirme o consentimento para subscrever.', err_name: 'Verifique o nome indicado.' };
+              // Textos BA (na home seguem o idioma ativo através de i18n['nlf.*']).
+              function tr(k) { try { if (typeof i18n !== 'undefined' && i18n[currentLang] && i18n[currentLang]['nlf.' + k] !== undefined) return i18n[currentLang]['nlf.' + k]; } catch (x) {} return MSG[k]; }
+              // Erros de campo: cada erro corresponde ao seu campo (email, consentimento, nome); outro erro: mensagem genérica.
+              function fieldOf(el) { var e = el.closest('.form__entry'), i = e && e.querySelector('input[name]:not([type=hidden])'); return i ? i.name : ''; }
+              function fieldMsg(n) { return n === 'EMAIL' ? tr('err_email') : n === 'OPT_IN' ? tr('err_consent') : (NAME_FIELD && n === NAME_FIELD) ? tr('err_name') : tr('err'); }
+              function errOf(n) { var i = f.querySelector('[name="' + n + '"]'), e = i && i.closest('.form__entry'); return e && e.querySelector('.entry__error'); }
+              // 1. Validação BA: email válido e consentimento obrigatório; mensagem junto de cada campo.
+              f.addEventListener('submit', function (ev) {
+                var bad = [];
+                if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test((f.EMAIL.value || '').trim())) bad.push('EMAIL');
+                if (!f.OPT_IN.checked) bad.push('OPT_IN');
+                ['EMAIL', 'OPT_IN'].forEach(function (n) { var l = errOf(n); if (l) l.textContent = bad.indexOf(n) >= 0 ? fieldMsg(n) : ''; });
+                if (bad.length) { ev.preventDefault(); ev.stopImmediatePropagation(); var x = f.querySelector('[name="' + bad[0] + '"]'); if (x) x.focus(); }
+              });
+              // 2. A Brevo pode devolver textos próprios (ex.: pt-BR) que o main.js escreve nos painéis e nos erros de campo:
+              //    repomos sempre os textos BA.
               function keep(el, want) {
+                if (!el || !window.MutationObserver) return;
                 new MutationObserver(function () { var w = want(); if (w !== null && el.textContent !== w) el.textContent = w; })
                   .observe(el, { childList: true, characterData: true, subtree: true });
               }
-              Array.prototype.forEach.call(c.querySelectorAll('.sib-form-message-panel__inner-text'), function (el) {
-                var own = el.textContent;
-                keep(el, function () { return tr(el.getAttribute('data-i18n')) || own; });
+              var okP = c.querySelector('#success-message'), koP = c.querySelector('#error-message'), ON = 'sib-form-message-panel--active';
+              keep(okP.querySelector('.sib-form-message-panel__inner-text'), function () { return tr('ok'); });
+              keep(koP.querySelector('.sib-form-message-panel__inner-text'), function () { return tr('err'); });
+              Array.prototype.forEach.call(f.querySelectorAll('.entry__error'), function (el) {
+                keep(el, function () { return el.textContent.trim() === '' ? null : fieldMsg(fieldOf(el)); });
               });
-              Array.prototype.forEach.call(c.querySelectorAll('.entry__error'), function (el) {
-                keep(el, function () { return el.textContent.trim() === '' ? null : ('Indique um email válido e confirme o consentimento.'); });
-              });
+              // 3. Painéis: o sucesso só aparece com HTTP 2xx E success:true. Qualquer falha (HTTP fora de 2xx, success:false,
+              //    resposta inválida, erro de rede ou timeout) esconde o sucesso e mostra o erro.
+              var state = null;
+              function show(ok) { state = ok; okP.classList.toggle(ON, ok); koP.classList.toggle(ON, !ok); }
+              if (window.MutationObserver) new MutationObserver(function () { if (state !== true && okP.classList.contains(ON)) okP.classList.remove(ON); })
+                .observe(okP, { attributes: true, attributeFilter: ['class'] });
+              function resetUi() { var b = f.querySelector('button[type=submit]'), l = c.querySelector('.loader'); if (l) l.style.display = 'none'; if (b) { b.style.display = ''; b.removeAttribute('disabled'); } }
+              var action = f.getAttribute('action'), XO = XMLHttpRequest.prototype.open, XS = XMLHttpRequest.prototype.send;
+              XMLHttpRequest.prototype.open = function (m, u) { this.__ba = typeof u === 'string' && u.indexOf(action) === 0; return XO.apply(this, arguments); };
+              XMLHttpRequest.prototype.send = function () {
+                var x = this;
+                if (x.__ba) {
+                  state = null; okP.classList.remove(ON); koP.classList.remove(ON);
+                  x.timeout = window.BA_SIB_TIMEOUT_MS || 20000;
+                  x.addEventListener('loadend', function () {
+                    var ok = false;
+                    if (x.status >= 200 && x.status < 300) { try { ok = JSON.parse(x.responseText).success === true; } catch (e) { ok = false; } }
+                    show(ok); resetUi();
+                  });
+                }
+                return XS.apply(this, arguments);
+              };
             })();
           </script>
           <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
