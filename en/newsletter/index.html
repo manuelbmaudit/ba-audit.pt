@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<script>
+  // Redirecionar de www.ba-audit.pt para ba-audit.pt
+  if (window.location.hostname === "www.ba-audit.pt") {
+    window.location.href = window.location.href.replace("www.ba-audit.pt", "ba-audit.pt");
+  }
+</script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BA AUDIT Newsletter — Issue No. 1, November 2026</title>
+  <meta name="description" content="BA AUDIT monthly newsletter: the tax calendar, a featured topic and the developments that matter. Issue No. 1, November 2026." />
+  <link rel="canonical" href="https://ba-audit.pt/en/newsletter/">
+  <link rel="alternate" hreflang="pt-PT" href="https://ba-audit.pt/newsletter/">
+  <link rel="alternate" hreflang="en" href="https://ba-audit.pt/en/newsletter/">
+  <link rel="alternate" hreflang="x-default" href="https://ba-audit.pt/newsletter/">
+  <link rel="icon" type="image/x-icon" href="/BA_AUDIT_logo.ico" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { ba: { blue: '#0E2744', navy: '#0E2744', mid: '#163A5F', gold: '#C4A574', goldsoft: '#D4BC96', cream: '#F6F1E8', line: '#E4DDD0', gray: '#3A4452', muted: '#5E6A78', off: '#FAF8F4' } },
+          fontFamily: { sans: ['Inter','Helvetica','Arial','ui-sans-serif','system-ui'], serif: ['Georgia','"Times New Roman"','serif'] },
+          boxShadow: { soft: '0 1px 2px rgba(14,39,68,.04), 0 8px 24px rgba(14,39,68,.06)' }
+        }
+      }
+    }
+  </script>
+  <style>
+    @font-face { font-family: Inter; src: local('Arial'); }
+    h1, h2, h3 { font-family: Georgia, 'Times New Roman', serif; font-weight: 400 !important; }
+    .ba-eyebrow { font-size: 11px; letter-spacing: .28em; text-transform: uppercase; color: #C4A574; font-weight: 700; }
+    .ba-btn { letter-spacing: .08em; text-transform: uppercase; font-size: 13px; font-weight: 600; }
+    #nav a:not(.ba-btn) { font-size: 14px; letter-spacing: .02em; }
+    #nav a:not(.ba-btn):hover, #mobileNav a:hover { color: #0E2744; box-shadow: inset 0 -1px 0 #C4A574; }
+    #nav a[aria-current="page"] { color: #0E2744; box-shadow: inset 0 -2px 0 #C4A574; }
+    .ba-footer a:hover { color: #0E2744; text-decoration: underline; text-decoration-color: #C4A574; text-underline-offset: 3px; }
+
+    .nl-ed{--navy:#0E2744;--navy-mid:#163A5F;--gold:#C4A574;--gold-soft:#D4BC96;--cream:#F6F1E8;--cream-dk:#EDE6D9;--ink:#1A2332;--muted:#5E6A78;--line:#E4DDD0;--off:#FAF8F4;
+      background:#fff;color:var(--ink);line-height:1.65;padding:0 24px 56px;border:1px solid var(--line);box-shadow:0 1px 2px rgba(14,39,68,.04),0 8px 24px rgba(14,39,68,.06)}
+    .nl-ed .hero{background:var(--off);margin:0 -24px;padding:36px 24px 28px;border-bottom:1px solid var(--line)}
+    .nl-ed .kicker{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-top:52px}
+    .nl-ed h1,.nl-ed h2{font-family:Georgia,'Times New Roman',serif;color:var(--navy);font-weight:400}
+    .nl-ed h1{font-size:30px;line-height:1.25;margin:0}
+    .nl-ed h2{font-size:26px;margin:8px 0 0}
+    .nl-ed h2::after{content:"";display:block;width:56px;height:2px;background:var(--gold);margin-top:12px}
+    .nl-ed h4{margin:0 0 4px;color:var(--navy);font-weight:700}
+    .nl-ed p{margin:1em 0}
+    .nl-ed a{color:var(--navy);text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:3px}
+    .nl-ed .meta-r{color:var(--muted);font-size:13px;margin-top:8px}
+    .nl-ed .nota{background:var(--cream);border-left:3px solid var(--gold);padding:22px 24px;margin:16px 0}
+    .nl-ed .nota .lead{font-family:Georgia,serif;font-size:17px;line-height:1.65;font-style:italic;margin:0 0 14px}
+    .nl-ed .nota .sig{border-top:1px solid var(--cream-dk);margin-top:18px;padding-top:14px;font-family:Georgia,serif;font-style:italic;font-size:16px;color:var(--navy)}
+    .nl-ed .nota .sig small{display:block;font-family:Arial,sans-serif;font-style:normal;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-top:4px}
+    .nl-ed ul.ag{list-style:none;padding:0;margin:16px 0 0;border:1px solid var(--line)}
+    .nl-ed ul.ag li{display:flex;gap:18px;border-top:1px solid var(--line);padding:14px 16px;background:#fff}
+    .nl-ed ul.ag li:nth-child(odd){background:var(--cream)}
+    .nl-ed ul.ag li:first-child{border-top:0}
+    .nl-ed ul.ag .d{min-width:86px;font-weight:700;color:var(--navy)}
+    .nl-ed ul.ag small{display:block;color:var(--gold);font-weight:700;letter-spacing:1.5px;text-transform:uppercase;font-size:10px;margin-top:3px}
+    .nl-ed ul.ag p{margin:3px 0 0;color:var(--muted);font-size:14px}
+    .nl-ed ul.ag em{color:var(--gold);font-style:normal}
+    .nl-ed .card{background:var(--cream);border-left:3px solid var(--gold);padding:16px 18px;margin:12px 0}
+    .nl-ed .card-k{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:700}
+    .nl-ed .card p{margin:6px 0 0;font-size:14px}
+    .nl-ed .alerta{position:relative;padding-left:22px;margin:18px 0}
+    .nl-ed .alerta::before{content:"";position:absolute;left:0;top:8px;width:8px;height:8px;background:var(--gold);border-radius:50%}
+    .nl-ed .btn{display:inline-block;padding:13px 24px;background:var(--navy);color:#fff;text-decoration:none;font-size:13px;letter-spacing:1px;text-transform:uppercase;font-weight:700;border-radius:2px;margin:4px 0}
+    .nl-ed .cta{background:var(--navy);color:#fff;margin:52px -24px 0;border-top:3px solid var(--gold)}
+    .nl-ed .cta-inner{padding:32px 28px}
+    .nl-ed .cta h3{font-family:Georgia,serif;font-weight:400;margin:0 0 10px;font-size:22px}
+    .nl-ed .cta p{color:var(--gold-soft);margin:0 0 22px}
+    .nl-ed .cta .btn{background:var(--gold);color:var(--navy)}
+    .nl-ed .cta .btn.o{background:transparent;color:var(--gold-soft);border:1px solid var(--gold-soft);margin-left:10px}
+    .nl-ed .small{font-size:13px;color:var(--muted);line-height:1.55}
+    .nl-ed ul.small{list-style:disc;padding-left:20px}
+    @media(max-width:640px){.nl-ed{padding:0 18px 40px}.nl-ed .hero,.nl-ed .cta{margin-left:-18px;margin-right:-18px}.nl-ed h1{font-size:26px}.nl-ed ul.ag li{gap:12px}.nl-ed ul.ag .d{min-width:64px}.nl-ed .cta .btn.o{margin-left:0}}
+    #ba-newsletter input[type=email],#ba-newsletter input[type=text]{background:#fff}
+
+    .sib-form-message-panel{display:none;margin:0 0 16px;padding:14px 16px;font-size:14px;line-height:1.5;color:#0E2744;background:#fff;border:1px solid #E4DDD0;border-left:3px solid #C4A574}
+    .sib-form-message-panel--active{display:block}
+    #error-message.sib-form-message-panel{border-left-color:#9B2C2C}
+    #sib-form .input--hidden{display:none !important}
+    #sib-form .entry__error{display:block;color:#9B2C2C;font-size:12px;margin-top:4px}
+    #sib-form .entry__error:empty{display:none}
+
+  </style>
+</head>
+<body class="bg-ba-cream text-ba-gray font-sans antialiased">
+  <div class="w-full bg-white/95 backdrop-blur border-b border-ba-line sticky top-0 z-50" style="border-top:3px solid #0E2744">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <div class="flex items-center justify-between h-16">
+        <a href="/?lang=en" class="flex items-center gap-3">
+          <img src="/BA_AUDIT_logo_transparent.png" alt="BA AUDIT" class="h-8 w-auto"/>
+          <span class="text-ba-blue font-semibold tracking-[.2em]">BA&nbsp;AUDIT</span>
+        </a>
+        <div class="flex items-center gap-2">
+          <button id="navBtn" class="md:hidden p-2 rounded hover:bg-gray-100" aria-label="Menu">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+          </button>
+          <div class="hidden md:flex items-center gap-1 text-sm" aria-label="Language"><a href="/newsletter/" hreflang="pt-PT" lang="pt-PT" class="px-2 py-1 rounded hover:bg-gray-100 text-ba-gray hover:text-ba-blue">PT</a><span class="text-gray-300">|</span><a href="/en/newsletter/" hreflang="en" lang="en" class="px-2 py-1 rounded hover:bg-gray-100 font-bold text-ba-blue" aria-current="true">EN</a></div>
+        </div>
+      </div>
+      <nav id="nav" class="hidden md:flex items-center gap-8 pb-4 md:pb-0">
+        <a href="/?lang=en#servicos" class="hover:text-ba-blue">Services</a>
+        <a href="/?lang=en#setores" class="hover:text-ba-blue">Sectors</a>
+        <a href="/?lang=en#metodologia" class="hover:text-ba-blue">Methodology</a>
+        <a href="/?lang=en#equipa" class="hover:text-ba-blue">About</a>
+        <a href="/en/newsletter/" class="hover:text-ba-blue" aria-current="page">Newsletter</a>
+        <a href="/?lang=en#contactos" class="ba-btn px-5 py-2 rounded-sm bg-ba-blue text-white hover:bg-ba-mid">Contact</a>
+      </nav>
+      <div id="mobileNav" class="hidden md:hidden border-t border-ba-line py-3">
+        <div class="flex flex-col gap-2">
+          <div class="flex pb-2 items-center gap-1 text-sm" aria-label="Language"><a href="/newsletter/" hreflang="pt-PT" lang="pt-PT" class="px-2 py-1 rounded hover:bg-gray-100 text-ba-gray hover:text-ba-blue">PT</a><span class="text-gray-300">|</span><a href="/en/newsletter/" hreflang="en" lang="en" class="px-2 py-1 rounded hover:bg-gray-100 font-bold text-ba-blue" aria-current="true">EN</a></div>
+          <a href="/?lang=en#servicos" class="py-2">Services</a>
+          <a href="/?lang=en#setores" class="py-2">Sectors</a>
+          <a href="/?lang=en#metodologia" class="py-2">Methodology</a>
+          <a href="/?lang=en#equipa" class="py-2">About</a>
+          <a href="/en/newsletter/" class="py-2 text-ba-blue font-semibold" aria-current="page">Newsletter</a>
+          <a href="/?lang=en#contactos" class="py-2">Contact</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="bg-ba-blue text-white" style="border-bottom:3px solid #C4A574">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 py-14 md:py-20">
+      <div class="ba-eyebrow">Monthly newsletter</div>
+      <h1 class="mt-4 text-3xl md:text-5xl leading-tight">BA AUDIT Newsletter</h1>
+      <div class="mt-5 h-px max-w-xl" style="background:#C4A574"></div>
+      <p class="mt-5 text-lg max-w-2xl text-ba-goldsoft leading-relaxed">At the start of each month: the tax calendar, a featured topic and the developments that matter.</p>
+      <p class="mt-2 font-serif italic text-ba-gold">Delivering Trust</p>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 grid gap-10 lg:grid-cols-[minmax(0,1fr)_380px] lg:items-start">
+      <aside id="subscrever" class="lg:order-2 lg:sticky lg:top-28 scroll-mt-28">
+        <div class="bg-ba-off border border-ba-line p-6 md:p-7 shadow-soft" style="border-top:3px solid #C4A574">
+          <!-- BA-FORM:newsletter-full:en START · Brevo «Newsletter BA AUDIT» · textos em build_newsletter_pages_v2.py (FORM_TXT) -->
+          <div id="sib-form-container" class="ba-newsletter" style="max-width:560px;font-family:Inter,Arial,Helvetica,sans-serif;color:#0E2744;">
+            <div id="error-message" class="sib-form-message-panel" role="alert">
+              <div class="sib-form-message-panel__text"><span class="sib-form-message-panel__inner-text">We were unable to register your subscription. Please check your email address and try again.</span></div>
+            </div>
+            <div id="success-message" class="sib-form-message-panel" role="status">
+              <div class="sib-form-message-panel__text"><span class="sib-form-message-panel__inner-text">Thank you. We have sent you an email to confirm your subscription. Your subscription only becomes active once confirmed.</span></div>
+            </div>
+            <div id="sib-container">
+            <form id="sib-form" method="POST" action="https://59b6c8af.sibforms.com/serve/MUIFAK5a-EF7HmrLDG8DuGi6jnGtjt-aag9Rbja0nBKYjwsRTNfhMpO-gfI6zw47jfExJuCTAgWzwAcGVGqVhs4-ttCWohj5k1LUggTKQrEM_I6oL0w1p6rh2TwCtya-3xArW3naQR1SKecXiuw_4tJKA37OnEzfhH8xbff1mGMdl1l_PCucDoBzqeZz-BzkHHRoO1OJS4ALUTtPAQ==" data-type="subscription" target="_self">
+              <h3 style="font-family:Georgia,'Times New Roman',serif;font-weight:400;color:#0E2744;font-size:24px;margin:0 0 6px;">BA AUDIT Newsletter</h3>
+              <p style="margin:0 0 18px;color:#5E6A78;font-size:15px;line-height:1.6;">At the start of each month: the tax calendar, a featured topic and the developments that matter. <em style="font-family:Georgia,serif;">Delivering Trust.</em></p>
+
+              <div class="form__entry">
+                <label for="EMAIL" style="display:block;font-size:13px;font-weight:600;margin-bottom:4px;">Email *</label>
+                <input id="EMAIL" name="EMAIL" type="email" required autocomplete="email" placeholder="name@company.com"
+                  style="box-sizing:border-box;width:100%;padding:11px 12px;border:1px solid #C4A574;border-radius:3px;font-size:15px;margin-bottom:12px;background:#fff;">
+                <label class="entry__error entry__error--primary"></label>
+              </div>
+
+              <label style="display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.5;color:#0E2744;margin-bottom:12px;">
+                <input type="checkbox" name="OPT_IN" value="1" required style="margin-top:3px;">
+                <span>I agree to receive by email the monthly newsletter and occasional informative communications from BA AUDIT on audit, accounting and tax. I may unsubscribe at any time using the link included in each email. My data are processed in accordance with the <a href="https://www.iubenda.com/privacy-policy/47280304" target="_blank" rel="noopener" style="color:#0E2744;">Privacy Policy</a>. *</span>
+              </label>
+
+              <p style="font-size:12px;line-height:1.5;color:#0E2744;margin:0 0 16px;">Data controller: Manuel Borges, Revisor Oficial de Contas (Statutory Auditor) registered with the OROC (Portuguese Institute of Statutory Auditors) under no. 1067 (BA AUDIT). Only the email address is required; the subscription depends on consent and double confirmation.</p>
+
+              <input type="text" name="email_address_check" value="" class="input--hidden" style="display:none" tabindex="-1" autocomplete="off">
+              <input type="hidden" name="locale" value="en">
+
+              <button type="submit" style="background:#0E2744;color:#fff;border:0;border-radius:3px;padding:12px 22px;font-size:15px;font-weight:600;cursor:pointer;">Subscribe</button>
+              <svg class="loader" style="display:none;width:22px;height:22px;vertical-align:middle" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="#C4A574" stroke-width="3" stroke-dasharray="42 20"><animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="0.9s" repeatCount="indefinite"/></circle></svg>
+              <p style="font-size:12px;color:#5E6A78;margin:12px 0 0;">You will receive a double opt-in email to confirm your subscription. Your subscription only becomes active once confirmed.</p>
+            </form>
+            </div>
+          </div>
+          <script>
+            window.REQUIRED_CODE_ERROR_MESSAGE = 'Please enter a valid email address and confirm your consent.';
+            window.LOCALE = 'en';
+            window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = 'Please enter a valid email address and confirm your consent.';
+            window.REQUIRED_ERROR_MESSAGE = 'Please enter a valid email address and confirm your consent.';
+            window.GENERIC_INVALID_MESSAGE = 'Please enter a valid email address and confirm your consent.';
+            window.translation = { common: { selectedList: '{quantity} list selected', selectedLists: '{quantity} lists selected' } };
+            var AUTOHIDE = Boolean(0);
+            // Validação BA (corre antes do main.js da Brevo): email válido e consentimento obrigatório.
+            document.getElementById('sib-form').addEventListener('submit', function (e) {
+              var f = e.target, em = (f.EMAIL.value || '').trim(), ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em);
+              if (!ok || !f.OPT_IN.checked) { e.preventDefault(); e.stopImmediatePropagation(); alert('Please enter a valid email address and confirm your consent.'); }
+            });
+          </script>
+          <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+          <!-- BA-FORM:newsletter-full:en END -->
+        </div>
+        <div class="mt-6 bg-white border border-ba-line p-6">
+          <div class="ba-eyebrow">Archive</div>
+          <ul class="mt-3 text-sm space-y-2">
+            <li><a class="text-ba-blue underline decoration-ba-gold underline-offset-4" href="/en/newsletter/2026-11/">No. 1 · November 2026</a></li>
+          </ul>
+        </div>
+      </aside>
+      <div class="lg:order-1 min-w-0">
+        <div class="ba-eyebrow mb-3">Featured issue</div>
+        <article class="nl-ed max-w-3xl">
+
+<section class="hero">
+<div class="meta-r">Newsletter No. 1 · November 2026 · published on 6 November 2026</div>
+<h1>November deadlines, tax benefits to decide by 31/12 and an update on the OE2027 (2027 State Budget)</h1>
+<p class="meta-r">Approximately 4 minutes’ reading.</p>
+</section>
+<div class="kicker">01 · From the partner</div>
+<h2>Opening note</h2>
+<div class="nota">
+<p class="lead">This is the first issue of the BA AUDIT monthly newsletter. At the start of each month, I will bring together here the tax and social security deadlines that matter, a featured topic and the developments that have an impact on business decisions.</p>
+<p>November is a month of preparation. The 2027 State Budget (Orçamento do Estado) enters the final stage of voting, and several decisions affecting 2026 IRC (Corporate Income Tax) have to be taken, and documented, before 31 December.</p><p>We sum up our commitment in two words: Delivering Trust. Accurate, verified and useful information, with the independence our profession requires.</p>
+<div class="sig">Manuel Borges<small>Revisor Oficial de Contas (Statutory Auditor)</small></div>
+</div>
+<div class="kicker">02 · This month’s deadlines</div>
+<h2>November tax calendar</h2>
+<ul class="ag"><li><span class="d">2 Nov <small>Mon</small></span><div><strong>Modelo 30 (return of payments to non-residents) and IUC (Single Vehicle Tax)</strong><p>Modelo 30 for August and IUC for October. <em>· AT</em></p></div></li><li><span class="d">5 Nov <small>Thu</small></span><div><strong>Reporting of invoice data (e-fatura)</strong><p>Reporting of October invoice data, or a nil return. <em>· AT</em></p></div></li><li><span class="d">10 Nov <small>Tue</small></span><div><strong>Declaração Mensal de Remunerações – DMR (Monthly Remuneration Return) to the AT (Portuguese Tax and Customs Authority)</strong><p>Employment income and withholdings for October. <em>· AT</em></p></div></li><li><span class="d">10 Nov <small>Tue</small></span><div><strong>Declaração de Remunerações (Remuneration Return) to the Segurança Social – SS (Social Security)</strong><p>For October, for entities not yet covered by the new model. For entities already covered, confirmation or correction of the calculated amounts by 20 Nov. <em>· SS</em></p></div></li><li><span class="d">20 Nov <small>Fri</small></span><div><strong>IVA (VAT): periodic return</strong><p>Monthly scheme (September transactions) and quarterly scheme (3rd quarter). Recapitulative statement (EC Sales List) filed monthly, for October, where applicable. <em>· AT</em></p></div></li><li><span class="d">20 Nov <small>Fri</small></span><div><strong>Withholding taxes and Imposto do Selo (Stamp Duty)</strong><p>Payment of amounts withheld and of Imposto do Selo assessed in October; filing of the DMIS (Monthly Stamp Duty Return). <em>· AT</em></p></div></li><li><span class="d">20 Nov <small>Fri</small></span><div><strong>Self-employed workers</strong><p>Payment of October contributions (between the 10th and the 20th). <em>· SS</em></p></div></li><li><span class="d">25 Nov <small>Wed</small></span><div><strong>IVA: payment</strong><p>Monthly and quarterly schemes. <em>· AT</em></p></div></li><li><span class="d">25 Nov <small>Wed</small></span><div><strong>Employer contributions</strong><p>Payment of employer and employee contributions for October (between the 1st and the 25th). <em>· SS</em></p></div></li><li><span class="d">30 Nov <small>Mon</small></span><div><strong>IMI (Municipal Property Tax)</strong><p>2nd instalment (tax above €100 and up to €500) or 3rd instalment (tax above €500). <em>· AT</em></p></div></li><li><span class="d">30 Nov <small>Mon</small></span><div><strong>Modelo 30 (return of payments to non-residents) and IUC (Single Vehicle Tax)</strong><p>Modelo 30: income paid or made available to non-residents in September. IUC: vehicles whose registration anniversary falls in November, without prejudice to the applicable special regimes. <em>· AT</em></p></div></li></ul>
+<div class="kicker">03 · Featured topic</div>
+<h2>Tax benefits decided before 31 December</h2>
+<p>For several tax benefits, what is done and documented by the financial year-end has a direct bearing on 2026 IRC. Some have application deadlines in 2027.</p>
+<div class="card"><div class="card-k">SIFIDE II (R&D Tax Incentive Scheme)</div><p>Extended to periods up to 2026 (DL – Decree-Law 170/2026). Base rate of 32.5% of eligible expenditure, plus 50% of the increase over the average of the two previous financial years, capped at €1.5 million for the incremental component, where applicable. Application for 2026 by 31/05/2027.</p></div><div class="card"><div class="card-k">RFAI (Regional Investment Tax Incentive Scheme)</div><p>Deduction from IRC payable on relevant investments in eligible regions and sectors: in the regions referred to in Article 107(3)(a) TFEU (Treaty on the Functioning of the European Union), 30% on investment up to €15 million and 10% on the excess; in the regions referred to in point (c), 10%. The limits on deductions from tax payable and the regional aid limits of the 2022–2027 regional aid map also apply. Investment made during the period counts. Mere advance payments do not count as additions to investments in progress; their subsequent completion requires analysis under the rules of Article 22 of the CFI (Investment Tax Code). A tax documentation file and retention of the assets are required.</p></div><div class="card"><div class="card-k">Incentivo à capitalização – ICE (Capitalisation Incentive)</div><p>Deduction from taxable profit calculated on the eligible net increases in equity in the financial year and the six preceding years, considering only periods beginning on or after 01/01/2023, up to the higher of two limits: €4 million or 30% of tax EBITDA. Rate: average 12-month Euribor for the period, plus 2 percentage points. In 2026, the deduction benefits from a transitional 20% uplift, subject to the legal limit.</p></div><div class="card"><div class="card-k">Salary increase incentive (valorização salarial)</div><p>Eligible costs of salary increases are deductible at 200%, provided both minimum-increase tests of 4.6% are met: of the average annual base pay in the company and of the annual base pay of employees earning up to the company average at the end of the previous year, in addition to the other legal conditions.</p></div><div class="card"><div class="card-k">IFR – Incentivo Fiscal à Recuperação (Tax Incentive for Recovery) (2022 balance)</div><p>Possible use of an IFR balance relating to eligible 2022 investment, subject to the available balance, the carry-forward period and other conditions.</p></div>
+<p>Before the year-end, it is advisable to confirm eligibility, gather the documentation and simulate the effect on 2026 tax.</p>
+<p><a class="btn" href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7524413611918688256/">View the slide deck on LinkedIn (in Portuguese)</a></p>
+<div class="kicker">04 · Current affairs</div>
+<h2>Alerts and updates</h2>
+<div class="alerta"><h4>2027 State Budget — proposal, not yet approved</h4><p>The proposal was approved in general terms (first reading) on 28 October. The parliamentary calendar sets the deadline for tabling amendments on 6 November, the start of detailed (committee-stage) voting on 18 November and the final overall vote on 24 November. Among the proposed measures: a 4.5% threshold for the salary increase incentive and the extension of SIFIDE II to 2027. The measures indicated are proposals and depend on the final approved text, promulgation and publication.</p></div><div class="alerta"><h4>IRC: the reduction is already law</h4><p>Law no. 64/2025 set the general IRC rate at 19% for periods beginning in 2026, 18% for periods beginning in 2027 and 17% for periods beginning on or after 01/01/2028. For PME (SMEs) and Small Mid Caps meeting the requirements, 15% on the first €50,000 of taxable income, from periods beginning in 2026.</p></div><div class="alerta"><h4>Segurança Social: new return model</h4><p>Under the new model (DL 127/2025), the Segurança Social calculates remuneration and contributions, and the employer confirms or corrects the amounts by the 20th of the following month. Payment is made between the 1st and the 25th. The transition takes place during 2026; the new model covers all employers from 01/01/2027. Failure to respond within the deadline is treated as acceptance of the calculated amounts.</p></div>
+<div class="kicker">05 · Planning ahead</div>
+<h2>December deadlines: a look ahead</h2>
+<ul class="ag"><li><span class="d">7 Dec</span><div><p>Reporting of November invoice data (e-fatura).</p></div></li><li><span class="d">10 Dec</span><div><p>DMR to the AT and, for entities not yet covered by the new model, Declaração de Remunerações to the Segurança Social, for November.</p></div></li><li><span class="d">15 Dec</span><div><p>For tax periods coinciding with the calendar year, the 3rd PPC (pagamento por conta – payment on account) and the 3rd additional payment on account fall due on 15 December. As regards the PPC, Article 107 of the CIRC (Corporate Income Tax Code) allows the third instalment to be waived if the payments already made cover the estimated tax, or limited to the difference where the normal instalment exceeds that difference. An insufficient estimate may give rise to compensatory interest.</p></div></li><li><span class="d">21 Dec</span><div><p>Monthly IVA (October), recapitulative statement and DMIS; payment of withholding taxes and Imposto do Selo; IRS (Personal Income Tax): 3rd payment on account.</p></div></li><li><span class="d">21 Dec</span><div><p>Payment of November contributions by self-employed workers (the 20th is a Sunday).</p></div></li><li><span class="d">28 Dec</span><div><p>Payment of IVA, monthly scheme.</p></div></li><li><span class="d">28 Dec</span><div><p>Payment of employer and employee contributions for November (the 25th is a public holiday, followed by a weekend).</p></div></li><li><span class="d">31 Dec</span><div><p>Modelo 30 (income paid or made available to non-residents in October) and IUC for vehicles whose registration anniversary falls in December, without prejudice to the applicable special regimes.</p></div></li></ul>
+<div class="card"><div class="card-k">Preparing for year-end · Inventories</div><p>Prepare the 2026 inventory report to the AT: general deadline 01/02/2027, for entities whose financial year coincides with the calendar year and that are subject to the obligation.</p></div>
+<section class="cta"><div class="cta-inner">
+<h3>Receive the next issue</h3>
+<p>At the start of each month: the tax calendar, a featured topic and the developments that matter.</p>
+<p><a class="btn" href="#subscrever">Subscribe</a><a class="btn o" href="https://www.linkedin.com/company/ba-audit">Follow on LinkedIn</a></p>
+</div></section>
+<p class="small" style="margin-top:28px">General information, verified on 06/11/2026 against the tax calendar of the Autoridade Tributária e Aduaneira (AT) and information from the Segurança Social. It does not replace the analysis of each specific situation. Where the last day falls on a weekend or public holiday, the deadline moves to the next working day.</p>
+<h4 style="margin-top:28px">Sources (in Portuguese)</h4>
+<ul class="small"><li><a href="https://info.portaldasfinancas.gov.pt/pt/apoio_contribuinte/calendario_fiscal/Pages/Quadro_res_Decl_2026.aspx">AT — Annual summary of filing obligations 2026</a></li><li><a href="https://info.portaldasfinancas.gov.pt/pt/apoio_contribuinte/calendario_fiscal/Pages/Quadro_res_Pag_2026.aspx">AT — Annual summary of payment obligations 2026</a></li><li><a href="https://info.portaldasfinancas.gov.pt/pt/apoio_ao_contribuinte/Cidadaos/Casa_e_propriedades/Imposto_anual/Paginas/default.aspx">Portal das Finanças — IMI, payment deadlines</a></li><li><a href="https://www.gov.pt/servicos/entidade-empregadora-declaracao-mensal-de-remuneracoes-a-seguranca-social">gov.pt — Monthly Remuneration Return to the Segurança Social</a></li><li><a href="https://www.seg-social.pt/ptss/pssd/documento/cmc1y95ap00dkkl2yk3g4tdla">Segurança Social — Practical guide (payment deadlines)</a></li><li><a href="https://www.seg-social.pt/ptss/pssd/documento/cmi5ypntw0047e4349twowd3k">Segurança Social — Frequently asked questions (new model)</a></li><li><a href="https://portugal.gov.pt/gc25/comunicacao/noticias/oe2027-esta-aprovado-na-generalidade">Government — OE2027 approved in general terms; calendar</a></li><li><a href="https://diariodarepublica.pt/dr/detalhe/lei/64-2025-944874408">Law no. 64/2025 (IRC rates)</a></li><li><a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cfi/Pages/cfi-40.aspx">CFI, Article 40 — SIFIDE II (Portal das Finanças)</a></li><li><a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/bf_rep/Pages/ebf19b.aspx">EBF (Tax Benefits Statute), Article 19-B — salary increase incentive (Portal das Finanças)</a></li><li><a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cfi/Pages/cfi-22.aspx">CFI, Article 22 — RFAI, scope and definitions (Portal das Finanças)</a></li><li><a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cfi/Pages/cfi-23.aspx">CFI, Article 23 — RFAI, tax benefits (Portal das Finanças)</a></li><li><a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cfi/Pages/cfi-43.aspx">CFI, Article 43 — limits on regional aid (Portal das Finanças)</a></li><li><a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/bf_rep/Pages/ebf43d.aspx">EBF, Article 43-D — capitalisation incentive (Portal das Finanças)</a></li><li><a href="https://app.parlamento.pt/OE2027/HTML/OrcamentoEstado2027.html">Assembleia da República (Portuguese Parliament) — 2027 State Budget proposal (official text)</a></li><li><a href="https://www.parlamento.pt/Documents/2026/outubro/calendario-OE2027.pdf">Assembleia da República — OE2027 review calendar</a></li></ul>
+
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer class="ba-footer bg-ba-off" style="border-top:3px solid #0E2744">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 py-12 grid gap-10 md:grid-cols-2 md:items-start">
+      <div>
+        <div class="text-ba-blue font-semibold tracking-[.2em]">BA&nbsp;AUDIT</div>
+        <div class="mt-1 font-serif italic text-ba-gold">Delivering Trust</div>
+        <p class="mt-4 text-sm text-ba-muted">BA AUDIT – Rua São Salvador da Baía, 7, 1D - 2800-201 Almada</p>
+      </div>
+      <div class="md:justify-self-end w-full md:max-w-md">
+        <div style="max-width:420px;font-family:Inter,Arial,sans-serif;color:#0E2744;">
+          <p style="margin:0 0 10px;font-family:Georgia,'Times New Roman',serif;font-size:18px;font-weight:400;color:#0E2744;">BA AUDIT monthly newsletter</p>
+          <a href="#subscrever" style="display:inline-block;background:#0E2744;color:#fff;border-radius:3px;padding:10px 16px;font-size:14px;text-decoration:none;">Subscribe</a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-ba-line">
+      <div class="max-w-7xl mx-auto px-4 md:px-6 py-6 flex flex-col md:flex-row gap-6 md:items-center md:justify-between">
+        <div class="flex items-center gap-3">
+          <img src="/BA_AUDIT_logo_transparent.png" class="h-7" alt="BA AUDIT"/>
+          <span class="text-sm">© <span id="y"></span> BA AUDIT. All rights reserved.</span>
+        </div>
+        <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+          <a href="https://www.iubenda.com/privacy-policy/47280304" class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe" title="Privacy Policy">Privacy Policy</a>
+          <a href="https://www.iubenda.com/privacy-policy/47280304/cookie-policy" class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe" title="Cookie Policy">Cookie Policy</a>
+          <a href="/en/newsletter/">Newsletter</a>
+          <a href="/?lang=en#contactos">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const btn = document.getElementById('navBtn');
+      const mobile = document.getElementById('mobileNav');
+      btn?.addEventListener('click', () => mobile.classList.toggle('hidden'));
+      document.getElementById('y').textContent = new Date().getFullYear();
+    });
+  </script>
+  <script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement('script'), tag = d.getElementsByTagName('script')[0]; s.src='https://cdn.iubenda.com/iubenda.js'; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener('load', loader, false);}else if(w.attachEvent){w.attachEvent('onload', loader);}else{w.onload = loader;}})(window, document);</script>
+</body>
+</html>

@@ -42,6 +42,12 @@
     #nav a:not(.ba-btn):hover, #mobileNav a:hover { color: #0E2744; box-shadow: inset 0 -1px 0 #C4A574; }
     .ba-footer a:hover { color: #0E2744; text-decoration: underline; text-decoration-color: #C4A574; text-underline-offset: 3px; }
     ::selection { background: #C4A574; color: #0E2744; }
+    .sib-form-message-panel{display:none;margin:0 0 16px;padding:14px 16px;font-size:14px;line-height:1.5;color:#0E2744;background:#fff;border:1px solid #E4DDD0;border-left:3px solid #C4A574}
+    .sib-form-message-panel--active{display:block}
+    #error-message.sib-form-message-panel{border-left-color:#9B2C2C}
+    #sib-form .input--hidden{display:none !important}
+    #sib-form .entry__error{display:block;color:#9B2C2C;font-size:12px;margin-top:4px}
+    #sib-form .entry__error:empty{display:none}
   </style>
 </head>
 <body class="bg-ba-cream text-ba-gray font-sans antialiased scroll-smooth">
@@ -71,7 +77,7 @@
         <a href="#setores" class="hover:text-ba-blue" data-i18n="nav.sectors">Setores</a>
         <a href="#metodologia" class="hover:text-ba-blue" data-i18n="nav.methodology">Metodologia</a>
         <a href="#equipa" class="hover:text-ba-blue" data-i18n="nav.about">Quem somos</a>
-        <a href="/newsletter/" class="hover:text-ba-blue" data-i18n="nav.newsletter">Newsletter</a>
+        <a href="/newsletter/" class="hover:text-ba-blue" data-i18n="nav.newsletter" data-i18n-href="nav.newsletter.href">Newsletter</a>
         <a href="#contactos" class="ba-btn px-5 py-2 rounded-sm bg-ba-blue text-white hover:bg-ba-mid" data-i18n="nav.contacts">Contactos</a>
       </nav>
       <div id="mobileNav" class="hidden md:hidden border-t border-ba-line py-3">
@@ -85,7 +91,7 @@
           <a href="#setores" class="py-2" data-i18n="nav.sectors">Setores</a>
           <a href="#metodologia" class="py-2" data-i18n="nav.methodology">Metodologia</a>
           <a href="#equipa" class="py-2" data-i18n="nav.about">Quem somos</a>
-          <a href="/newsletter/" class="py-2" data-i18n="nav.newsletter">Newsletter</a>
+          <a href="/newsletter/" class="py-2" data-i18n="nav.newsletter" data-i18n-href="nav.newsletter.href">Newsletter</a>
           <a href="#contactos" class="py-2" data-i18n="nav.contacts">Contactos</a>
         </div>
       </div>
@@ -282,24 +288,53 @@
       <div>
         <div class="text-ba-blue font-semibold tracking-[.2em]">BA&nbsp;AUDIT</div>
         <div class="mt-1 font-serif italic text-ba-gold">Delivering Trust</div>
-        <p class="mt-4 text-sm text-ba-muted">BA AUDIT – Rua São Salvador da Baia, 7, 1D - 2800-201 Almada</p>
+        <p class="mt-4 text-sm text-ba-muted">BA AUDIT – Rua São Salvador da Baía, 7, 1D - 2800-201 Almada</p>
       </div>
       <div class="md:justify-self-end w-full md:max-w-md">
-        <!-- BA AUDIT · Subscrição compacta para o footer de todas as páginas (Brevo). Substituir BREVO_FORM_ACTION_URL (mesmo formulário). NÃO PUBLICADO. -->
-        <form method="POST" action="BREVO_FORM_ACTION_URL" style="font-family:Inter,Arial,sans-serif;max-width:420px;">
-          <p style="margin:0 0 8px;font-size:14px;font-weight:600;color:#0E2744;">Newsletter mensal BA AUDIT</p>
-          <div style="display:flex;flex-wrap:wrap;gap:8px;">
-            <input name="EMAIL" type="email" required placeholder="O seu email" aria-label="Email"
-              style="flex:1 1 200px;padding:10px 12px;border:1px solid #E4DDD0;border-radius:3px;font-size:14px;">
-            <button type="submit" style="background:#0E2744;color:#fff;border:0;border-radius:2px;padding:10px 16px;font-size:14px;cursor:pointer;">Subscrever</button>
+        <!-- BA-FORM:newsletter-compact:pt START · Brevo «Newsletter BA AUDIT» · textos em build_newsletter_pages_v2.py (FORM_TXT) -->
+        <div id="sib-form-container" style="max-width:420px;font-family:Inter,Arial,sans-serif;color:#0E2744;">
+          <div id="error-message" class="sib-form-message-panel" role="alert">
+            <div class="sib-form-message-panel__text"><span class="sib-form-message-panel__inner-text" data-i18n="nlf.err">Não foi possível registar a subscrição. Verifique o endereço de email e tente novamente.</span></div>
           </div>
-          <label style="display:flex;gap:8px;align-items:flex-start;font-size:12px;color:#5B6573;margin-top:8px;line-height:1.45;">
-            <input type="checkbox" name="OPT_IN" value="1" required style="margin-top:2px;">
-            <span>Aceito receber a newsletter da BA AUDIT. Cancelamento a qualquer momento. <a href="https://www.iubenda.com/privacy-policy/47280304" style="color:#0E2744;">Privacidade</a>.</span>
-          </label>
-          <input type="text" name="email_address_check" value="" style="display:none" tabindex="-1" autocomplete="off">
-          <input type="hidden" name="locale" value="pt">
-        </form>
+          <div id="success-message" class="sib-form-message-panel" role="status">
+            <div class="sib-form-message-panel__text"><span class="sib-form-message-panel__inner-text" data-i18n="nlf.ok">Obrigado. Enviámos-lhe um email para confirmar a subscrição. A subscrição só fica ativa depois dessa confirmação.</span></div>
+          </div>
+          <div id="sib-container">
+          <form id="sib-form" method="POST" action="https://59b6c8af.sibforms.com/serve/MUIFAK5a-EF7HmrLDG8DuGi6jnGtjt-aag9Rbja0nBKYjwsRTNfhMpO-gfI6zw47jfExJuCTAgWzwAcGVGqVhs4-ttCWohj5k1LUggTKQrEM_I6oL0w1p6rh2TwCtya-3xArW3naQR1SKecXiuw_4tJKA37OnEzfhH8xbff1mGMdl1l_PCucDoBzqeZz-BzkHHRoO1OJS4ALUTtPAQ==" data-type="subscription" target="_self">
+            <p style="margin:0 0 8px;font-family:Georgia,'Times New Roman',serif;font-size:18px;font-weight:400;color:#0E2744;" data-i18n="nlf.title">Newsletter mensal BA AUDIT</p>
+            <div class="form__entry" style="display:flex;flex-wrap:wrap;gap:8px;">
+              <input id="EMAIL" name="EMAIL" type="email" required autocomplete="email" placeholder="O seu email" data-i18n-placeholder="nlf.placeholder" aria-label="Email"
+                style="flex:1 1 200px;padding:10px 12px;border:1px solid #C4A574;border-radius:3px;font-size:14px;background:#fff;">
+              <button type="submit" style="background:#0E2744;color:#fff;border:0;border-radius:3px;padding:10px 16px;font-size:14px;cursor:pointer;" data-i18n="nlf.submit">Subscrever</button>
+              <svg class="loader" style="display:none;width:22px;height:22px;vertical-align:middle" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="#C4A574" stroke-width="3" stroke-dasharray="42 20"><animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="0.9s" repeatCount="indefinite"/></circle></svg>
+              <label class="entry__error entry__error--primary" style="flex-basis:100%"></label>
+            </div>
+            <label style="display:flex;gap:8px;align-items:flex-start;font-size:12px;color:#5E6A78;margin-top:8px;line-height:1.45;">
+              <input type="checkbox" name="OPT_IN" value="1" required style="margin-top:2px;">
+              <span data-i18n="nlf.consent">Aceito receber por email a newsletter mensal e comunicações informativas pontuais da BA AUDIT sobre auditoria, contabilidade e fiscalidade. Posso cancelar a qualquer momento através da ligação em cada envio. <a href="https://www.iubenda.com/privacy-policy/47280304" target="_blank" rel="noopener" style="color:#0E2744;">Política de Privacidade</a>.</span>
+            </label>
+            <p style="font-size:12px;line-height:1.5;color:#0E2744;margin:8px 0 0;" data-i18n="nlf.note">Vai receber um email para confirmar. A subscrição só fica ativa depois dessa confirmação. Responsável pelo tratamento: Manuel Borges, Revisor Oficial de Contas inscrito na OROC sob o n.º 1067 (BA AUDIT).</p>
+            <input type="text" name="email_address_check" value="" class="input--hidden" style="display:none" tabindex="-1" autocomplete="off">
+            <input type="hidden" name="locale" value="pt" data-i18n-value="nlf.locale">
+          </form>
+          </div>
+        </div>
+        <script>
+          window.REQUIRED_CODE_ERROR_MESSAGE = 'Indique um email válido e confirme o consentimento.';
+          window.LOCALE = 'pt';
+          window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = 'Indique um email válido e confirme o consentimento.';
+          window.REQUIRED_ERROR_MESSAGE = 'Indique um email válido e confirme o consentimento.';
+          window.GENERIC_INVALID_MESSAGE = 'Indique um email válido e confirme o consentimento.';
+          window.translation = { common: { selectedList: '{quantity} list selected', selectedLists: '{quantity} lists selected' } };
+          var AUTOHIDE = Boolean(0);
+          // Validação BA (corre antes do main.js da Brevo): email válido e consentimento obrigatório.
+          document.getElementById('sib-form').addEventListener('submit', function (e) {
+            var f = e.target, em = (f.EMAIL.value || '').trim(), ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em);
+            if (!ok || !f.OPT_IN.checked) { e.preventDefault(); e.stopImmediatePropagation(); alert((typeof i18n !== 'undefined' && i18n[currentLang] && i18n[currentLang]['nlf.alert']) || 'Indique um email válido e confirme o consentimento.'); }
+          });
+        </script>
+        <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+        <!-- BA-FORM:newsletter-compact:pt END -->
       </div>
     </div>
     <div class="border-t border-ba-line">
@@ -311,7 +346,7 @@
       <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm">
         <a href="https://www.iubenda.com/privacy-policy/47280304" class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe" title="Política de Privacidade" data-i18n="footer.privacy">Política de Privacidade</a>
         <a href="https://www.iubenda.com/privacy-policy/47280304/cookie-policy" class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe" title="Política de Cookies" data-i18n="footer.cookies">Política de Cookies</a>
-        <a href="/newsletter/" data-i18n="nav.newsletter">Newsletter</a>
+        <a href="/newsletter/" data-i18n="nav.newsletter" data-i18n-href="nav.newsletter.href">Newsletter</a>
         <a href="#contactos" data-i18n="nav.contacts">Contactos</a>
       </div>
     </div>
@@ -355,6 +390,16 @@
         'nav.about': 'Quem somos',
         'nav.contacts': 'Contactos',
         'nav.newsletter': 'Newsletter',
+        'nav.newsletter.href': '/newsletter/',
+        'nlf.title': 'Newsletter mensal BA AUDIT',
+        'nlf.placeholder': 'O seu email',
+        'nlf.submit': 'Subscrever',
+        'nlf.consent': 'Aceito receber por email a newsletter mensal e comunicações informativas pontuais da BA AUDIT sobre auditoria, contabilidade e fiscalidade. Posso cancelar a qualquer momento através da ligação em cada envio. <a href="https://www.iubenda.com/privacy-policy/47280304" target="_blank" rel="noopener" style="color:#0E2744;">Política de Privacidade</a>.',
+        'nlf.note': 'Vai receber um email para confirmar. A subscrição só fica ativa depois dessa confirmação. Responsável pelo tratamento: Manuel Borges, Revisor Oficial de Contas inscrito na OROC sob o n.º 1067 (BA AUDIT).',
+        'nlf.ok': 'Obrigado. Enviámos-lhe um email para confirmar a subscrição. A subscrição só fica ativa depois dessa confirmação.',
+        'nlf.err': 'Não foi possível registar a subscrição. Verifique o endereço de email e tente novamente.',
+        'nlf.alert': 'Indique um email válido e confirme o consentimento.',
+        'nlf.locale': 'pt',
         'hero.title': 'Auditoria e Consultoria que criam confiança e valor',
         'hero.subtitle': 'Apoiamos as empresas com serviços de auditoria financeira, fiscalidade e melhoria de processos — com qualidade, com cumprimento de prazos  e com preços competitivos.',
         'hero.cta1': 'Solicitar contacto',
@@ -434,6 +479,16 @@
         'nav.about': 'About',
         'nav.contacts': 'Contact',
         'nav.newsletter': 'Newsletter',
+        'nav.newsletter.href': '/en/newsletter/',
+        'nlf.title': 'BA AUDIT monthly newsletter',
+        'nlf.placeholder': 'Your email',
+        'nlf.submit': 'Subscribe',
+        'nlf.consent': 'I agree to receive by email the monthly newsletter and occasional informative communications from BA AUDIT on audit, accounting and tax. I may unsubscribe at any time using the link in each email. <a href="https://www.iubenda.com/privacy-policy/47280304" target="_blank" rel="noopener" style="color:#0E2744;">Privacy Policy</a>.',
+        'nlf.note': 'You will receive an email to confirm. Your subscription only becomes active once confirmed. Data controller: Manuel Borges, Revisor Oficial de Contas (Statutory Auditor) registered with the OROC (Portuguese Institute of Statutory Auditors) under no. 1067 (BA AUDIT).',
+        'nlf.ok': 'Thank you. We have sent you an email to confirm your subscription. Your subscription only becomes active once confirmed.',
+        'nlf.err': 'We were unable to register your subscription. Please check your email address and try again.',
+        'nlf.alert': 'Please enter a valid email address and confirm your consent.',
+        'nlf.locale': 'en',
         'hero.title': 'Audit & Consulting that build trust and value',
         'hero.subtitle': 'We support companies with financial audit, tax and process improvement — delivering quality, on-time and at competitive prices.',
         'hero.cta1': 'Request contact',
@@ -516,6 +571,12 @@
         const key = el.getAttribute('data-i18n');
         if(i18n[lang][key] !== undefined){ el.innerHTML = i18n[lang][key]; }
       });
+      [['data-i18n-href','href'],['data-i18n-placeholder','placeholder'],['data-i18n-value','value']].forEach(([a,attr]) => {
+        document.querySelectorAll('['+a+']').forEach(el => {
+          const v = i18n[lang][el.getAttribute(a)];
+          if(v !== undefined){ el.setAttribute(attr, v); }
+        });
+      });
       // Toggle button emphasis
       document.getElementById('lang-pt')?.classList.toggle('font-bold', lang==='pt');
       document.getElementById('lang-en')?.classList.toggle('font-bold', lang==='en');
@@ -525,7 +586,7 @@
 
     // Init
     window.addEventListener('DOMContentLoaded', () => {
-      applyI18n('pt');
+      applyI18n(new URLSearchParams(window.location.search).get('lang') === 'en' ? 'en' : 'pt');
       const btn = document.getElementById('navBtn');
       const mobile = document.getElementById('mobileNav');
       btn?.addEventListener('click', () => mobile.classList.toggle('hidden'));

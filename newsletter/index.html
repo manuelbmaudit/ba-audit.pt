@@ -12,6 +12,9 @@
   <title>Newsletter BA AUDIT — Edição n.º 1, novembro 2026</title>
   <meta name="description" content="Newsletter mensal BA AUDIT: agenda fiscal, um tema em destaque e as novidades que contam. Edição n.º 1, novembro de 2026." />
   <link rel="canonical" href="https://ba-audit.pt/newsletter/">
+  <link rel="alternate" hreflang="pt-PT" href="https://ba-audit.pt/newsletter/">
+  <link rel="alternate" hreflang="en" href="https://ba-audit.pt/en/newsletter/">
+  <link rel="alternate" hreflang="x-default" href="https://ba-audit.pt/newsletter/">
   <link rel="icon" type="image/x-icon" href="/BA_AUDIT_logo.ico" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -76,6 +79,13 @@
     @media(max-width:640px){.nl-ed{padding:0 18px 40px}.nl-ed .hero,.nl-ed .cta{margin-left:-18px;margin-right:-18px}.nl-ed h1{font-size:26px}.nl-ed ul.ag li{gap:12px}.nl-ed ul.ag .d{min-width:64px}.nl-ed .cta .btn.o{margin-left:0}}
     #ba-newsletter input[type=email],#ba-newsletter input[type=text]{background:#fff}
 
+    .sib-form-message-panel{display:none;margin:0 0 16px;padding:14px 16px;font-size:14px;line-height:1.5;color:#0E2744;background:#fff;border:1px solid #E4DDD0;border-left:3px solid #C4A574}
+    .sib-form-message-panel--active{display:block}
+    #error-message.sib-form-message-panel{border-left-color:#9B2C2C}
+    #sib-form .input--hidden{display:none !important}
+    #sib-form .entry__error{display:block;color:#9B2C2C;font-size:12px;margin-top:4px}
+    #sib-form .entry__error:empty{display:none}
+
   </style>
 </head>
 <body class="bg-ba-cream text-ba-gray font-sans antialiased">
@@ -86,9 +96,12 @@
           <img src="/BA_AUDIT_logo_transparent.png" alt="BA AUDIT" class="h-8 w-auto"/>
           <span class="text-ba-blue font-semibold tracking-[.2em]">BA&nbsp;AUDIT</span>
         </a>
-        <button id="navBtn" class="md:hidden p-2 rounded hover:bg-gray-100" aria-label="Menu">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-        </button>
+        <div class="flex items-center gap-2">
+          <button id="navBtn" class="md:hidden p-2 rounded hover:bg-gray-100" aria-label="Menu">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+          </button>
+          <div class="hidden md:flex items-center gap-1 text-sm" aria-label="Idioma"><a href="/newsletter/" hreflang="pt-PT" lang="pt-PT" class="px-2 py-1 rounded hover:bg-gray-100 font-bold text-ba-blue" aria-current="true">PT</a><span class="text-gray-300">|</span><a href="/en/newsletter/" hreflang="en" lang="en" class="px-2 py-1 rounded hover:bg-gray-100 text-ba-gray hover:text-ba-blue">EN</a></div>
+        </div>
       </div>
       <nav id="nav" class="hidden md:flex items-center gap-8 pb-4 md:pb-0">
         <a href="/#servicos" class="hover:text-ba-blue">Serviços</a>
@@ -100,6 +113,7 @@
       </nav>
       <div id="mobileNav" class="hidden md:hidden border-t border-ba-line py-3">
         <div class="flex flex-col gap-2">
+          <div class="flex pb-2 items-center gap-1 text-sm" aria-label="Idioma"><a href="/newsletter/" hreflang="pt-PT" lang="pt-PT" class="px-2 py-1 rounded hover:bg-gray-100 font-bold text-ba-blue" aria-current="true">PT</a><span class="text-gray-300">|</span><a href="/en/newsletter/" hreflang="en" lang="en" class="px-2 py-1 rounded hover:bg-gray-100 text-ba-gray hover:text-ba-blue">EN</a></div>
           <a href="/#servicos" class="py-2">Serviços</a>
           <a href="/#setores" class="py-2">Setores</a>
           <a href="/#metodologia" class="py-2">Metodologia</a>
@@ -111,7 +125,6 @@
     </div>
   </div>
 
-  <!-- Cabeçalho da página -->
   <section class="bg-ba-blue text-white" style="border-bottom:3px solid #C4A574">
     <div class="max-w-7xl mx-auto px-4 md:px-6 py-14 md:py-20">
       <div class="ba-eyebrow">Newsletter mensal</div>
@@ -124,55 +137,60 @@
 
   <section class="py-12 md:py-16">
     <div class="max-w-7xl mx-auto px-4 md:px-6 grid gap-10 lg:grid-cols-[minmax(0,1fr)_380px] lg:items-start">
-
-      <!-- Subscrição -->
       <aside id="subscrever" class="lg:order-2 lg:sticky lg:top-28 scroll-mt-28">
         <div class="bg-ba-off border border-ba-line p-6 md:p-7 shadow-soft" style="border-top:3px solid #C4A574">
-          <!--
-            BA AUDIT · Formulário de subscrição da newsletter (Brevo) — versão completa para /newsletter
-            NÃO PUBLICADO. Antes de usar:
-             1) Em Brevo > Contacts > Forms, criar um formulário "Newsletter BA AUDIT" com os campos EMAIL, FIRSTNAME (opcional), COMPANY (opcional) e o campo "Opt-in" (gera OPT_IN).
-             2) Em Settings do formulário: "Double confirmation email" ligado, com template DOI em pt-PT e página de confirmação https://ba-audit.pt/newsletter/obrigado.
-             3) Em Share > HTML code, copiar o URL de "action" (https://XXXX.sibforms.com/serve/XXXX) e substituir BREVO_FORM_ACTION_URL abaixo.
-             Este HTML replica a estrutura do embed oficial da Brevo (POST para sibforms) com o estilo BA AUDIT, sem dependências externas.
-          -->
-          <div id="ba-newsletter" style="max-width:560px;font-family:Inter,Arial,Helvetica,sans-serif;color:#1A2332;">
-            <form id="ba-sib-form" method="POST" action="BREVO_FORM_ACTION_URL" target="_self" novalidate>
+          <!-- BA-FORM:newsletter-full:pt START · Brevo «Newsletter BA AUDIT» · textos em build_newsletter_pages_v2.py (FORM_TXT) -->
+          <div id="sib-form-container" class="ba-newsletter" style="max-width:560px;font-family:Inter,Arial,Helvetica,sans-serif;color:#0E2744;">
+            <div id="error-message" class="sib-form-message-panel" role="alert">
+              <div class="sib-form-message-panel__text"><span class="sib-form-message-panel__inner-text">Não foi possível registar a subscrição. Verifique o endereço de email e tente novamente.</span></div>
+            </div>
+            <div id="success-message" class="sib-form-message-panel" role="status">
+              <div class="sib-form-message-panel__text"><span class="sib-form-message-panel__inner-text">Obrigado. Enviámos-lhe um email para confirmar a subscrição. A subscrição só fica ativa depois dessa confirmação.</span></div>
+            </div>
+            <div id="sib-container">
+            <form id="sib-form" method="POST" action="https://59b6c8af.sibforms.com/serve/MUIFAK5a-EF7HmrLDG8DuGi6jnGtjt-aag9Rbja0nBKYjwsRTNfhMpO-gfI6zw47jfExJuCTAgWzwAcGVGqVhs4-ttCWohj5k1LUggTKQrEM_I6oL0w1p6rh2TwCtya-3xArW3naQR1SKecXiuw_4tJKA37OnEzfhH8xbff1mGMdl1l_PCucDoBzqeZz-BzkHHRoO1OJS4ALUTtPAQ==" data-type="subscription" target="_self">
               <h3 style="font-family:Georgia,'Times New Roman',serif;font-weight:400;color:#0E2744;font-size:24px;margin:0 0 6px;">Newsletter BA AUDIT</h3>
               <p style="margin:0 0 18px;color:#5E6A78;font-size:15px;line-height:1.6;">No início de cada mês: agenda fiscal, um tema em destaque e as novidades que contam. <em style="font-family:Georgia,serif;">Delivering Trust.</em></p>
 
-              <label for="ba-email" style="display:block;font-size:13px;font-weight:600;margin-bottom:4px;">Email profissional *</label>
-              <input id="ba-email" name="EMAIL" type="email" required autocomplete="email" placeholder="nome@empresa.pt"
-                style="width:100%;padding:11px 12px;border:1px solid #E4DDD0;border-radius:3px;font-size:15px;margin-bottom:12px;">
+              <div class="form__entry">
+                <label for="EMAIL" style="display:block;font-size:13px;font-weight:600;margin-bottom:4px;">Email *</label>
+                <input id="EMAIL" name="EMAIL" type="email" required autocomplete="email" placeholder="nome@empresa.pt"
+                  style="box-sizing:border-box;width:100%;padding:11px 12px;border:1px solid #C4A574;border-radius:3px;font-size:15px;margin-bottom:12px;background:#fff;">
+                <label class="entry__error entry__error--primary"></label>
+              </div>
 
-              <label for="ba-nome" style="display:block;font-size:13px;font-weight:600;margin-bottom:4px;">Nome</label>
-              <input id="ba-nome" name="FIRSTNAME" type="text" autocomplete="given-name"
-                style="width:100%;padding:11px 12px;border:1px solid #E4DDD0;border-radius:3px;font-size:15px;margin-bottom:12px;">
-
-              <label for="ba-empresa" style="display:block;font-size:13px;font-weight:600;margin-bottom:4px;">Empresa</label>
-              <input id="ba-empresa" name="COMPANY" type="text" autocomplete="organization"
-                style="width:100%;padding:11px 12px;border:1px solid #E4DDD0;border-radius:3px;font-size:15px;margin-bottom:14px;">
-
-              <label style="display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.5;color:#1A2332;margin-bottom:16px;">
+              <label style="display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.5;color:#0E2744;margin-bottom:12px;">
                 <input type="checkbox" name="OPT_IN" value="1" required style="margin-top:3px;">
-                <span>Aceito receber a newsletter mensal e outras comunicações informativas da BA AUDIT por email. Posso cancelar a subscrição a qualquer momento através da ligação incluída em cada envio. Os meus dados são tratados nos termos da <a href="https://www.iubenda.com/privacy-policy/47280304" target="_blank" rel="noopener" style="color:#0E2744;">Política de Privacidade</a>. *</span>
+                <span>Aceito receber por email a newsletter mensal e comunicações informativas pontuais da BA AUDIT sobre auditoria, contabilidade e fiscalidade. Posso cancelar a subscrição a qualquer momento através da ligação incluída em cada envio. Os meus dados são tratados nos termos da <a href="https://www.iubenda.com/privacy-policy/47280304" target="_blank" rel="noopener" style="color:#0E2744;">Política de Privacidade</a>. *</span>
               </label>
 
-              <!-- honeypot anti-spam (campo oficial do embed Brevo) -->
-              <input type="text" name="email_address_check" value="" style="display:none" tabindex="-1" autocomplete="off">
+              <p style="font-size:12px;line-height:1.5;color:#0E2744;margin:0 0 16px;">Responsável pelo tratamento: Manuel Borges, Revisor Oficial de Contas inscrito na OROC sob o n.º 1067 (BA AUDIT). Só o email é obrigatório; a subscrição depende do consentimento e da dupla confirmação.</p>
+
+              <input type="text" name="email_address_check" value="" class="input--hidden" style="display:none" tabindex="-1" autocomplete="off">
               <input type="hidden" name="locale" value="pt">
 
               <button type="submit" style="background:#0E2744;color:#fff;border:0;border-radius:3px;padding:12px 22px;font-size:15px;font-weight:600;cursor:pointer;">Subscrever</button>
-              <p style="font-size:12px;color:#5E6A78;margin:12px 0 0;">Vai receber um email para confirmar a subscrição (double opt-in). Só depois da confirmação fica inscrito.</p>
+              <svg class="loader" style="display:none;width:22px;height:22px;vertical-align:middle" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="#C4A574" stroke-width="3" stroke-dasharray="42 20"><animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="0.9s" repeatCount="indefinite"/></circle></svg>
+              <p style="font-size:12px;color:#5E6A78;margin:12px 0 0;">Vai receber um email de dupla confirmação da subscrição. A subscrição só fica ativa depois dessa confirmação.</p>
             </form>
+            </div>
           </div>
           <script>
-          // Validação mínima: impede envio sem email válido e consentimento explícito.
-          document.getElementById('ba-sib-form').addEventListener('submit',function(e){
-            var f=e.target, em=f.EMAIL.value.trim(), ok=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em);
-            if(!ok||!f.OPT_IN.checked){e.preventDefault();alert('Indique um email válido e confirme o consentimento.');}
-          });
+            window.REQUIRED_CODE_ERROR_MESSAGE = 'Indique um email válido e confirme o consentimento.';
+            window.LOCALE = 'pt';
+            window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = 'Indique um email válido e confirme o consentimento.';
+            window.REQUIRED_ERROR_MESSAGE = 'Indique um email válido e confirme o consentimento.';
+            window.GENERIC_INVALID_MESSAGE = 'Indique um email válido e confirme o consentimento.';
+            window.translation = { common: { selectedList: '{quantity} list selected', selectedLists: '{quantity} lists selected' } };
+            var AUTOHIDE = Boolean(0);
+            // Validação BA (corre antes do main.js da Brevo): email válido e consentimento obrigatório.
+            document.getElementById('sib-form').addEventListener('submit', function (e) {
+              var f = e.target, em = (f.EMAIL.value || '').trim(), ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em);
+              if (!ok || !f.OPT_IN.checked) { e.preventDefault(); e.stopImmediatePropagation(); alert('Indique um email válido e confirme o consentimento.'); }
+            });
           </script>
+          <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+          <!-- BA-FORM:newsletter-full:pt END -->
         </div>
         <div class="mt-6 bg-white border border-ba-line p-6">
           <div class="ba-eyebrow">Arquivo</div>
@@ -181,8 +199,6 @@
           </ul>
         </div>
       </aside>
-
-      <!-- Edição em destaque -->
       <div class="lg:order-1 min-w-0">
         <div class="ba-eyebrow mb-3">Edição em destaque</div>
         <article class="nl-ed max-w-3xl">
@@ -234,24 +250,13 @@
       <div>
         <div class="text-ba-blue font-semibold tracking-[.2em]">BA&nbsp;AUDIT</div>
         <div class="mt-1 font-serif italic text-ba-gold">Delivering Trust</div>
-        <p class="mt-4 text-sm text-ba-muted">BA AUDIT – Rua São Salvador da Baia, 7, 1D - 2800-201 Almada</p>
+        <p class="mt-4 text-sm text-ba-muted">BA AUDIT – Rua São Salvador da Baía, 7, 1D - 2800-201 Almada</p>
       </div>
       <div class="md:justify-self-end w-full md:max-w-md">
-        <!-- BA AUDIT · Subscrição compacta para o footer de todas as páginas (Brevo). Substituir BREVO_FORM_ACTION_URL (mesmo formulário). NÃO PUBLICADO. -->
-        <form method="POST" action="BREVO_FORM_ACTION_URL" style="font-family:Inter,Arial,sans-serif;max-width:420px;">
-          <p style="margin:0 0 8px;font-size:14px;font-weight:600;color:#0E2744;">Newsletter mensal BA AUDIT</p>
-          <div style="display:flex;flex-wrap:wrap;gap:8px;">
-            <input name="EMAIL" type="email" required placeholder="O seu email" aria-label="Email"
-              style="flex:1 1 200px;padding:10px 12px;border:1px solid #E4DDD0;border-radius:3px;font-size:14px;">
-            <button type="submit" style="background:#0E2744;color:#fff;border:0;border-radius:3px;padding:10px 16px;font-size:14px;cursor:pointer;">Subscrever</button>
-          </div>
-          <label style="display:flex;gap:8px;align-items:flex-start;font-size:12px;color:#5E6A78;margin-top:8px;line-height:1.45;">
-            <input type="checkbox" name="OPT_IN" value="1" required style="margin-top:2px;">
-            <span>Aceito receber a newsletter da BA AUDIT. Cancelamento a qualquer momento. <a href="https://www.iubenda.com/privacy-policy/47280304" style="color:#0E2744;">Privacidade</a>.</span>
-          </label>
-          <input type="text" name="email_address_check" value="" style="display:none" tabindex="-1" autocomplete="off">
-          <input type="hidden" name="locale" value="pt">
-        </form>
+        <div style="max-width:420px;font-family:Inter,Arial,sans-serif;color:#0E2744;">
+          <p style="margin:0 0 10px;font-family:Georgia,'Times New Roman',serif;font-size:18px;font-weight:400;color:#0E2744;">Newsletter mensal BA AUDIT</p>
+          <a href="#subscrever" style="display:inline-block;background:#0E2744;color:#fff;border-radius:3px;padding:10px 16px;font-size:14px;text-decoration:none;">Subscrever</a>
+        </div>
       </div>
     </div>
     <div class="border-t border-ba-line">
