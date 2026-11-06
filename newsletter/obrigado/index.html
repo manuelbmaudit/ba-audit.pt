@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<script>
+  // Redirecionar de www.ba-audit.pt para ba-audit.pt
+  if (window.location.hostname === "www.ba-audit.pt") {
+    window.location.href = window.location.href.replace("www.ba-audit.pt", "ba-audit.pt");
+  }
+</script>
+  <meta charset="utf-8" />
+  <meta name="robots" content="noindex" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Subscrição — Newsletter BA AUDIT</title>
+  <meta name="description" content="Confirmação da subscrição da newsletter BA AUDIT." />
+  <link rel="canonical" href="https://ba-audit.pt/newsletter/obrigado/">
+  <link rel="icon" type="image/x-icon" href="/BA_AUDIT_logo.ico" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { ba: { blue: '#0E2744', navy: '#0E2744', mid: '#163A5F', gold: '#C4A574', goldsoft: '#D4BC96', cream: '#F6F1E8', line: '#E4DDD0', gray: '#3A4452', muted: '#5E6A78', off: '#FAF8F4' } },
+          fontFamily: { sans: ['Inter','Helvetica','Arial','ui-sans-serif','system-ui'], serif: ['Georgia','"Times New Roman"','serif'] },
+          boxShadow: { soft: '0 1px 2px rgba(14,39,68,.04), 0 8px 24px rgba(14,39,68,.06)' }
+        }
+      }
+    }
+  </script>
+  <style>
+    @font-face { font-family: Inter; src: local('Arial'); }
+    h1, h2, h3 { font-family: Georgia, 'Times New Roman', serif; font-weight: 400 !important; }
+    .ba-eyebrow { font-size: 11px; letter-spacing: .28em; text-transform: uppercase; color: #C4A574; font-weight: 700; }
+    .ba-btn { letter-spacing: .08em; text-transform: uppercase; font-size: 13px; font-weight: 600; }
+    #nav a:not(.ba-btn) { font-size: 14px; letter-spacing: .02em; }
+    #nav a:not(.ba-btn):hover, #mobileNav a:hover { color: #0E2744; box-shadow: inset 0 -1px 0 #C4A574; }
+    #nav a[aria-current="page"] { color: #0E2744; box-shadow: inset 0 -2px 0 #C4A574; }
+    .ba-footer a:hover { color: #0E2744; text-decoration: underline; text-decoration-color: #C4A574; text-underline-offset: 3px; }
+
+  </style>
+</head>
+<body class="bg-ba-cream text-ba-gray font-sans antialiased">
+  <div class="w-full bg-white/95 backdrop-blur border-b border-ba-line sticky top-0 z-50" style="border-top:3px solid #0E2744">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="flex items-center gap-3">
+          <img src="/BA_AUDIT_logo_transparent.png" alt="BA AUDIT" class="h-8 w-auto"/>
+          <span class="text-ba-blue font-semibold tracking-[.2em]">BA&nbsp;AUDIT</span>
+        </a>
+        <button id="navBtn" class="md:hidden p-2 rounded hover:bg-gray-100" aria-label="Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+      <nav id="nav" class="hidden md:flex items-center gap-8 pb-4 md:pb-0">
+        <a href="/#servicos" class="hover:text-ba-blue">Serviços</a>
+        <a href="/#setores" class="hover:text-ba-blue">Setores</a>
+        <a href="/#metodologia" class="hover:text-ba-blue">Metodologia</a>
+        <a href="/#equipa" class="hover:text-ba-blue">Quem somos</a>
+        <a href="/newsletter/" class="hover:text-ba-blue" aria-current="page">Newsletter</a>
+        <a href="/#contactos" class="ba-btn px-5 py-2 rounded-sm bg-ba-blue text-white hover:bg-ba-mid">Contactos</a>
+      </nav>
+      <div id="mobileNav" class="hidden md:hidden border-t border-ba-line py-3">
+        <div class="flex flex-col gap-2">
+          <a href="/#servicos" class="py-2">Serviços</a>
+          <a href="/#setores" class="py-2">Setores</a>
+          <a href="/#metodologia" class="py-2">Metodologia</a>
+          <a href="/#equipa" class="py-2">Quem somos</a>
+          <a href="/newsletter/" class="py-2 text-ba-blue font-semibold" aria-current="page">Newsletter</a>
+          <a href="/#contactos" class="py-2">Contactos</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="py-20 md:py-28">
+    <div class="max-w-3xl mx-auto px-4 md:px-6">
+      <div class="bg-white border border-ba-line p-8 md:p-12 shadow-soft" style="border-top:3px solid #C4A574">
+        <div class="ba-eyebrow">Newsletter mensal</div>
+        <h1 class="mt-4 text-3xl md:text-4xl text-ba-blue">Obrigado pela sua subscrição</h1>
+        <p class="mt-5 text-ba-muted leading-relaxed">Se ainda não o fez, confirme a subscrição através da ligação enviada para o seu email. Só depois da confirmação fica inscrito.</p>
+        <p class="mt-8"><a href="/newsletter/" class="ba-btn inline-block px-6 py-3 rounded-sm bg-ba-blue text-white hover:bg-ba-mid">Ver a edição mais recente</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="ba-footer bg-ba-off" style="border-top:3px solid #0E2744">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 py-12 grid gap-10 md:grid-cols-2 md:items-start">
+      <div>
+        <div class="text-ba-blue font-semibold tracking-[.2em]">BA&nbsp;AUDIT</div>
+        <div class="mt-1 font-serif italic text-ba-gold">Delivering Trust</div>
+        <p class="mt-4 text-sm text-ba-muted">BA AUDIT – Rua São Salvador da Baia, 7, 1D - 2800-201 Almada</p>
+      </div>
+      <div class="md:justify-self-end w-full md:max-w-md">
+        <!-- BA AUDIT · Subscrição compacta para o footer de todas as páginas (Brevo). Substituir BREVO_FORM_ACTION_URL (mesmo formulário). NÃO PUBLICADO. -->
+        <form method="POST" action="BREVO_FORM_ACTION_URL" style="font-family:Inter,Arial,sans-serif;max-width:420px;">
+          <p style="margin:0 0 8px;font-size:14px;font-weight:600;color:#0E2744;">Newsletter mensal BA AUDIT</p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <input name="EMAIL" type="email" required placeholder="O seu email" aria-label="Email"
+              style="flex:1 1 200px;padding:10px 12px;border:1px solid #E4DDD0;border-radius:3px;font-size:14px;">
+            <button type="submit" style="background:#0E2744;color:#fff;border:0;border-radius:3px;padding:10px 16px;font-size:14px;cursor:pointer;">Subscrever</button>
+          </div>
+          <label style="display:flex;gap:8px;align-items:flex-start;font-size:12px;color:#5E6A78;margin-top:8px;line-height:1.45;">
+            <input type="checkbox" name="OPT_IN" value="1" required style="margin-top:2px;">
+            <span>Aceito receber a newsletter da BA AUDIT. Cancelamento a qualquer momento. <a href="https://www.iubenda.com/privacy-policy/47280304" style="color:#0E2744;">Privacidade</a>.</span>
+          </label>
+          <input type="text" name="email_address_check" value="" style="display:none" tabindex="-1" autocomplete="off">
+          <input type="hidden" name="locale" value="pt">
+        </form>
+      </div>
+    </div>
+    <div class="border-t border-ba-line">
+      <div class="max-w-7xl mx-auto px-4 md:px-6 py-6 flex flex-col md:flex-row gap-6 md:items-center md:justify-between">
+        <div class="flex items-center gap-3">
+          <img src="/BA_AUDIT_logo_transparent.png" class="h-7" alt="BA AUDIT"/>
+          <span class="text-sm">© <span id="y"></span> BA AUDIT. Todos os direitos reservados.</span>
+        </div>
+        <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+          <a href="https://www.iubenda.com/privacy-policy/47280304" class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe" title="Política de Privacidade">Política de Privacidade</a>
+          <a href="https://www.iubenda.com/privacy-policy/47280304/cookie-policy" class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe" title="Política de Cookies">Política de Cookies</a>
+          <a href="/newsletter/">Newsletter</a>
+          <a href="/#contactos">Contactos</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const btn = document.getElementById('navBtn');
+      const mobile = document.getElementById('mobileNav');
+      btn?.addEventListener('click', () => mobile.classList.toggle('hidden'));
+      document.getElementById('y').textContent = new Date().getFullYear();
+    });
+  </script>
+  <script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement('script'), tag = d.getElementsByTagName('script')[0]; s.src='https://cdn.iubenda.com/iubenda.js'; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener('load', loader, false);}else if(w.attachEvent){w.attachEvent('onload', loader);}else{w.onload = loader;}})(window, document);</script>
+</body>
+</html>
