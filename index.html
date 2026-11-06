@@ -348,7 +348,9 @@
             function fieldMsg(n) { return n === 'EMAIL' ? tr('err_email') : n === 'OPT_IN' ? tr('err_consent') : (NAME_FIELD && n === NAME_FIELD) ? tr('err_name') : tr('err'); }
             function errOf(n) { var i = f.querySelector('[name="' + n + '"]'), e = i && i.closest('.form__entry'); return e && e.querySelector('.entry__error'); }
             // 1. Validação BA: email válido e consentimento obrigatório; mensagem junto de cada campo.
+            //    Cada nova tentativa começa por limpar e esconder os painéis de sucesso e de erro (também quando é travada aqui).
             f.addEventListener('submit', function (ev) {
+              clearPanels();
               var bad = [];
               if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test((f.EMAIL.value || '').trim())) bad.push('EMAIL');
               if (!f.OPT_IN.checked) bad.push('OPT_IN');
@@ -371,6 +373,7 @@
             // 3. Painéis: o sucesso só aparece com HTTP 2xx E success:true. Qualquer falha (HTTP fora de 2xx, success:false,
             //    resposta inválida, erro de rede ou timeout) esconde o sucesso e mostra o erro.
             var state = null;
+            function clearPanels() { state = null; okP.classList.remove(ON); koP.classList.remove(ON); }
             function show(ok) { state = ok; okP.classList.toggle(ON, ok); koP.classList.toggle(ON, !ok); }
             if (window.MutationObserver) new MutationObserver(function () { if (state !== true && okP.classList.contains(ON)) okP.classList.remove(ON); })
               .observe(okP, { attributes: true, attributeFilter: ['class'] });
@@ -380,7 +383,7 @@
             XMLHttpRequest.prototype.send = function () {
               var x = this;
               if (x.__ba) {
-                state = null; okP.classList.remove(ON); koP.classList.remove(ON);
+                clearPanels();
                 x.timeout = window.BA_SIB_TIMEOUT_MS || 20000;
                 x.addEventListener('loadend', function () {
                   var ok = false;
