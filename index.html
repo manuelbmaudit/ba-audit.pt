@@ -303,6 +303,8 @@
           <form id="sib-form" method="POST" action="https://59b6c8af.sibforms.com/serve/MUIFAK5a-EF7HmrLDG8DuGi6jnGtjt-aag9Rbja0nBKYjwsRTNfhMpO-gfI6zw47jfExJuCTAgWzwAcGVGqVhs4-ttCWohj5k1LUggTKQrEM_I6oL0w1p6rh2TwCtya-3xArW3naQR1SKecXiuw_4tJKA37OnEzfhH8xbff1mGMdl1l_PCucDoBzqeZz-BzkHHRoO1OJS4ALUTtPAQ==" data-type="subscription" target="_self">
             <p style="margin:0 0 8px;font-family:Georgia,'Times New Roman',serif;font-size:18px;font-weight:400;color:#0E2744;" data-i18n="nlf.title">Newsletter mensal BA AUDIT</p>
             <div class="form__entry" style="display:flex;flex-wrap:wrap;gap:8px;">
+              <input id="FIRSTNAME" name="FIRSTNAME" type="text" maxlength="200" autocomplete="given-name" placeholder="O seu nome (facultativo)" data-i18n-placeholder="nlf.name_placeholder" data-i18n-aria="nlf.name_aria" aria-label="Nome (facultativo)"
+                style="flex:1 1 100%;box-sizing:border-box;padding:10px 12px;border:1px solid #C4A574;border-radius:3px;font-size:14px;background:#fff;">
               <input id="EMAIL" name="EMAIL" type="email" required autocomplete="email" placeholder="O seu email" data-i18n-placeholder="nlf.placeholder" aria-label="Email"
                 style="flex:1 1 200px;padding:10px 12px;border:1px solid #C4A574;border-radius:3px;font-size:14px;background:#fff;">
               <button type="submit" style="background:#0E2744;color:#fff;border:0;border-radius:3px;padding:10px 16px;font-size:14px;cursor:pointer;" data-i18n="nlf.submit">Subscrever</button>
@@ -332,6 +334,23 @@
             var f = e.target, em = (f.EMAIL.value || '').trim(), ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em);
             if (!ok || !f.OPT_IN.checked) { e.preventDefault(); e.stopImmediatePropagation(); alert((typeof i18n !== 'undefined' && i18n[currentLang] && i18n[currentLang]['nlf.alert']) || 'Indique um email válido e confirme o consentimento.'); }
           });
+          // Mensagens: a Brevo pode devolver textos próprios (ex.: pt-BR «Você fez sua assinatura com sucesso.») e o main.js
+          // escreve-os nos painéis e nos erros de campo. Repomos sempre os textos BA (PT/EN; na home segue o idioma ativo).
+          (function () {
+            var c = document.getElementById('sib-form-container'); if (!c || !window.MutationObserver) return;
+            function tr(k) { try { if (k && typeof i18n !== 'undefined' && i18n[currentLang] && i18n[currentLang][k] !== undefined) return i18n[currentLang][k]; } catch (x) {} return null; }
+            function keep(el, want) {
+              new MutationObserver(function () { var w = want(); if (w !== null && el.textContent !== w) el.textContent = w; })
+                .observe(el, { childList: true, characterData: true, subtree: true });
+            }
+            Array.prototype.forEach.call(c.querySelectorAll('.sib-form-message-panel__inner-text'), function (el) {
+              var own = el.textContent;
+              keep(el, function () { return tr(el.getAttribute('data-i18n')) || own; });
+            });
+            Array.prototype.forEach.call(c.querySelectorAll('.entry__error'), function (el) {
+              keep(el, function () { return el.textContent.trim() === '' ? null : ((typeof i18n !== 'undefined' && i18n[currentLang] && i18n[currentLang]['nlf.alert']) || 'Indique um email válido e confirme o consentimento.'); });
+            });
+          })();
         </script>
         <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
         <!-- BA-FORM:newsletter-compact:pt END -->
@@ -399,6 +418,8 @@
         'nlf.ok': 'Obrigado. Enviámos-lhe um email para confirmar a subscrição. A subscrição só fica ativa depois dessa confirmação.',
         'nlf.err': 'Não foi possível processar o pedido de subscrição. Tente novamente mais tarde.',
         'nlf.alert': 'Indique um email válido e confirme o consentimento.',
+        'nlf.name_placeholder': 'O seu nome (facultativo)',
+        'nlf.name_aria': 'Nome (facultativo)',
         'nlf.locale': 'pt',
         'hero.title': 'Auditoria e Consultoria que criam confiança e valor',
         'hero.subtitle': 'Apoiamos as empresas com serviços de auditoria financeira, fiscalidade e melhoria de processos — com qualidade, com cumprimento de prazos  e com preços competitivos.',
@@ -483,11 +504,13 @@
         'nlf.title': 'BA AUDIT monthly newsletter',
         'nlf.placeholder': 'Your email',
         'nlf.submit': 'Subscribe',
-        'nlf.consent': 'I agree to receive by email the monthly newsletter and occasional informative communications from BA AUDIT on audit, accounting and tax. I may unsubscribe at any time using the link in each email. <a href="https://www.iubenda.com/privacy-policy/47280304" target="_blank" rel="noopener" style="color:#0E2744;">Privacy Policy (in Portuguese)</a>.',
+        'nlf.consent': 'I agree to receive by email the monthly newsletter and occasional informative communications from BA AUDIT on audit, accounting and tax. I may unsubscribe at any time using the link in each email. <a href="https://www.iubenda.com/privacy-policy/47280304" target="_blank" rel="noopener" style="color:#0E2744;">Privacy Policy (in Portuguese)</a>. See the <a href="/en/newsletter/privacy-notice/" target="_blank" rel="noopener" style="color:#0E2744;">Newsletter privacy notice (in English)</a>.',
         'nlf.note': 'You will receive a confirmation email. Your subscription will only become active after you click the confirmation link. Data controller: Manuel Borges, Revisor Oficial de Contas (Statutory Auditor), registered with the Ordem dos Revisores Oficiais de Contas (OROC, the Portuguese institute of statutory auditors) under no. 1067 (BA AUDIT).',
         'nlf.ok': 'Thank you. We have sent you a confirmation email. Your subscription will only become active after you click the confirmation link.',
         'nlf.err': 'We were unable to process your subscription request. Please try again later.',
         'nlf.alert': 'Please enter a valid email address and confirm your consent.',
+        'nlf.name_placeholder': 'Your name (optional)',
+        'nlf.name_aria': 'Name (optional)',
         'nlf.locale': 'en',
         'hero.title': 'Audit & Consulting that build trust and value',
         'hero.subtitle': 'We support companies with financial audit, tax and process improvement — delivering quality, on-time and at competitive prices.',
@@ -571,7 +594,7 @@
         const key = el.getAttribute('data-i18n');
         if(i18n[lang][key] !== undefined){ el.innerHTML = i18n[lang][key]; }
       });
-      [['data-i18n-href','href'],['data-i18n-placeholder','placeholder'],['data-i18n-value','value']].forEach(([a,attr]) => {
+      [['data-i18n-href','href'],['data-i18n-placeholder','placeholder'],['data-i18n-value','value'],['data-i18n-aria','aria-label']].forEach(([a,attr]) => {
         document.querySelectorAll('['+a+']').forEach(el => {
           const v = i18n[lang][el.getAttribute(a)];
           if(v !== undefined){ el.setAttribute(attr, v); }

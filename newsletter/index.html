@@ -158,13 +158,19 @@
                   style="box-sizing:border-box;width:100%;padding:11px 12px;border:1px solid #C4A574;border-radius:3px;font-size:15px;margin-bottom:12px;background:#fff;">
                 <label class="entry__error entry__error--primary"></label>
               </div>
+              <div class="form__entry">
+                <label for="FIRSTNAME" style="display:block;font-size:13px;font-weight:600;margin-bottom:4px;">Nome (facultativo)</label>
+                <input id="FIRSTNAME" name="FIRSTNAME" type="text" maxlength="200" autocomplete="given-name"
+                  style="box-sizing:border-box;width:100%;padding:11px 12px;border:1px solid #C4A574;border-radius:3px;font-size:15px;margin-bottom:12px;background:#fff;">
+                <label class="entry__error entry__error--primary"></label>
+              </div>
 
               <label style="display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.5;color:#0E2744;margin-bottom:12px;">
                 <input type="checkbox" name="OPT_IN" value="1" required style="margin-top:3px;">
                 <span>Aceito receber por email a newsletter mensal e comunicações informativas pontuais da BA AUDIT sobre auditoria, contabilidade e fiscalidade. Posso cancelar a subscrição a qualquer momento através da ligação incluída em cada envio. Os meus dados são tratados nos termos da <a href="https://www.iubenda.com/privacy-policy/47280304" target="_blank" rel="noopener" style="color:#0E2744;">Política de Privacidade</a>. *</span>
               </label>
 
-              <p style="font-size:12px;line-height:1.5;color:#0E2744;margin:0 0 16px;">Responsável pelo tratamento: Manuel Borges, Revisor Oficial de Contas inscrito na OROC sob o n.º 1067 (BA AUDIT). A subscrição é facultativa. Para receber estas comunicações, é necessário indicar o endereço de email, dar o consentimento e confirmar a subscrição através da ligação enviada por email. Sem estes passos, a subscrição não fica ativa.</p>
+              <p style="font-size:12px;line-height:1.5;color:#0E2744;margin:0 0 16px;">Responsável pelo tratamento: Manuel Borges, Revisor Oficial de Contas inscrito na OROC sob o n.º 1067 (BA AUDIT). A subscrição é facultativa. Para subscrever, só é necessário o endereço de email; o nome é facultativo. Para receber estas comunicações, é também necessário dar o consentimento e confirmar a subscrição através da ligação enviada por email. Sem estes passos, a subscrição não fica ativa.</p>
 
               <input type="text" name="email_address_check" value="" class="input--hidden" style="display:none" tabindex="-1" autocomplete="off">
               <input type="hidden" name="locale" value="pt">
@@ -188,6 +194,23 @@
               var f = e.target, em = (f.EMAIL.value || '').trim(), ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em);
               if (!ok || !f.OPT_IN.checked) { e.preventDefault(); e.stopImmediatePropagation(); alert('Indique um email válido e confirme o consentimento.'); }
             });
+            // Mensagens: a Brevo pode devolver textos próprios (ex.: pt-BR «Você fez sua assinatura com sucesso.») e o main.js
+            // escreve-os nos painéis e nos erros de campo. Repomos sempre os textos BA (PT/EN; na home segue o idioma ativo).
+            (function () {
+              var c = document.getElementById('sib-form-container'); if (!c || !window.MutationObserver) return;
+              function tr(k) { try { if (k && typeof i18n !== 'undefined' && i18n[currentLang] && i18n[currentLang][k] !== undefined) return i18n[currentLang][k]; } catch (x) {} return null; }
+              function keep(el, want) {
+                new MutationObserver(function () { var w = want(); if (w !== null && el.textContent !== w) el.textContent = w; })
+                  .observe(el, { childList: true, characterData: true, subtree: true });
+              }
+              Array.prototype.forEach.call(c.querySelectorAll('.sib-form-message-panel__inner-text'), function (el) {
+                var own = el.textContent;
+                keep(el, function () { return tr(el.getAttribute('data-i18n')) || own; });
+              });
+              Array.prototype.forEach.call(c.querySelectorAll('.entry__error'), function (el) {
+                keep(el, function () { return el.textContent.trim() === '' ? null : ('Indique um email válido e confirme o consentimento.'); });
+              });
+            })();
           </script>
           <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
           <!-- BA-FORM:newsletter-full:pt END -->
