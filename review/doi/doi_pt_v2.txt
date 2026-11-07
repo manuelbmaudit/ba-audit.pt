@@ -1,0 +1,32 @@
+Assunto: Confirme a sua subscrição da newsletter BA AUDIT
+Preheader: Para concluir a subscrição, confirme o seu endereço de email. Se não pediu esta subscrição, ignore este email.
+Remetente: BA AUDIT <newsletter@ba-audit.pt>
+
+---
+
+BA AUDIT
+Newsletter mensal · Delivering Trust
+
+Confirme a sua subscrição
+
+Caro(a) leitor(a),
+
+Obrigado pelo seu interesse na newsletter mensal da BA AUDIT. Para concluir a subscrição e passar a receber as nossas comunicações, confirme o seu endereço de email através da ligação abaixo.
+
+Ao confirmar, declara: «Aceito receber por email a newsletter mensal e comunicações informativas pontuais da BA AUDIT sobre auditoria, contabilidade e fiscalidade. Posso cancelar a subscrição a qualquer momento através da ligação incluída em cada envio. Os meus dados são tratados nos termos da Política de Privacidade.»
+
+Confirmar subscrição:
+{{ doubleoptin }}
+
+Se não pediu esta subscrição, ignore este email. Sem a confirmação, o seu endereço não será inscrito na lista.
+
+Esta ligação é válida durante 30 dias.
+
+Política de Privacidade: https://www.iubenda.com/privacy-policy/47280304
+
+—
+BA AUDIT
+Delivering Trust
+Manuel Borges, ROC, inscrito na OROC sob o n.º 1067
+BA AUDIT – Rua São Salvador da Baía, 7, 1D - 2800-201 Almada
+newsletter@ba-audit.pt · https://ba-audit.pt

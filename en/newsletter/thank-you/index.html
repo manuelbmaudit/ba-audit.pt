@@ -101,7 +101,7 @@
       <div>
         <div class="text-ba-blue font-semibold tracking-[.2em]">BA&nbsp;AUDIT</div>
         <div class="mt-1 font-serif italic text-ba-gold">Delivering Trust</div>
-        <p class="mt-4 text-sm text-ba-muted">BA AUDIT – Rua São Salvador da Baía, 7, 1D - 2800-201 Almada</p>
+        <p class="mt-4 text-sm text-ba-muted">BA AUDIT – Rua São Salvador da Baía, 7, 1D – 2800-201 Almada</p>
       </div>
       <div class="md:justify-self-end w-full md:max-w-md">
         <!-- BA-FORM:newsletter-compact:en START · Brevo «Newsletter BA AUDIT» · textos em build_newsletter_pages_v2.py (FORM_TXT) -->
@@ -115,11 +115,6 @@
           <div id="sib-container">
           <form id="sib-form" method="POST" action="https://59b6c8af.sibforms.com/serve/MUIFAK5a-EF7HmrLDG8DuGi6jnGtjt-aag9Rbja0nBKYjwsRTNfhMpO-gfI6zw47jfExJuCTAgWzwAcGVGqVhs4-ttCWohj5k1LUggTKQrEM_I6oL0w1p6rh2TwCtya-3xArW3naQR1SKecXiuw_4tJKA37OnEzfhH8xbff1mGMdl1l_PCucDoBzqeZz-BzkHHRoO1OJS4ALUTtPAQ==" data-type="subscription" target="_self">
             <p style="margin:0 0 8px;font-family:Georgia,'Times New Roman',serif;font-size:18px;font-weight:400;color:#0E2744;">BA AUDIT monthly newsletter</p>
-            <div class="form__entry" style="margin-bottom:8px;">
-              <input id="FIRSTNAME" name="FIRSTNAME" type="text" maxlength="200" autocomplete="given-name" placeholder="Your name (optional)" aria-label="Name (optional)"
-                style="box-sizing:border-box;width:100%;padding:10px 12px;border:1px solid #C4A574;border-radius:3px;font-size:14px;background:#fff;">
-              <label class="entry__error entry__error--primary"></label>
-            </div>
             <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:flex-start;">
               <div class="form__entry" style="flex:1 1 200px;min-width:0;">
                 <input id="EMAIL" name="EMAIL" type="email" required autocomplete="email" placeholder="Your email" aria-label="Email"
@@ -131,19 +126,19 @@
             </div>
             <div class="form__entry" style="margin-top:8px;">
               <label style="display:flex;gap:8px;align-items:flex-start;font-size:12px;color:#5E6A78;line-height:1.45;">
-                <input type="checkbox" name="OPT_IN" value="1" required style="margin-top:2px;">
+                <input type="checkbox" data-ba-consent data-ba-field="OPT_IN" value="1" required style="margin-top:2px;">
                 <span>I agree to receive by email the monthly newsletter and occasional informative communications from BA AUDIT on audit, accounting and tax. I may unsubscribe at any time using the link included in each email. My data are processed in accordance with the <a href="https://www.iubenda.com/privacy-policy/47280304" target="_blank" rel="noopener" style="color:#0E2744;">Privacy Policy (in Portuguese)</a>. See the <a href="/en/newsletter/privacy-notice/" target="_blank" rel="noopener" style="color:#0E2744;">Newsletter privacy notice (in English)</a>.</span>
               </label>
               <label class="entry__error entry__error--primary"></label>
             </div>
             <p style="font-size:12px;line-height:1.5;color:#0E2744;margin:8px 0 0;">You will receive a confirmation email. Your subscription will only become active after you click the confirmation link. Data controller: Manuel Borges, Revisor Oficial de Contas (Statutory Auditor), registered with the Ordem dos Revisores Oficiais de Contas (OROC, the Portuguese institute of statutory auditors) under no. 1067 (BA AUDIT).</p>
             <input type="text" name="email_address_check" value="" class="input--hidden" style="display:none" tabindex="-1" autocomplete="off">
-            <input type="hidden" name="locale" value="en">
+            <input type="hidden" name="locale" value="pt">
           </form>
           </div>
         </div>
         <script>
-          window.LOCALE = 'en';
+          window.LOCALE = 'pt';
           window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = 'Please enter a valid email address.';
           window.REQUIRED_ERROR_MESSAGE = window.REQUIRED_CODE_ERROR_MESSAGE = window.GENERIC_INVALID_MESSAGE = 'We were unable to process your subscription request. Please try again later.';
           window.translation = { common: { selectedList: '{quantity} list selected', selectedLists: '{quantity} lists selected' } };
@@ -152,23 +147,23 @@
           (function () {
             var c = document.getElementById('sib-form-container'), f = document.getElementById('sib-form');
             if (!c || !f) return;
-            var NAME_FIELD = 'FIRSTNAME';
+            var NAME_FIELD = '';
             var MSG = { ok: 'Thank you. We have sent you a confirmation email. Your subscription will only become active after you click the confirmation link.', err: 'We were unable to process your subscription request. Please try again later.', err_email: 'Please enter a valid email address.', err_consent: 'Please confirm your consent to subscribe.', err_name: 'Please check the name entered.' };
             // Textos BA (na home seguem o idioma ativo através de i18n['nlf.*']).
             function tr(k) { try { if (typeof i18n !== 'undefined' && i18n[currentLang] && i18n[currentLang]['nlf.' + k] !== undefined) return i18n[currentLang]['nlf.' + k]; } catch (x) {} return MSG[k]; }
             // Erros de campo: cada erro corresponde ao seu campo (email, consentimento, nome); outro erro: mensagem genérica.
-            function fieldOf(el) { var e = el.closest('.form__entry'), i = e && e.querySelector('input[name]:not([type=hidden])'); return i ? i.name : ''; }
+            function fieldOf(el) { var e = el.closest('.form__entry'); if (!e) return ''; var marked = e.querySelector('[data-ba-field]'); if (marked) return marked.getAttribute('data-ba-field'); var i = e.querySelector('input[name]:not([type=hidden])'); return i ? i.name : ''; }
             function fieldMsg(n) { return n === 'EMAIL' ? tr('err_email') : n === 'OPT_IN' ? tr('err_consent') : (NAME_FIELD && n === NAME_FIELD) ? tr('err_name') : tr('err'); }
-            function errOf(n) { var i = f.querySelector('[name="' + n + '"]'), e = i && i.closest('.form__entry'); return e && e.querySelector('.entry__error'); }
+            function errOf(n) { var i = n === 'OPT_IN' ? f.querySelector('[data-ba-consent]') : f.querySelector('[name="' + n + '"]'); var e = i && i.closest('.form__entry'); return e && e.querySelector('.entry__error'); }
             // 1. Validação BA: email válido e consentimento obrigatório; mensagem junto de cada campo.
             //    Cada nova tentativa começa por limpar e esconder os painéis de sucesso e de erro (também quando é travada aqui).
             f.addEventListener('submit', function (ev) {
               clearPanels();
               var bad = [];
               if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test((f.EMAIL.value || '').trim())) bad.push('EMAIL');
-              if (!f.OPT_IN.checked) bad.push('OPT_IN');
+              var consent = f.querySelector('[data-ba-consent]'); if (!consent || !consent.checked) bad.push('OPT_IN');
               ['EMAIL', 'OPT_IN'].forEach(function (n) { var l = errOf(n); if (l) l.textContent = bad.indexOf(n) >= 0 ? fieldMsg(n) : ''; });
-              if (bad.length) { ev.preventDefault(); ev.stopImmediatePropagation(); var x = f.querySelector('[name="' + bad[0] + '"]'); if (x) x.focus(); }
+              if (bad.length) { ev.preventDefault(); ev.stopImmediatePropagation(); var x = bad[0] === 'OPT_IN' ? consent : f.querySelector('[name="' + bad[0] + '"]'); if (x) x.focus(); }
             });
             // 2. A Brevo pode devolver textos próprios (ex.: pt-BR) que o main.js escreve nos painéis e nos erros de campo:
             //    repomos sempre os textos BA.
@@ -193,9 +188,10 @@
             function resetUi() { var b = f.querySelector('button[type=submit]'), l = c.querySelector('.loader'); if (l) l.style.display = 'none'; if (b) { b.style.display = ''; b.removeAttribute('disabled'); } }
             var action = f.getAttribute('action'), XO = XMLHttpRequest.prototype.open, XS = XMLHttpRequest.prototype.send;
             XMLHttpRequest.prototype.open = function (m, u) { this.__ba = typeof u === 'string' && u.indexOf(action) === 0; return XO.apply(this, arguments); };
-            XMLHttpRequest.prototype.send = function () {
+            XMLHttpRequest.prototype.send = function (body) {
               var x = this;
-              if (x.__ba) {
+              if (x.__ba && body && typeof body.delete === 'function') { body.delete('FIRSTNAME'); body.delete('OPT_IN'); if (typeof body.set === 'function') body.set('locale', 'pt'); }
+                if (x.__ba) {
                 clearPanels();
                 x.timeout = window.BA_SIB_TIMEOUT_MS || 20000;
                 x.addEventListener('loadend', function () {

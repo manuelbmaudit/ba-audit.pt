@@ -158,22 +158,16 @@
                   style="box-sizing:border-box;width:100%;padding:11px 12px;border:1px solid #C4A574;border-radius:3px;font-size:15px;margin-bottom:12px;background:#fff;">
                 <label class="entry__error entry__error--primary"></label>
               </div>
-              <div class="form__entry">
-                <label for="FIRSTNAME" style="display:block;font-size:13px;font-weight:600;margin-bottom:4px;">Nome (facultativo)</label>
-                <input id="FIRSTNAME" name="FIRSTNAME" type="text" maxlength="200" autocomplete="given-name"
-                  style="box-sizing:border-box;width:100%;padding:11px 12px;border:1px solid #C4A574;border-radius:3px;font-size:15px;margin-bottom:12px;background:#fff;">
-                <label class="entry__error entry__error--primary"></label>
-              </div>
 
               <div class="form__entry" style="margin-bottom:12px;">
                 <label style="display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.5;color:#0E2744;">
-                  <input type="checkbox" name="OPT_IN" value="1" required style="margin-top:3px;">
+                  <input type="checkbox" data-ba-consent data-ba-field="OPT_IN" value="1" required style="margin-top:3px;">
                   <span>Aceito receber por email a newsletter mensal e comunicações informativas pontuais da BA AUDIT sobre auditoria, contabilidade e fiscalidade. Posso cancelar a subscrição a qualquer momento através da ligação incluída em cada envio. Os meus dados são tratados nos termos da <a href="https://www.iubenda.com/privacy-policy/47280304" target="_blank" rel="noopener" style="color:#0E2744;">Política de Privacidade</a>. <span aria-hidden="true">*</span></span>
                 </label>
                 <label class="entry__error entry__error--primary"></label>
               </div>
 
-              <p style="font-size:12px;line-height:1.5;color:#0E2744;margin:0 0 16px;">Responsável pelo tratamento: Manuel Borges, Revisor Oficial de Contas inscrito na OROC sob o n.º 1067 (BA AUDIT). A subscrição é facultativa. Para subscrever, só é necessário o endereço de email; o nome é facultativo. Para receber estas comunicações, é também necessário dar o consentimento e confirmar a subscrição através da ligação enviada por email. Sem estes passos, a subscrição não fica ativa.</p>
+              <p style="font-size:12px;line-height:1.5;color:#0E2744;margin:0 0 16px;">Responsável pelo tratamento: Manuel Borges, Revisor Oficial de Contas inscrito na OROC sob o n.º 1067 (BA AUDIT). A subscrição é facultativa. Para subscrever, só é necessário o endereço de email. Para receber estas comunicações, é também necessário dar o consentimento e confirmar a subscrição através da ligação enviada por email. Sem estes passos, a subscrição não fica ativa.</p>
 
               <input type="text" name="email_address_check" value="" class="input--hidden" style="display:none" tabindex="-1" autocomplete="off">
               <input type="hidden" name="locale" value="pt">
@@ -194,23 +188,23 @@
             (function () {
               var c = document.getElementById('sib-form-container'), f = document.getElementById('sib-form');
               if (!c || !f) return;
-              var NAME_FIELD = 'FIRSTNAME';
+              var NAME_FIELD = '';
               var MSG = { ok: 'Obrigado. Enviámos-lhe um email para confirmar a subscrição. A subscrição só fica ativa depois dessa confirmação.', err: 'Não foi possível processar o pedido de subscrição. Tente novamente mais tarde.', err_email: 'Indique um endereço de email válido.', err_consent: 'Confirme o consentimento para subscrever.', err_name: 'Verifique o nome indicado.' };
               // Textos BA (na home seguem o idioma ativo através de i18n['nlf.*']).
               function tr(k) { try { if (typeof i18n !== 'undefined' && i18n[currentLang] && i18n[currentLang]['nlf.' + k] !== undefined) return i18n[currentLang]['nlf.' + k]; } catch (x) {} return MSG[k]; }
               // Erros de campo: cada erro corresponde ao seu campo (email, consentimento, nome); outro erro: mensagem genérica.
-              function fieldOf(el) { var e = el.closest('.form__entry'), i = e && e.querySelector('input[name]:not([type=hidden])'); return i ? i.name : ''; }
+              function fieldOf(el) { var e = el.closest('.form__entry'); if (!e) return ''; var marked = e.querySelector('[data-ba-field]'); if (marked) return marked.getAttribute('data-ba-field'); var i = e.querySelector('input[name]:not([type=hidden])'); return i ? i.name : ''; }
               function fieldMsg(n) { return n === 'EMAIL' ? tr('err_email') : n === 'OPT_IN' ? tr('err_consent') : (NAME_FIELD && n === NAME_FIELD) ? tr('err_name') : tr('err'); }
-              function errOf(n) { var i = f.querySelector('[name="' + n + '"]'), e = i && i.closest('.form__entry'); return e && e.querySelector('.entry__error'); }
+              function errOf(n) { var i = n === 'OPT_IN' ? f.querySelector('[data-ba-consent]') : f.querySelector('[name="' + n + '"]'); var e = i && i.closest('.form__entry'); return e && e.querySelector('.entry__error'); }
               // 1. Validação BA: email válido e consentimento obrigatório; mensagem junto de cada campo.
               //    Cada nova tentativa começa por limpar e esconder os painéis de sucesso e de erro (também quando é travada aqui).
               f.addEventListener('submit', function (ev) {
                 clearPanels();
                 var bad = [];
                 if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test((f.EMAIL.value || '').trim())) bad.push('EMAIL');
-                if (!f.OPT_IN.checked) bad.push('OPT_IN');
+                var consent = f.querySelector('[data-ba-consent]'); if (!consent || !consent.checked) bad.push('OPT_IN');
                 ['EMAIL', 'OPT_IN'].forEach(function (n) { var l = errOf(n); if (l) l.textContent = bad.indexOf(n) >= 0 ? fieldMsg(n) : ''; });
-                if (bad.length) { ev.preventDefault(); ev.stopImmediatePropagation(); var x = f.querySelector('[name="' + bad[0] + '"]'); if (x) x.focus(); }
+                if (bad.length) { ev.preventDefault(); ev.stopImmediatePropagation(); var x = bad[0] === 'OPT_IN' ? consent : f.querySelector('[name="' + bad[0] + '"]'); if (x) x.focus(); }
               });
               // 2. A Brevo pode devolver textos próprios (ex.: pt-BR) que o main.js escreve nos painéis e nos erros de campo:
               //    repomos sempre os textos BA.
@@ -235,8 +229,9 @@
               function resetUi() { var b = f.querySelector('button[type=submit]'), l = c.querySelector('.loader'); if (l) l.style.display = 'none'; if (b) { b.style.display = ''; b.removeAttribute('disabled'); } }
               var action = f.getAttribute('action'), XO = XMLHttpRequest.prototype.open, XS = XMLHttpRequest.prototype.send;
               XMLHttpRequest.prototype.open = function (m, u) { this.__ba = typeof u === 'string' && u.indexOf(action) === 0; return XO.apply(this, arguments); };
-              XMLHttpRequest.prototype.send = function () {
+              XMLHttpRequest.prototype.send = function (body) {
                 var x = this;
+                if (x.__ba && body && typeof body.delete === 'function') { body.delete('FIRSTNAME'); body.delete('OPT_IN'); if (typeof body.set === 'function') body.set('locale', 'pt'); }
                 if (x.__ba) {
                   clearPanels();
                   x.timeout = window.BA_SIB_TIMEOUT_MS || 20000;
@@ -311,7 +306,7 @@
       <div>
         <div class="text-ba-blue font-semibold tracking-[.2em]">BA&nbsp;AUDIT</div>
         <div class="mt-1 font-serif italic text-ba-gold">Delivering Trust</div>
-        <p class="mt-4 text-sm text-ba-muted">BA AUDIT – Rua São Salvador da Baía, 7, 1D - 2800-201 Almada</p>
+        <p class="mt-4 text-sm text-ba-muted">BA AUDIT – Rua São Salvador da Baía, 7, 1D – 2800-201 Almada</p>
       </div>
       <div class="md:justify-self-end w-full md:max-w-md">
         <div style="max-width:420px;font-family:Inter,Arial,sans-serif;color:#0E2744;">
