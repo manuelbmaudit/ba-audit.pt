@@ -684,6 +684,22 @@
     to { opacity: 1; transform: none; }
   }
 
+  .pub-teaser { display: grid; gap: 22px; margin-top: 36px; }
+  @media (min-width: 800px) { .pub-teaser { grid-template-columns: 1fr 1fr 1fr; gap: 18px; } }
+  .pub-teaser a { color: inherit; text-decoration: none; display: block; }
+  .pub-teaser img, .pub-teaser .pub-mark { width: 100%; height: auto; aspect-ratio: 1080 / 1350; object-fit: cover; background: #000; display: block; }
+  .pub-teaser .pub-mark { display: flex; flex-direction: column; justify-content: flex-end; gap: 10px; padding: 28px 24px; color: #fff; }
+  .pub-teaser .pub-mark p { margin: 0; }
+  .pub-teaser .pub-mark-kicker { font-family: Georgia, "Times New Roman", serif; font-style: italic; color: #c4a574; font-size: 18px; }
+  .pub-teaser .pub-mark-num { font-size: clamp(40px, 5vw, 56px); font-weight: 600; letter-spacing: -0.04em; line-height: 1; }
+  .pub-teaser h3 { margin-top: 12px; font-size: 22px; letter-spacing: -0.025em; line-height: 1.2; }
+  .pub-teaser .pub-date { margin-top: 12px; font-size: 13px; color: #424245; }
+  .pub-teaser .pub-note { margin-top: 8px; color: #424245; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
+  .pub-teaser .pub-note::before { content: ""; display: inline-block; width: 18px; height: 1px; margin-right: 8px; background: #c4a574; vertical-align: middle; }
+  .pub-teaser .pub-summary { margin-top: 8px; color: #424245; font-size: 15px; line-height: 1.45; font-weight: 400; letter-spacing: 0; }
+  .pubs-more { display: inline-block; margin-top: 28px; color: #1d1d1f; font-weight: 500; text-decoration: none; }
+  .pubs-more:hover { box-shadow: inset 0 -1px 0 #c4a574; }
+
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     *, *::before, *::after {
@@ -718,7 +734,7 @@
   } catch (e) {}
 </script>
 </head>
-<body>
+<body data-pub-page="home">
   <header class="nav">
     <div class="nav-inner">
       <a class="brand" href="#home"><span data-i18n="brand">BA AUDIT</span></a>
@@ -727,6 +743,7 @@
         <a href="#setores" data-i18n="nav.sectors">Setores</a>
         <a href="#metodologia" data-i18n="nav.methodology">Metodologia</a>
         <a href="#equipa" data-i18n="nav.about">Quem somos</a>
+        <a href="publicacoes/" data-i18n="nav.publications" data-i18n-href="nav.publicationsHref">Publicações</a>
         <a href="#pedir-proposta" data-i18n="nav.proposal">Pedir proposta</a>
       </nav>
       <div class="nav-tools">
@@ -747,6 +764,7 @@
       <a href="#setores" data-i18n="nav.sectors">Setores</a>
       <a href="#metodologia" data-i18n="nav.methodology">Metodologia</a>
       <a href="#equipa" data-i18n="nav.about">Quem somos</a>
+      <a href="publicacoes/" data-i18n="nav.publications" data-i18n-href="nav.publicationsHref">Publicações</a>
       <a class="btn" href="#pedir-proposta" data-i18n="nav.proposal">Pedir proposta</a>
     </nav>
   </div>
@@ -1018,6 +1036,15 @@
       </div>
     </section>
 
+    <section id="publicacoes" class="section tone-snow" aria-labelledby="publicacoes-title">
+      <div class="wrap">
+        <h2 id="publicacoes-title" class="reveal" data-i18n="pubs.title">Publicações</h2>
+        <p class="sub reveal" data-i18n="pubs.kicker">Newsletter e conjuntos de slides</p>
+        <div class="pub-teaser" data-pub-teaser></div>
+        <a class="pubs-more" href="publicacoes/" data-i18n="pubs.all" data-i18n-href="pubs.allHref">Ver todas</a>
+      </div>
+    </section>
+
     <section class="band" aria-labelledby="cta-title">
       <picture>
         <source type="image/webp" srcset="assets/img/faixa-800.webp 800w, assets/img/faixa-1600.webp 1600w, assets/img/faixa-2560.webp 2560w" sizes="100vw" />
@@ -1132,6 +1159,12 @@
         'nav.sectors': 'Setores',
         'nav.methodology': 'Metodologia',
         'nav.about': 'Quem somos',
+        'nav.publications': 'Publicações',
+        'nav.publicationsHref': 'publicacoes/',
+        'pubs.title': 'Publicações',
+        'pubs.kicker': 'Newsletter e conjuntos de slides',
+        'pubs.all': 'Ver todas',
+        'pubs.allHref': 'publicacoes/',
         'nav.proposal': 'Pedir proposta',
         'hero.title': 'Auditoria, fiscalidade e consultoria, com independência e rigor.',
         'hero.identification': 'A BA AUDIT presta revisão legal das contas e auditoria, fiscalidade, consultoria contabilística e financeira e due diligence, com atuação em Portugal.',
@@ -1211,6 +1244,12 @@
         'nav.sectors': 'Sectors',
         'nav.methodology': 'Methodology',
         'nav.about': 'About',
+        'nav.publications': 'Insights',
+        'nav.publicationsHref': 'en/insights/',
+        'pubs.title': 'Insights',
+        'pubs.kicker': 'Newsletter and slide decks',
+        'pubs.all': 'View all',
+        'pubs.allHref': 'en/insights/',
         'nav.proposal': 'Request a proposal',
         'hero.title': 'Audit, tax and advisory, with independence and rigour.',
         'hero.identification': 'BA AUDIT provides statutory and voluntary audit, tax, accounting and financial advisory, and due diligence, with activity in Portugal.',
@@ -1299,6 +1338,11 @@
         const key = el.getAttribute('data-i18n-alt');
         if(i18n[lang][key] !== undefined){ el.setAttribute('alt', i18n[lang][key]); }
       });
+      document.querySelectorAll('[data-i18n-href]').forEach(el => {
+        const key = el.getAttribute('data-i18n-href');
+        if(i18n[lang][key] !== undefined){ el.setAttribute('href', i18n[lang][key]); }
+      });
+      document.dispatchEvent(new CustomEvent('ba-lang'));
       document.getElementById('lang-pt')?.classList.toggle('is-active', lang==='pt');
       document.getElementById('lang-en')?.classList.toggle('is-active', lang==='en');
       document.getElementById('lang-pt')?.setAttribute('aria-pressed', lang==='pt' ? 'true' : 'false');
@@ -1400,6 +1444,9 @@
       reduceMq.addEventListener?.('change', (e) => { if (e.matches) clearMotion(); });
     });
   </script>
+
+  <script src="/publicacoes/data.js"></script>
+  <script src="publicacoes/publicacoes.js"></script>
 
   <!-- Iubenda scripts (opcional, iguais aos teus) -->
   <script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement('script'), tag = d.getElementsByTagName('script')[0]; s.src='https://cdn.iubenda.com/iubenda.js'; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener('load', loader, false);}else if(w.attachEvent){w.attachEvent('onload', loader);}else{w.onload = loader;}})(window, document);</script>
