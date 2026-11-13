@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<script>
+  // Redirecionar de www.ba-audit.pt para ba-audit.pt
+  if (window.location.hostname === "www.ba-audit.pt") {
+    window.location.href = window.location.href.replace("www.ba-audit.pt", "ba-audit.pt");
+  }
+</script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Newsletter BA AUDIT — Edição n.º 1, novembro 2026</title>
+  <meta name="description" content="Newsletter mensal BA AUDIT: agenda fiscal, um tema em destaque e as novidades que contam. Edição n.º 1, novembro de 2026." />
+  <link rel="canonical" href="https://ba-audit.pt/newsletter/">
+  <link rel="alternate" hreflang="pt-PT" href="https://ba-audit.pt/newsletter/">
+  <link rel="alternate" hreflang="en" href="https://ba-audit.pt/en/newsletter/">
+  <link rel="alternate" hreflang="x-default" href="https://ba-audit.pt/newsletter/">
+  <link rel="icon" type="image/x-icon" href="/BA_AUDIT_logo.ico" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { ba: { blue: '#0E2744', navy: '#0E2744', mid: '#163A5F', gold: '#C4A574', goldsoft: '#D4BC96', cream: '#F6F1E8', line: '#E4DDD0', gray: '#3A4452', muted: '#5E6A78', off: '#FAF8F4' } },
+          fontFamily: { sans: ['Inter','Helvetica','Arial','ui-sans-serif','system-ui'], serif: ['Georgia','"Times New Roman"','serif'] },
+          boxShadow: { soft: '0 1px 2px rgba(14,39,68,.04), 0 8px 24px rgba(14,39,68,.06)' }
+        }
+      }
+    }
+  </script>
+  <style>
+    @font-face { font-family: Inter; src: local('Arial'); }
+    h1, h2, h3 { font-family: Georgia, 'Times New Roman', serif; font-weight: 400 !important; }
+    .ba-eyebrow { font-size: 11px; letter-spacing: .28em; text-transform: uppercase; color: #C4A574; font-weight: 700; }
+    .ba-btn { letter-spacing: .08em; text-transform: uppercase; font-size: 13px; font-weight: 600; }
+    #nav a:not(.ba-btn) { font-size: 14px; letter-spacing: .02em; }
+    #nav a:not(.ba-btn):hover, #mobileNav a:hover { color: #0E2744; box-shadow: inset 0 -1px 0 #C4A574; }
+    #nav a[aria-current="page"] { color: #0E2744; box-shadow: inset 0 -2px 0 #C4A574; }
+    .ba-footer a:hover { color: #0E2744; text-decoration: underline; text-decoration-color: #C4A574; text-underline-offset: 3px; }
+
+    .nl-ed{--navy:#0E2744;--navy-mid:#163A5F;--gold:#C4A574;--gold-soft:#D4BC96;--cream:#F6F1E8;--cream-dk:#EDE6D9;--ink:#1A2332;--muted:#5E6A78;--line:#E4DDD0;--off:#FAF8F4;
+      background:#fff;color:var(--ink);line-height:1.65;padding:0 24px 56px;border:1px solid var(--line);box-shadow:0 1px 2px rgba(14,39,68,.04),0 8px 24px rgba(14,39,68,.06)}
+    .nl-ed .hero{background:var(--off);margin:0 -24px;padding:36px 24px 28px;border-bottom:1px solid var(--line)}
+    .nl-ed .kicker{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-top:52px}
+    .nl-ed h1,.nl-ed h2{font-family:Georgia,'Times New Roman',serif;color:var(--navy);font-weight:400}
+    .nl-ed h1{font-size:30px;line-height:1.25;margin:0}
+    .nl-ed h2{font-size:26px;margin:8px 0 0}
+    .nl-ed h2::after{content:"";display:block;width:56px;height:2px;background:var(--gold);margin-top:12px}
+    .nl-ed h4{margin:0 0 4px;color:var(--navy);font-weight:700}
+    .nl-ed p{margin:1em 0}
+    .nl-ed a{color:var(--navy);text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:3px}
+    .nl-ed .meta-r{color:var(--muted);font-size:13px;margin-top:8px}
+    .nl-ed .nota{background:var(--cream);border-left:3px solid var(--gold);padding:22px 24px;margin:16px 0}
+    .nl-ed .nota .lead{font-family:Georgia,serif;font-size:17px;line-height:1.65;font-style:italic;margin:0 0 14px}
+    .nl-ed .nota .sig{border-top:1px solid var(--cream-dk);margin-top:18px;padding-top:14px;font-family:Georgia,serif;font-style:italic;font-size:16px;color:var(--navy)}
+    .nl-ed .nota .sig small{display:block;font-family:Arial,sans-serif;font-style:normal;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-top:4px}
+    .nl-ed ul.ag{list-style:none;padding:0;margin:16px 0 0;border:1px solid var(--line)}
+    .nl-ed ul.ag li{display:flex;gap:18px;border-top:1px solid var(--line);padding:14px 16px;background:#fff}
+    .nl-ed ul.ag li:nth-child(odd){background:var(--cream)}
+    .nl-ed ul.ag li:first-child{border-top:0}
+    .nl-ed ul.ag .d{min-width:86px;font-weight:700;color:var(--navy)}
+    .nl-ed ul.ag small{display:block;color:var(--gold);font-weight:700;letter-spacing:1.5px;text-transform:uppercase;font-size:10px;margin-top:3px}
+    .nl-ed ul.ag p{margin:3px 0 0;color:var(--muted);font-size:14px}
+    .nl-ed ul.ag em{color:var(--gold);font-style:normal}
+    .nl-ed .card{background:var(--cream);border-left:3px solid var(--gold);padding:16px 18px;margin:12px 0}
+    .nl-ed .card-k{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:700}
+    .nl-ed .card p{margin:6px 0 0;font-size:14px}
+    .nl-ed .alerta{position:relative;padding-left:22px;margin:18px 0}
+    .nl-ed .alerta::before{content:"";position:absolute;left:0;top:8px;width:8px;height:8px;background:var(--gold);border-radius:50%}
+    .nl-ed .btn{display:inline-block;padding:13px 24px;background:var(--navy);color:#fff;text-decoration:none;font-size:13px;letter-spacing:1px;text-transform:uppercase;font-weight:700;border-radius:2px;margin:4px 0}
+    .nl-ed .cta{background:var(--navy);color:#fff;margin:52px -24px 0;border-top:3px solid var(--gold)}
+    .nl-ed .cta-inner{padding:32px 28px}
+    .nl-ed .cta h3{font-family:Georgia,serif;font-weight:400;margin:0 0 10px;font-size:22px}
+    .nl-ed .cta p{color:var(--gold-soft);margin:0 0 22px}
+    .nl-ed .cta .btn{background:var(--gold);color:var(--navy)}
+    .nl-ed .cta .btn.o{background:transparent;color:var(--gold-soft);border:1px solid var(--gold-soft);margin-left:10px}
+    .nl-ed .small{font-size:13px;color:var(--muted);line-height:1.55}
+    .nl-ed ul.small{list-style:disc;padding-left:20px}
+    @media(max-width:640px){.nl-ed{padding:0 18px 40px}.nl-ed .hero,.nl-ed .cta{margin-left:-18px;margin-right:-18px}.nl-ed h1{font-size:26px}.nl-ed ul.ag li{gap:12px}.nl-ed ul.ag .d{min-width:64px}.nl-ed .cta .btn.o{margin-left:0}}
+    #ba-newsletter input[type=email],#ba-newsletter input[type=text]{background:#fff}
+
+    .sib-form-message-panel{display:none;margin:0 0 16px;padding:14px 16px;font-size:14px;line-height:1.5;color:#0E2744;background:#fff;border:1px solid #E4DDD0;border-left:3px solid #C4A574}
+    .sib-form-message-panel--active{display:block}
+    #error-message.sib-form-message-panel{border-left-color:#9B2C2C}
+    #sib-form .input--hidden{display:none !important}
+    #sib-form .entry__error{display:block;color:#9B2C2C;font-size:12px;margin-top:4px}
+    #sib-form .entry__error:empty{display:none}
+
+  </style>
+</head>
+<body class="bg-ba-cream text-ba-gray font-sans antialiased">
+  <div class="w-full bg-white/95 backdrop-blur border-b border-ba-line sticky top-0 z-50" style="border-top:3px solid #0E2744">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="flex items-center gap-3">
+          <img src="/BA_AUDIT_logo_transparent.png" alt="BA AUDIT" class="h-8 w-auto"/>
+          <span class="text-ba-blue font-semibold tracking-[.2em]">BA&nbsp;AUDIT</span>
+        </a>
+        <div class="flex items-center gap-2">
+          <button id="navBtn" class="md:hidden p-2 rounded hover:bg-gray-100" aria-label="Menu">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+          </button>
+          <div class="hidden md:flex items-center gap-1 text-sm" aria-label="Idioma"><a href="/newsletter/" hreflang="pt-PT" lang="pt-PT" class="px-2 py-1 rounded hover:bg-gray-100 font-bold text-ba-blue" aria-current="true">PT</a><span class="text-gray-300">|</span><a href="/en/newsletter/" hreflang="en" lang="en" class="px-2 py-1 rounded hover:bg-gray-100 text-ba-gray hover:text-ba-blue">EN</a></div>
+        </div>
+      </div>
+      <nav id="nav" class="hidden md:flex items-center gap-8 pb-4 md:pb-0">
+        <a href="/#servicos" class="hover:text-ba-blue">Serviços</a>
+        <a href="/#setores" class="hover:text-ba-blue">Setores</a>
+        <a href="/#metodologia" class="hover:text-ba-blue">Metodologia</a>
+        <a href="/#equipa" class="hover:text-ba-blue">Quem somos</a>
+        <a href="/newsletter/" class="hover:text-ba-blue" aria-current="page">Newsletter</a>
+        <a href="/#contactos" class="ba-btn px-5 py-2 rounded-sm bg-ba-blue text-white hover:bg-ba-mid">Contactos</a>
+      </nav>
+      <div id="mobileNav" class="hidden md:hidden border-t border-ba-line py-3">
+        <div class="flex flex-col gap-2">
+          <div class="flex pb-2 items-center gap-1 text-sm" aria-label="Idioma"><a href="/newsletter/" hreflang="pt-PT" lang="pt-PT" class="px-2 py-1 rounded hover:bg-gray-100 font-bold text-ba-blue" aria-current="true">PT</a><span class="text-gray-300">|</span><a href="/en/newsletter/" hreflang="en" lang="en" class="px-2 py-1 rounded hover:bg-gray-100 text-ba-gray hover:text-ba-blue">EN</a></div>
+          <a href="/#servicos" class="py-2">Serviços</a>
+          <a href="/#setores" class="py-2">Setores</a>
+          <a href="/#metodologia" class="py-2">Metodologia</a>
+          <a href="/#equipa" class="py-2">Quem somos</a>
+          <a href="/newsletter/" class="py-2 text-ba-blue font-semibold" aria-current="page">Newsletter</a>
+          <a href="/#contactos" class="py-2">Contactos</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="bg-ba-blue text-white" style="border-bottom:3px solid #C4A574">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 py-14 md:py-20">
+      <div class="ba-eyebrow">Newsletter mensal</div>
+      <h1 class="mt-4 text-3xl md:text-5xl leading-tight">Newsletter BA AUDIT</h1>
+      <div class="mt-5 h-px max-w-xl" style="background:#C4A574"></div>
+      <p class="mt-5 text-lg max-w-2xl text-ba-goldsoft leading-relaxed">No início de cada mês: agenda fiscal, um tema em destaque e as novidades que contam.</p>
+      <p class="mt-2 font-serif italic text-ba-gold">Delivering Trust</p>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 grid gap-10 lg:grid-cols-[minmax(0,1fr)_380px] lg:items-start">
+      <aside id="subscrever" class="lg:order-2 lg:sticky lg:top-28 scroll-mt-28">
+        <div class="bg-ba-off border border-ba-line p-6 md:p-7 shadow-soft" style="border-top:3px solid #C4A574">
+          <!-- BA-FORM:newsletter-full:pt START · Brevo «Newsletter BA AUDIT» · textos em build_newsletter_pages_v2.py (FORM_TXT) -->
+          <div id="sib-form-container" class="ba-newsletter" style="max-width:560px;font-family:Inter,Arial,Helvetica,sans-serif;color:#0E2744;">
+            <div id="error-message" class="sib-form-message-panel" role="alert">
+              <div class="sib-form-message-panel__text"><span class="sib-form-message-panel__inner-text">Não foi possível processar o pedido de subscrição. Tente novamente mais tarde.</span></div>
+            </div>
+            <div id="success-message" class="sib-form-message-panel" role="status">
+              <div class="sib-form-message-panel__text"><span class="sib-form-message-panel__inner-text">Obrigado. Enviámos-lhe um email para confirmar a subscrição. A subscrição só fica ativa depois dessa confirmação.</span></div>
+            </div>
+            <div id="sib-container">
+            <form id="sib-form" method="POST" action="https://59b6c8af.sibforms.com/serve/MUIFAK5a-EF7HmrLDG8DuGi6jnGtjt-aag9Rbja0nBKYjwsRTNfhMpO-gfI6zw47jfExJuCTAgWzwAcGVGqVhs4-ttCWohj5k1LUggTKQrEM_I6oL0w1p6rh2TwCtya-3xArW3naQR1SKecXiuw_4tJKA37OnEzfhH8xbff1mGMdl1l_PCucDoBzqeZz-BzkHHRoO1OJS4ALUTtPAQ==" data-type="subscription" target="_self">
+              <h3 style="font-family:Georgia,'Times New Roman',serif;font-weight:400;color:#0E2744;font-size:24px;margin:0 0 6px;">Newsletter BA AUDIT</h3>
+              <p style="margin:0 0 18px;color:#5E6A78;font-size:15px;line-height:1.6;">No início de cada mês: agenda fiscal, um tema em destaque e as novidades que contam. <em style="font-family:Georgia,serif;">Delivering Trust.</em></p>
+
+              <div class="form__entry">
+                <label for="EMAIL" style="display:block;font-size:13px;font-weight:600;margin-bottom:4px;">Email *</label>
+                <input id="EMAIL" name="EMAIL" type="email" required autocomplete="email" placeholder="nome@empresa.pt"
+                  style="box-sizing:border-box;width:100%;padding:11px 12px;border:1px solid #C4A574;border-radius:3px;font-size:15px;margin-bottom:12px;background:#fff;">
+                <label class="entry__error entry__error--primary"></label>
+              </div>
+
+              <div class="form__entry" style="margin-bottom:12px;">
+                <label style="display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.5;color:#0E2744;">
+                  <input type="checkbox" data-ba-consent data-ba-field="OPT_IN" value="1" required style="margin-top:3px;">
+                  <span>Aceito receber por email a newsletter mensal e comunicações informativas pontuais da BA AUDIT sobre auditoria, contabilidade e fiscalidade. Posso cancelar a subscrição a qualquer momento através da ligação incluída em cada envio. Os meus dados são tratados nos termos da <a href="https://www.iubenda.com/privacy-policy/47280304" target="_blank" rel="noopener" style="color:#0E2744;">Política de Privacidade</a>. <span aria-hidden="true">*</span></span>
+                </label>
+                <label class="entry__error entry__error--primary"></label>
+              </div>
+
+              <p style="font-size:12px;line-height:1.5;color:#0E2744;margin:0 0 16px;">Responsável pelo tratamento: Manuel Borges, Revisor Oficial de Contas inscrito na OROC sob o n.º 1067 (BA AUDIT). A subscrição é facultativa. Para subscrever, só é necessário o endereço de email. Para receber estas comunicações, é também necessário dar o consentimento e confirmar a subscrição através da ligação enviada por email. Sem estes passos, a subscrição não fica ativa.</p>
+
+              <input type="text" name="email_address_check" value="" class="input--hidden" style="display:none" tabindex="-1" autocomplete="off">
+              <input type="hidden" name="locale" value="pt">
+
+              <button type="submit" style="background:#0E2744;color:#fff;border:0;border-radius:3px;padding:12px 22px;font-size:15px;font-weight:600;cursor:pointer;">Subscrever</button>
+              <svg class="loader" style="display:none;width:22px;height:22px;vertical-align:middle" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="#C4A574" stroke-width="3" stroke-dasharray="42 20"><animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="0.9s" repeatCount="indefinite"/></circle></svg>
+              <p style="font-size:12px;color:#5E6A78;margin:12px 0 0;">Vai receber um email de dupla confirmação da subscrição. A subscrição só fica ativa depois dessa confirmação.</p>
+            </form>
+            </div>
+          </div>
+          <script>
+            window.LOCALE = 'pt';
+            window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = 'Indique um endereço de email válido.';
+            window.REQUIRED_ERROR_MESSAGE = window.REQUIRED_CODE_ERROR_MESSAGE = window.GENERIC_INVALID_MESSAGE = 'Não foi possível processar o pedido de subscrição. Tente novamente mais tarde.';
+            window.translation = { common: { selectedList: '{quantity} list selected', selectedLists: '{quantity} lists selected' } };
+            var AUTOHIDE = Boolean(0);
+            // BA: validação, textos e painéis. Corre antes do main.js da Brevo (defer).
+            (function () {
+              var c = document.getElementById('sib-form-container'), f = document.getElementById('sib-form');
+              if (!c || !f) return;
+              var NAME_FIELD = '';
+              var MSG = { ok: 'Obrigado. Enviámos-lhe um email para confirmar a subscrição. A subscrição só fica ativa depois dessa confirmação.', err: 'Não foi possível processar o pedido de subscrição. Tente novamente mais tarde.', err_email: 'Indique um endereço de email válido.', err_consent: 'Confirme o consentimento para subscrever.', err_name: 'Verifique o nome indicado.' };
+              // Textos BA (na home seguem o idioma ativo através de i18n['nlf.*']).
+              function tr(k) { try { if (typeof i18n !== 'undefined' && i18n[currentLang] && i18n[currentLang]['nlf.' + k] !== undefined) return i18n[currentLang]['nlf.' + k]; } catch (x) {} return MSG[k]; }
+              // Erros de campo: cada erro corresponde ao seu campo (email, consentimento, nome); outro erro: mensagem genérica.
+              function fieldOf(el) { var e = el.closest('.form__entry'); if (!e) return ''; var marked = e.querySelector('[data-ba-field]'); if (marked) return marked.getAttribute('data-ba-field'); var i = e.querySelector('input[name]:not([type=hidden])'); return i ? i.name : ''; }
+              function fieldMsg(n) { return n === 'EMAIL' ? tr('err_email') : n === 'OPT_IN' ? tr('err_consent') : (NAME_FIELD && n === NAME_FIELD) ? tr('err_name') : tr('err'); }
+              function errOf(n) { var i = n === 'OPT_IN' ? f.querySelector('[data-ba-consent]') : f.querySelector('[name="' + n + '"]'); var e = i && i.closest('.form__entry'); return e && e.querySelector('.entry__error'); }
+              // 1. Validação BA: email válido e consentimento obrigatório; mensagem junto de cada campo.
+              //    Cada nova tentativa começa por limpar e esconder os painéis de sucesso e de erro (também quando é travada aqui).
+              f.addEventListener('submit', function (ev) {
+                clearPanels();
+                var bad = [];
+                if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test((f.EMAIL.value || '').trim())) bad.push('EMAIL');
+                var consent = f.querySelector('[data-ba-consent]'); if (!consent || !consent.checked) bad.push('OPT_IN');
+                ['EMAIL', 'OPT_IN'].forEach(function (n) { var l = errOf(n); if (l) l.textContent = bad.indexOf(n) >= 0 ? fieldMsg(n) : ''; });
+                if (bad.length) { ev.preventDefault(); ev.stopImmediatePropagation(); var x = bad[0] === 'OPT_IN' ? consent : f.querySelector('[name="' + bad[0] + '"]'); if (x) x.focus(); }
+              });
+              // 2. A Brevo pode devolver textos próprios (ex.: pt-BR) que o main.js escreve nos painéis e nos erros de campo:
+              //    repomos sempre os textos BA.
+              function keep(el, want) {
+                if (!el || !window.MutationObserver) return;
+                new MutationObserver(function () { var w = want(); if (w !== null && el.textContent !== w) el.textContent = w; })
+                  .observe(el, { childList: true, characterData: true, subtree: true });
+              }
+              var okP = c.querySelector('#success-message'), koP = c.querySelector('#error-message'), ON = 'sib-form-message-panel--active';
+              keep(okP.querySelector('.sib-form-message-panel__inner-text'), function () { return tr('ok'); });
+              keep(koP.querySelector('.sib-form-message-panel__inner-text'), function () { return tr('err'); });
+              Array.prototype.forEach.call(f.querySelectorAll('.entry__error'), function (el) {
+                keep(el, function () { return el.textContent.trim() === '' ? null : fieldMsg(fieldOf(el)); });
+              });
+              // 3. Painéis: o sucesso só aparece com HTTP 2xx E success:true. Qualquer falha (HTTP fora de 2xx, success:false,
+              //    resposta inválida, erro de rede ou timeout) esconde o sucesso e mostra o erro.
+              var state = null;
+              function clearPanels() { state = null; okP.classList.remove(ON); koP.classList.remove(ON); }
+              function show(ok) { state = ok; okP.classList.toggle(ON, ok); koP.classList.toggle(ON, !ok); }
+              if (window.MutationObserver) new MutationObserver(function () { if (state !== true && okP.classList.contains(ON)) okP.classList.remove(ON); })
+                .observe(okP, { attributes: true, attributeFilter: ['class'] });
+              function resetUi() { var b = f.querySelector('button[type=submit]'), l = c.querySelector('.loader'); if (l) l.style.display = 'none'; if (b) { b.style.display = ''; b.removeAttribute('disabled'); } }
+              var action = f.getAttribute('action'), XO = XMLHttpRequest.prototype.open, XS = XMLHttpRequest.prototype.send;
+              XMLHttpRequest.prototype.open = function (m, u) { this.__ba = typeof u === 'string' && u.indexOf(action) === 0; return XO.apply(this, arguments); };
+              XMLHttpRequest.prototype.send = function (body) {
+                var x = this;
+                if (x.__ba && body && typeof body.delete === 'function') { body.delete('FIRSTNAME'); body.delete('OPT_IN'); if (typeof body.set === 'function') body.set('locale', 'pt'); }
+                if (x.__ba) {
+                  clearPanels();
+                  x.timeout = window.BA_SIB_TIMEOUT_MS || 20000;
+                  x.addEventListener('loadend', function () {
+                    var ok = false;
+                    if (x.status >= 200 && x.status < 300) { try { ok = JSON.parse(x.responseText).success === true; } catch (e) { ok = false; } }
+                    show(ok); resetUi();
+                  });
+                }
+                return XS.apply(this, arguments);
+              };
+            })();
+          </script>
+          <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+          <!-- BA-FORM:newsletter-full:pt END -->
+        </div>
+        <div class="mt-6 bg-white border border-ba-line p-6">
+          <div class="ba-eyebrow">Arquivo</div>
+          <ul class="mt-3 text-sm space-y-2">
+            <li><a class="text-ba-blue underline decoration-ba-gold underline-offset-4" href="/newsletter/2026-11/">N.º 1 · novembro 2026</a></li>
+          </ul>
+        </div>
+      </aside>
+      <div class="lg:order-1 min-w-0">
+        <div class="ba-eyebrow mb-3">Edição em destaque</div>
+        <article class="nl-ed max-w-3xl">
+
+<section class="hero">
+<div class="meta-r">Newsletter n.º 1 · novembro 2026 · publicada a 6 de novembro de 2026</div>
+<h1>Prazos de novembro, benefícios a decidir até 31/12 e o ponto do OE2027</h1>
+<p class="meta-r">Leitura de cerca de 4 minutos.</p>
+</section>
+<div class="kicker">01 · Do partner</div>
+<h2>Nota de abertura</h2>
+<div class="nota">
+<p class="lead">Esta é a primeira edição da newsletter mensal da BA AUDIT. No início de cada mês, reunirei aqui os prazos fiscais e contributivos que contam, um tema em destaque e as novidades com impacto nas decisões das empresas.</p>
+<p>Novembro é um mês de preparação. O Orçamento do Estado para 2027 entra na fase final de votação e várias decisões com reflexo no IRC de 2026 têm de ser tomadas, e documentadas, antes de 31 de dezembro.</p><p>Resumimos o nosso compromisso em duas palavras: Delivering Trust. Informação rigorosa, verificada e útil, com a independência que a nossa profissão exige.</p>
+<div class="sig">Manuel Borges<small>Revisor Oficial de Contas</small></div>
+</div>
+<div class="kicker">02 · Prazos do mês</div>
+<h2>Agenda fiscal de novembro</h2>
+<ul class="ag"><li><span class="d">2 nov <small>seg</small></span><div><strong>Modelo 30 e IUC</strong><p>Modelo 30 relativo a agosto e IUC de outubro. <em>· AT</em></p></div></li><li><span class="d">5 nov <small>qui</small></span><div><strong>Comunicação dos elementos das faturas (e-fatura)</strong><p>Comunicação dos elementos das faturas de outubro ou da sua inexistência. <em>· AT</em></p></div></li><li><span class="d">10 nov <small>ter</small></span><div><strong>Declaração Mensal de Remunerações (AT)</strong><p>Rendimentos do trabalho dependente e retenções de outubro. <em>· AT</em></p></div></li><li><span class="d">10 nov <small>ter</small></span><div><strong>Declaração de Remunerações à Segurança Social</strong><p>Relativa a outubro, para entidades ainda não abrangidas pelo novo modelo. Para as entidades já abrangidas, confirmação ou correção dos valores apurados até 20 nov. <em>· SS</em></p></div></li><li><span class="d">20 nov <small>sex</small></span><div><strong>IVA: declaração periódica</strong><p>Regime mensal (operações de setembro) e regime trimestral (3.º trimestre). Declaração recapitulativa com envio mensal, relativa a outubro, se aplicável. <em>· AT</em></p></div></li><li><span class="d">20 nov <small>sex</small></span><div><strong>Retenções na fonte e Imposto do Selo</strong><p>Pagamento das importâncias retidas e do Imposto do Selo liquidado em outubro; entrega da DMIS. <em>· AT</em></p></div></li><li><span class="d">20 nov <small>sex</small></span><div><strong>Trabalhadores independentes</strong><p>Pagamento das contribuições de outubro (entre os dias 10 e 20). <em>· SS</em></p></div></li><li><span class="d">25 nov <small>qua</small></span><div><strong>IVA: pagamento</strong><p>Regime mensal e regime trimestral. <em>· AT</em></p></div></li><li><span class="d">25 nov <small>qua</small></span><div><strong>Contribuições das entidades empregadoras</strong><p>Pagamento das contribuições e quotizações de outubro (entre os dias 1 e 25). <em>· SS</em></p></div></li><li><span class="d">30 nov <small>seg</small></span><div><strong>IMI</strong><p>2.ª prestação (imposto superior a 100 € e igual ou inferior a 500 €) ou 3.ª prestação (imposto superior a 500 €). <em>· AT</em></p></div></li><li><span class="d">30 nov <small>seg</small></span><div><strong>Modelo 30 e IUC</strong><p>Modelo 30: rendimentos pagos ou colocados à disposição de não residentes em setembro. IUC: veículos cujo aniversário da matrícula ocorre em novembro, sem prejuízo dos regimes especiais aplicáveis. <em>· AT</em></p></div></li></ul>
+<div class="kicker">03 · Tema em destaque</div>
+<h2>Benefícios fiscais que se decidem antes de 31 de dezembro</h2>
+<p>Em vários benefícios fiscais, o que se faz e documenta até ao fecho do exercício pesa diretamente no IRC de 2026. Alguns têm prazos de candidatura já em 2027.</p>
+<div class="card"><div class="card-k">SIFIDE II</div><p>Prorrogado para os períodos até 2026 (DL 170/2026). Taxa de base de 32,5 % das despesas elegíveis, acrescida de 50 % do aumento face à média dos dois exercícios anteriores, com limite de 1,5 M€ para a componente incremental, quando aplicável. Candidatura relativa a 2026 até 31/05/2027.</p></div><div class="card"><div class="card-k">RFAI</div><p>Dedução à coleta de IRC sobre aplicações relevantes em regiões e setores elegíveis: nas regiões da alínea a) do n.º 3 do art. 107.º do TFUE, 30 % até 15 M€ de investimento e 10 % sobre o excedente; nas regiões da alínea c), 10 %. Aplicam-se ainda os limites de dedução à coleta e os limites de auxílios regionais do mapa 2022–2027. Conta o investimento realizado no período. Os meros adiantamentos não contam como adições aos investimentos em curso; a sua posterior concretização exige análise das regras do art. 22.º do CFI. Exige processo de documentação fiscal e manutenção dos bens.</p></div><div class="card"><div class="card-k">Incentivo à capitalização (ICE)</div><p>Dedução ao lucro tributável calculada sobre os aumentos líquidos de capitais próprios elegíveis do exercício e dos seis anteriores, considerando apenas períodos iniciados em ou após 01/01/2023, até ao maior de dois limites: 4 M€ ou 30 % do EBITDA fiscal. Taxa: Euribor a 12 meses média do período, acrescida de 2 pontos percentuais. Em 2026, a dedução beneficia de majoração transitória de 20 %, sujeita ao limite legal.</p></div><div class="card"><div class="card-k">Valorização salarial</div><p>Encargos elegíveis com aumentos salariais considerados em 200 %, desde que se cumpram os dois testes de aumento mínimo de 4,6 %: da retribuição base anual média na empresa e da retribuição base anual dos trabalhadores que aufiram até à média da empresa no final do ano anterior, além das restantes condições legais.</p></div><div class="card"><div class="card-k">IFR (saldo de 2022)</div><p>Possível utilização de saldo de IFR relativo a investimento elegível de 2022, sujeito a saldo disponível, prazo de reporte e demais condições.</p></div>
+<p>Antes do fecho do ano, convém confirmar a elegibilidade, reunir a documentação e simular o efeito no imposto de 2026.</p>
+<p><a class="btn" href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7524413611918688256/">Ver o conjunto de slides no LinkedIn</a></p>
+<div class="kicker">04 · Atualidade</div>
+<h2>Alertas e novidades</h2>
+<div class="alerta"><h4>Orçamento do Estado para 2027 — proposta, ainda não aprovada</h4><p>A proposta foi aprovada na generalidade a 28 de outubro. O calendário parlamentar prevê o termo do prazo de apresentação de propostas de alteração em 6 de novembro, o início das votações na especialidade em 18 de novembro e a votação final global em 24 de novembro. Entre as medidas propostas: limiar do incentivo à valorização salarial de 4,5 % e prorrogação do SIFIDE II para 2027. As medidas indicadas são propostas e dependem do texto final aprovado, da promulgação e da publicação.</p></div><div class="alerta"><h4>IRC: a descida já é lei</h4><p>A Lei n.º 64/2025 fixou a taxa geral de IRC em 19 % para períodos iniciados em 2026, 18 % para períodos iniciados em 2027 e 17 % para períodos iniciados em ou após 01/01/2028. Para PME e Small Mid Cap que cumpram os requisitos, 15 % nos primeiros 50 000 € de matéria coletável, a partir dos períodos iniciados em 2026.</p></div><div class="alerta"><h4>Segurança Social: novo modelo de declaração</h4><p>Com o novo modelo (DL 127/2025), a Segurança Social apura as remunerações e contribuições e a entidade empregadora confirma ou corrige os valores até ao dia 20 do mês seguinte. O pagamento é feito entre os dias 1 e 25. A transição decorre durante 2026; o novo modelo abrange todas as entidades empregadoras a partir de 01/01/2027. A falta de manifestação no prazo equivale à aceitação dos valores apurados.</p></div>
+<div class="kicker">05 · Para planear</div>
+<h2>Prazos de dezembro em antevisão</h2>
+<ul class="ag"><li><span class="d">7 dez</span><div><p>Comunicação dos elementos das faturas de novembro (e-fatura).</p></div></li><li><span class="d">10 dez</span><div><p>DMR à AT e, para as entidades ainda não abrangidas pelo novo modelo, Declaração de Remunerações à Segurança Social, relativas a novembro.</p></div></li><li><span class="d">15 dez</span><div><p>Para períodos de tributação coincidentes com o ano civil, o 3.º PPC e o 3.º pagamento adicional por conta vencem-se em 15 de dezembro. Quanto ao PPC, o art. 107.º do CIRC permite dispensar a terceira entrega se os pagamentos já efetuados cobrirem o imposto estimado, ou limitá-la à diferença quando a entrega normal exceda essa diferença. Uma estimativa insuficiente pode originar juros compensatórios.</p></div></li><li><span class="d">21 dez</span><div><p>IVA mensal (outubro), declaração recapitulativa e DMIS; pagamento de retenções na fonte e Imposto do Selo; IRS: 3.º pagamento por conta.</p></div></li><li><span class="d">21 dez</span><div><p>Pagamento das contribuições de novembro dos trabalhadores independentes (dia 20 é domingo).</p></div></li><li><span class="d">28 dez</span><div><p>Pagamento do IVA, regime mensal.</p></div></li><li><span class="d">28 dez</span><div><p>Pagamento das contribuições e quotizações de novembro das entidades empregadoras (dia 25 é feriado, seguido de fim de semana).</p></div></li><li><span class="d">31 dez</span><div><p>Modelo 30 (rendimentos pagos ou colocados à disposição de não residentes em outubro) e IUC dos veículos cujo aniversário da matrícula ocorre em dezembro, sem prejuízo dos regimes especiais aplicáveis.</p></div></li></ul>
+<div class="card"><div class="card-k">A preparar para o fecho · Inventários</div><p>Preparar a comunicação dos inventários de 2026: prazo geral até 01/02/2027, para entidades com exercício coincidente com o ano civil e sujeitas à obrigação.</p></div>
+<section class="cta"><div class="cta-inner">
+<h3>Receba a próxima edição</h3>
+<p>No início de cada mês: agenda fiscal, um tema em destaque e as novidades que contam.</p>
+<p><a class="btn" href="#subscrever">Subscrever</a><a class="btn o" href="https://www.linkedin.com/company/ba-audit">Seguir no LinkedIn</a></p>
+</div></section>
+<p class="small" style="margin-top:28px">Informação de caráter geral, verificada em 06/11/2026 com base no calendário fiscal da Autoridade Tributária e Aduaneira e na informação da Segurança Social. Não dispensa a análise de cada situação concreta. Quando o último dia coincide com fim de semana ou feriado, aplica-se o dia útil seguinte.</p>
+<h4 style="margin-top:28px">Fontes</h4>
+<ul class="small"><li><a href="https://info.portaldasfinancas.gov.pt/pt/apoio_contribuinte/calendario_fiscal/Pages/Quadro_res_Decl_2026.aspx">AT — Resumo anual das obrigações declarativas 2026</a></li><li><a href="https://info.portaldasfinancas.gov.pt/pt/apoio_contribuinte/calendario_fiscal/Pages/Quadro_res_Pag_2026.aspx">AT — Resumo anual das obrigações de pagamento 2026</a></li><li><a href="https://info.portaldasfinancas.gov.pt/pt/apoio_ao_contribuinte/Cidadaos/Casa_e_propriedades/Imposto_anual/Paginas/default.aspx">Portal das Finanças — IMI, prazos de pagamento</a></li><li><a href="https://www.gov.pt/servicos/entidade-empregadora-declaracao-mensal-de-remuneracoes-a-seguranca-social">gov.pt — Declaração Mensal de Remunerações à Segurança Social</a></li><li><a href="https://www.seg-social.pt/ptss/pssd/documento/cmc1y95ap00dkkl2yk3g4tdla">Segurança Social — Guia prático (prazos de pagamento)</a></li><li><a href="https://www.seg-social.pt/ptss/pssd/documento/cmi5ypntw0047e4349twowd3k">Segurança Social — Perguntas frequentes (novo modelo)</a></li><li><a href="https://portugal.gov.pt/gc25/comunicacao/noticias/oe2027-esta-aprovado-na-generalidade">Governo — OE2027 aprovado na generalidade; calendário</a></li><li><a href="https://diariodarepublica.pt/dr/detalhe/lei/64-2025-944874408">Lei n.º 64/2025 (taxas de IRC)</a></li><li><a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cfi/Pages/cfi-40.aspx">CFI, art. 40.º — SIFIDE II (Portal das Finanças)</a></li><li><a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/bf_rep/Pages/ebf19b.aspx">EBF, art. 19.º-B — valorização salarial (Portal das Finanças)</a></li><li><a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cfi/Pages/cfi-22.aspx">CFI, art. 22.º — RFAI, âmbito e definições (Portal das Finanças)</a></li><li><a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cfi/Pages/cfi-23.aspx">CFI, art. 23.º — RFAI, benefícios fiscais (Portal das Finanças)</a></li><li><a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cfi/Pages/cfi-43.aspx">CFI, art. 43.º — limites dos auxílios com finalidade regional (Portal das Finanças)</a></li><li><a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/bf_rep/Pages/ebf43d.aspx">EBF, art. 43.º-D — incentivo à capitalização (Portal das Finanças)</a></li><li><a href="https://app.parlamento.pt/OE2027/HTML/OrcamentoEstado2027.html">Assembleia da República — Proposta de Orçamento do Estado para 2027 (texto oficial)</a></li><li><a href="https://www.parlamento.pt/Documents/2026/outubro/calendario-OE2027.pdf">Assembleia da República — Calendário de apreciação do OE2027</a></li></ul>
+
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer class="ba-footer bg-ba-off" style="border-top:3px solid #0E2744">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 py-12 grid gap-10 md:grid-cols-2 md:items-start">
+      <div>
+        <div class="text-ba-blue font-semibold tracking-[.2em]">BA&nbsp;AUDIT</div>
+        <div class="mt-1 font-serif italic text-ba-gold">Delivering Trust</div>
+        <p class="mt-4 text-sm text-ba-muted">BA AUDIT – Rua São Salvador da Baía, 7, 1D – 2800-201 Almada</p>
+      </div>
+      <div class="md:justify-self-end w-full md:max-w-md">
+        <div style="max-width:420px;font-family:Inter,Arial,sans-serif;color:#0E2744;">
+          <p style="margin:0 0 10px;font-family:Georgia,'Times New Roman',serif;font-size:18px;font-weight:400;color:#0E2744;">Newsletter mensal BA AUDIT</p>
+          <a href="#subscrever" style="display:inline-block;background:#0E2744;color:#fff;border-radius:3px;padding:10px 16px;font-size:14px;text-decoration:none;">Subscrever</a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-ba-line">
+      <div class="max-w-7xl mx-auto px-4 md:px-6 py-6 flex flex-col md:flex-row gap-6 md:items-center md:justify-between">
+        <div class="flex items-center gap-3">
+          <img src="/BA_AUDIT_logo_transparent.png" class="h-7" alt="BA AUDIT"/>
+          <span class="text-sm">© <span id="y"></span> BA AUDIT. Todos os direitos reservados.</span>
+        </div>
+        <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+          <a href="https://www.iubenda.com/privacy-policy/47280304" class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe" title="Política de Privacidade">Política de Privacidade</a>
+          <a href="https://www.iubenda.com/privacy-policy/47280304/cookie-policy" class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe" title="Política de Cookies">Política de Cookies</a>
+          <a href="/newsletter/">Newsletter</a>
+          <a href="/#contactos">Contactos</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const btn = document.getElementById('navBtn');
+      const mobile = document.getElementById('mobileNav');
+      btn?.addEventListener('click', () => mobile.classList.toggle('hidden'));
+      document.getElementById('y').textContent = new Date().getFullYear();
+    });
+  </script>
+  <script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement('script'), tag = d.getElementsByTagName('script')[0]; s.src='https://cdn.iubenda.com/iubenda.js'; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener('load', loader, false);}else if(w.attachEvent){w.attachEvent('onload', loader);}else{w.onload = loader;}})(window, document);</script>
+</body>
+</html>

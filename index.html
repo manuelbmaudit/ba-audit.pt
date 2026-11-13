@@ -981,6 +981,7 @@
         </nav>
       </div>
     </div>
+    </div>
   </footer>
 
   <!-- EmailJS -->
@@ -1169,8 +1170,8 @@
         'footer.address': 'BA AUDIT – Rua São Salvador da Baía, 7, 1D - 2800-201 Almada, Portugal',
         'footer.registration': 'Manuel Borges, Statutory Auditor (<em>Revisor Oficial de Contas — ROC</em>), registered with the OROC under no. 1067 and with the CMVM under no. 20160679',
         'footer.copy': ' BA AUDIT. All rights reserved.',
-        'footer.privacy': 'Privacy Policy',
-        'footer.cookies': 'Cookie Policy'
+        'footer.privacy': 'Privacy Policy (in Portuguese)',
+        'footer.cookies': 'Cookie Policy (in Portuguese)'
       }
     };
 
@@ -1219,7 +1220,7 @@
     }
 
     window.addEventListener('DOMContentLoaded', () => {
-      applyI18n('pt');
+      applyI18n(new URLSearchParams(window.location.search).get('lang') === 'en' ? 'en' : 'pt');
       const btn = document.getElementById('navBtn');
       const mobile = document.getElementById('mobileNav');
       btn?.addEventListener('click', () => {
