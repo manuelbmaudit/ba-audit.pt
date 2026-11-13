@@ -1,0 +1,33 @@
+Subject: Confirm your BA AUDIT newsletter subscription
+Preheader: To complete your subscription, please confirm your email address. If you did not request this subscription, you may ignore this email.
+From: BA AUDIT <newsletter@ba-audit.pt>
+
+---
+
+BA AUDIT
+Monthly newsletter · Delivering Trust
+
+Confirm your subscription
+
+Dear reader,
+
+Thank you for your interest in the BA AUDIT monthly newsletter. To complete your subscription and start receiving our communications, please confirm your email address using the link below.
+
+By confirming, you agree to the following statement: “I agree to receive by email the monthly newsletter and occasional informative communications from BA AUDIT on audit, accounting and tax. I may unsubscribe at any time using the link included in each email. My data are processed in accordance with the Privacy Policy (in Portuguese). See the Newsletter privacy notice (in English).”
+
+Confirm subscription:
+{{ doubleoptin }}
+
+If you did not request this subscription, please ignore this email. Without confirmation, your address will not be added to the list.
+
+This link is valid for 30 days.
+
+Newsletter privacy notice (in English): https://ba-audit.pt/en/newsletter/privacy-notice/
+Privacy Policy (in Portuguese): https://www.iubenda.com/privacy-policy/47280304
+
+—
+BA AUDIT
+Delivering Trust
+Manuel Borges, ROC, registered with OROC under no. 1067
+BA AUDIT – Rua São Salvador da Baía, 7, 1D - 2800-201 Almada
+newsletter@ba-audit.pt · https://ba-audit.pt
