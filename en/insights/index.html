@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Insights — BA AUDIT</title>
+<meta name="description" content="BA AUDIT newsletter and slide decks. Published in Portuguese. Delivering Trust." />
+<link rel="icon" type="image/x-icon" href="../../BA_AUDIT_logo.ico" />
+<link rel="stylesheet" href="../../publicacoes/publicacoes.css" />
+</head>
+<body data-root="../../" data-pub-page="list" class="anim">
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/">BA AUDIT</a>
+    <nav class="nav-links" aria-label="Menu">
+      <a href="/#servicos">Services</a>
+      <a href="/#setores">Sectors</a>
+      <a href="/#metodologia">Methodology</a>
+      <a href="/#equipa">About</a>
+      <a href="/en/insights/" aria-current="page">Insights</a>
+      <a href="/#pedir-proposta">Request a proposal</a>
+    </nav>
+    <div style="display:flex;align-items:center">
+      <div class="langs">
+        <a href="/publicacoes/" id="lang-pt" >PT</a>
+        <a href="/en/insights/" id="lang-en" aria-current="true">EN</a>
+      </div>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Menu"><span class="burger"></span></button>
+    </div>
+  </div>
+</header>
+<div id="mobileNav" class="mobile-nav">
+  <a href="/#servicos">Services</a>
+  <a href="/#setores">Sectors</a>
+  <a href="/#metodologia">Methodology</a>
+  <a href="/#equipa">About</a>
+  <a href="/en/insights/">Insights</a>
+  <a href="/#pedir-proposta">Request a proposal</a>
+</div>
+<main class="page">
+  <div class="wrap">
+    <h1>Insights</h1>
+    <p class="kicker">Newsletter and slide decks</p>
+    <div class="pub-grid" data-pub-list></div>
+  </div>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-brand">BA AUDIT</div>
+    <div class="tagline">Delivering Trust</div>
+    <p class="footer-address">BA AUDIT – Rua São Salvador da Baía, 7, 1D - 2800-201 Almada</p>
+    <p class="footer-address">Manuel Borges, Statutory Auditor (ROC), registered with the OROC under no. 1067 and with the CMVM under no. 20160679</p>
+  </div>
+  <div class="footer-bottom"><div class="wrap footer-bottom-inner">
+    <span>© <span class="y"></span> BA AUDIT. All rights reserved.</span>
+    <nav class="footer-links" aria-label="Menu">
+      <a href="https://www.iubenda.com/privacy-policy/47280304">Privacy Policy</a>
+      <a href="https://www.iubenda.com/privacy-policy/47280304/cookie-policy">Cookie Policy</a>
+      <a href="/#pedir-proposta">Request a proposal</a>
+    </nav>
+  </div></div>
+</footer>
+<script src="/publicacoes/data.js"></script>
+<script src="../../publicacoes/publicacoes.js"></script>
+<script>
+document.querySelectorAll('.y').forEach(function (el) { el.textContent = new Date().getFullYear(); });
+var btn = document.querySelector('.nav-toggle');
+var menu = document.getElementById('mobileNav');
+btn.addEventListener('click', function () {
+  var open = btn.getAttribute('aria-expanded') === 'true';
+  btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+  menu.classList.toggle('open', !open);
+});
+menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }); });
+if (location.search && document.getElementById('lang-pt')) {
+  var q = location.search;
+  var pt = document.getElementById('lang-pt');
+  var en = document.getElementById('lang-en');
+  if (pt.getAttribute('href').indexOf('?') === -1) pt.href = '/publicacoes/conjunto/' + q;
+  if (en.getAttribute('href').indexOf('?') === -1) en.href = '/en/insights/deck/' + q;
+}
+</script>
+</body>
+</html>
