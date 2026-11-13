@@ -1,297 +1,984 @@
 <!doctype html>
 <html lang="pt">
 <head>
-<link rel="canonical" href="https://ba-audit.pt/">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <script>
   // Redirecionar de www.ba-audit.pt para ba-audit.pt
   if (window.location.hostname === "www.ba-audit.pt") {
     window.location.href = window.location.href.replace("www.ba-audit.pt", "ba-audit.pt");
   }
 </script>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>BA AUDIT — Revisão legal das contas</title>
-  <meta name="description" content="A BA AUDIT é a denominação da prática individual de Manuel Borges, Revisor Oficial de Contas, inscrito na OROC sob o n.º 1067. Revisão legal das contas, com independência e rigor. Delivering Trust." />
+<title>BA AUDIT — Revisão legal das contas</title>
+<meta name="description" content="A BA AUDIT é a denominação da prática individual de Manuel Borges, Revisor Oficial de Contas, inscrito na OROC sob o n.º 1067. Revisão legal das contas, com independência e rigor. Delivering Trust." />
+<link rel="canonical" href="https://ba-audit.pt/" />
+<link rel="icon" type="image/x-icon" href="BA_AUDIT_logo.ico" />
+<meta name="theme-color" content="#000000" />
+<link rel="preload" as="image" href="assets/video/hero-poster.jpg" fetchpriority="high" />
+<style>
+  :root {
+    --white: #ffffff;
+    --snow: #f5f5f7;
+    --ink: #1d1d1f;
+    --black: #000000;
+    --ink-black: #111111;
+    --gold: #c4a574;
+    --muted: #424245;
+    --muted-dark: #a1a1a6;
+    --line: #d2d2d7;
+    --nav-h: 48px;
+    --nav-offset: calc(var(--nav-h) + env(safe-area-inset-top));
+    --gutter: 24px;
+    --wrap: min(1120px, calc(100% - var(--gutter) * 2));
+    --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Inter, Arial, sans-serif;
+    --serif: Georgia, "Times New Roman", "Liberation Serif", serif;
+  }
+  @media (max-width: 600px) {
+    :root { --gutter: 20px; }
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; overflow-x: clip; }
+  body {
+    margin: 0;
+    background: var(--white);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.47;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: clip;
+  }
+  body.nav-open { overflow: hidden; }
+  img { max-width: 100%; }
+  h1, h2, h3, p, ul, figure { margin: 0; }
+  ul { padding: 0; list-style: none; }
+  a { color: inherit; }
+  button, input, textarea { font: inherit; color: inherit; }
+  ::selection { background: var(--ink); color: var(--white); }
+  :focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+  .hero :focus-visible,
+  .services :focus-visible,
+  .tone-ink :focus-visible,
+  .band :focus-visible,
+  .nav :focus-visible,
+  .mobile-nav :focus-visible,
+  .footer :focus-visible { outline-color: #fff; }
 
-  <link rel="icon" type="image/x-icon" href="BA_AUDIT_logo.ico" />
+  .serif { font-family: var(--serif); font-weight: 400; }
+  .wrap { width: var(--wrap); margin-inline: auto; }
+  .section { padding: 96px 0; }
+  @media (min-width: 900px) { .section { padding: 132px 0; } }
+  .tone-white { background: var(--white); }
+  .tone-snow { background: var(--snow); }
+  .tone-ink { background: var(--ink-black); color: #fff; }
+  .tone-ink h2, .tone-ink h3 { color: #fff; }
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: { ba: { blue: '#0E2744', navy: '#0E2744', mid: '#163A5F', gold: '#C4A574', cream: '#F6F1E8', line: '#E4DDD0', gray: '#3A4452', muted: '#5E6A78' } },
-          fontFamily: {
-            sans: ['Inter','Helvetica','Arial','ui-sans-serif','system-ui'],
-            serif: ['Georgia','"Times New Roman"','serif']
-          },
-          boxShadow: { soft: '0 1px 2px rgba(14,39,68,.04), 0 8px 24px rgba(14,39,68,.06)' }
-        }
-      }
+  h1, h2, h3 {
+    font-family: var(--sans);
+    font-weight: 600;
+    letter-spacing: -0.035em;
+    line-height: 1.05;
+    text-wrap: balance;
+  }
+  h2 { font-size: clamp(40px, 6vw, 68px); color: var(--ink); }
+  .sub {
+    margin-top: 22px;
+    max-width: 36rem;
+    font-size: 19px;
+    line-height: 1.5;
+    font-weight: 400;
+    letter-spacing: -0.015em;
+    color: var(--muted);
+  }
+  .statement {
+    max-width: 20em;
+    font-size: clamp(24px, 2.6vw, 34px);
+    font-weight: 600;
+    letter-spacing: -0.028em;
+    line-height: 1.28;
+    color: var(--ink);
+    text-wrap: balance;
+  }
+  .prose {
+    max-width: 40rem;
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--ink);
+  }
+  .prose + .prose { margin-top: 18px; }
+  .legal {
+    max-width: 42rem;
+    margin-top: 28px;
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--ink);
+  }
+  .fine {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--muted);
+  }
+  .fine:first-of-type { margin-top: 22px; }
+
+  .nav {
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: 50;
+    height: var(--nav-offset);
+    padding-top: env(safe-area-inset-top);
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, .72);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, .12);
+  }
+  .nav-inner {
+    width: var(--wrap);
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .brand {
+    font-family: var(--serif);
+    color: #fff;
+    text-decoration: none;
+    font-size: 17px;
+    letter-spacing: .16em;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .nav-links { display: none; align-items: center; gap: 22px; }
+  .nav-links a {
+    position: relative;
+    color: rgba(255, 255, 255, .84);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: -0.006em;
+    padding: 16px 0;
+    white-space: nowrap;
+  }
+  .nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: 12px;
+    height: 1px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .35s ease;
+  }
+  .nav-links a:hover { color: #fff; }
+  .nav-links a:hover::after,
+  .nav-links a:focus-visible::after { transform: scaleX(1); }
+  .nav-tools { display: flex; align-items: center; gap: 4px; }
+  .langs { display: flex; align-items: center; }
+  .langs button {
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0 6px;
+    border: 0;
+    background: transparent;
+    color: rgba(255, 255, 255, .42);
+    font-size: 12px;
+    letter-spacing: .08em;
+    cursor: pointer;
+  }
+  .langs button.is-active { color: #fff; }
+  .langs button:hover { color: var(--gold); }
+  .nav-toggle {
+    width: 44px;
+    height: 44px;
+    border: 0;
+    background: transparent;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .burger, .burger::before, .burger::after {
+    display: block;
+    width: 18px;
+    height: 1px;
+    background: #fff;
+    position: relative;
+    transition: transform .25s ease, opacity .2s ease;
+  }
+  .burger::before, .burger::after {
+    content: "";
+    position: absolute;
+    left: 0;
+  }
+  .burger::before { top: -6px; }
+  .burger::after { top: 6px; }
+  .nav-toggle[aria-expanded="true"] .burger { background: transparent; }
+  .nav-toggle[aria-expanded="true"] .burger::before { top: 0; transform: rotate(45deg); }
+  .nav-toggle[aria-expanded="true"] .burger::after { top: 0; transform: rotate(-45deg); }
+  @media (min-width: 980px) {
+    .nav-links { display: flex; }
+    .nav-toggle { display: none; }
+  }
+
+  .mobile-nav {
+    position: fixed;
+    top: var(--nav-offset);
+    left: 0; right: 0; bottom: 0;
+    z-index: 40;
+    background: rgba(0, 0, 0, .97);
+    -webkit-backdrop-filter: saturate(180%) blur(24px);
+    backdrop-filter: saturate(180%) blur(24px);
+    padding: 12px 24px 40px;
+    overflow: auto;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition: opacity .3s ease, transform .3s ease, visibility .3s;
+  }
+  .mobile-nav.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: none;
+  }
+  .mobile-nav a:not(.btn) {
+    display: flex;
+    align-items: center;
+    min-height: 52px;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, .12);
+  }
+  .mobile-nav a:not(.btn):hover { color: var(--gold); }
+  .mobile-nav .btn { width: 100%; margin-top: 28px; }
+  @media (min-width: 980px) {
+    .mobile-nav { display: none; }
+  }
+
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    padding: var(--nav-offset) 0 48px;
+    background: var(--black);
+    color: #fff;
+    overflow: hidden;
+  }
+  .hero-parallax {
+    position: absolute;
+    left: 0; right: 0;
+    top: -15%;
+    bottom: -15%;
+    z-index: 0;
+  }
+  .hero-parallax picture,
+  .hero-parallax img,
+  .hero-parallax video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right center;
+    pointer-events: none;
+  }
+  .hero-parallax video { z-index: 1; background: #000; }
+  .hero-fallback img:not([src]) { display: none; }
+  .hero-still .hero-video { display: none; }
+  .hero-poster {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right center;
+    pointer-events: none;
+  }
+  html:not(.hero-still) .hero-poster { display: none; }
+  html.hero-fallback .hero-video,
+  html.hero-fallback .hero-poster { display: none; }
+  .hero-scrim {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(90deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.22) 40%, rgba(0,0,0,0) 64%);
+  }
+  .hero-copy { position: relative; z-index: 2; }
+  .tagline {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--gold);
+  }
+  .hero .tagline { font-size: 20px; margin-bottom: 18px; }
+  h1 {
+    max-width: min(11em, 100%);
+    font-size: clamp(36px, 4.6vw, 64px);
+    color: #fff;
+  }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+  @media (max-width: 700px) {
+    .hero { align-items: flex-start; padding-top: calc(var(--nav-offset) + 28px); }
+    .hero-parallax img,
+    .hero-parallax video,
+    .hero-poster { object-position: 78% 100%; }
+    .hero-scrim {
+      background: linear-gradient(180deg, rgba(0,0,0,.88) 0%, rgba(0,0,0,.72) 42%, rgba(0,0,0,.18) 68%, rgba(0,0,0,.25) 100%);
     }
-  </script>
-  <style>
-    @font-face { font-family: Inter; src: local('Arial'); }
-    h1, h2, h3 { font-family: Georgia, 'Times New Roman', serif; font-weight: 400 !important; letter-spacing: -.005em; }
-    h2.ba-title::after { content: ""; display: block; width: 56px; height: 2px; background: #C4A574; margin-top: 18px; }
-    .ba-eyebrow { font-size: 11px; letter-spacing: .28em; text-transform: uppercase; color: #C4A574; font-weight: 700; }
-    .ba-card { border-color: #E4DDD0 !important; border-top: 2px solid #C4A574 !important; }
-    .ba-btn { letter-spacing: .08em; text-transform: uppercase; font-size: 13px; font-weight: 600; }
-    #nav a:not(.ba-btn) { font-size: 14px; letter-spacing: .02em; }
-    #nav a:not(.ba-btn):hover, #mobileNav a:hover { color: #0E2744; box-shadow: inset 0 -1px 0 #C4A574; }
-    .ba-footer a:hover { color: #0E2744; text-decoration: underline; text-decoration-color: #C4A574; text-underline-offset: 3px; }
-    section, #pedir-proposta { scroll-margin-top: 96px; }
-    ::selection { background: #C4A574; color: #0E2744; }
-  </style>
-</head>
-<body class="bg-ba-cream text-ba-gray font-sans antialiased scroll-smooth">
+    .hero-copy { margin-top: 6vh; }
+  }
+  @media (max-width: 520px) {
+    .actions { flex-direction: column; align-items: stretch; }
+    .hero .actions .btn { width: 100%; }
+  }
 
-  <!-- Top bar -->
-  <div class="w-full bg-white/95 backdrop-blur border-b border-ba-line sticky top-0 z-50" style="border-top:3px solid #0E2744">
-    <div class="max-w-7xl mx-auto px-4 md:px-6">
-      <div class="flex items-center justify-between h-16">
-        <a href="#home" class="flex items-center gap-3">
-          <img src="BA_AUDIT_logo_transparent.png" alt="BA AUDIT" class="h-8 w-auto"/>
-          <span class="text-ba-blue font-semibold tracking-[.2em]" data-i18n="brand">BA&nbsp;AUDIT</span>
-        </a>
-        <div class="flex items-center gap-2">
-          <button id="navBtn" class="md:hidden p-2 rounded hover:bg-ba-cream" aria-label="Menu">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-          </button>
-          <div class="hidden md:flex items-center gap-1 text-sm">
-            <button id="lang-pt" class="px-2 py-1 rounded hover:bg-ba-cream font-medium">PT</button>
-            <span class="text-gray-300">|</span>
-            <button id="lang-en" class="px-2 py-1 rounded hover:bg-ba-cream">EN</button>
-          </div>
-        </div>
-      </div>
-      <nav id="nav" class="hidden md:flex flex-wrap items-center gap-x-8 gap-y-3 pb-4 md:pb-3">
-        <a href="#servicos" class="hover:text-ba-blue" data-i18n="nav.services">Serviços</a>
-        <a href="#setores" class="hover:text-ba-blue" data-i18n="nav.sectors">Setores</a>
-        <a href="#metodologia" class="hover:text-ba-blue" data-i18n="nav.methodology">Metodologia</a>
-        <a href="#equipa" class="hover:text-ba-blue" data-i18n="nav.about">Quem somos</a>
-        <a href="#pedir-proposta" class="ba-btn px-5 py-2 rounded-sm bg-ba-blue text-white hover:bg-ba-mid" data-i18n="nav.proposal">Pedir proposta</a>
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0 22px;
+    border-radius: 980px;
+    border: 1px solid transparent;
+    background: #fff;
+    color: #000;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform .25s ease, border-color .25s ease, background .25s ease, color .25s ease;
+  }
+  .btn:hover { border-color: var(--gold); transform: translateY(-1px); }
+  .btn:active { transform: translateY(0); }
+  .btn-dark { background: #000; color: #fff; }
+  .btn-dark:hover { background: #000; color: #fff; border-color: var(--gold); }
+  .btn-ghost {
+    background: transparent;
+    color: #fff;
+    border-color: rgba(255, 255, 255, .45);
+  }
+  .btn-ghost:hover { background: transparent; color: #fff; border-color: var(--gold); }
+  .btn:disabled { opacity: .55; cursor: progress; transform: none; }
+
+  .screen {
+    min-height: calc(100svh - var(--nav-offset));
+    display: flex;
+    align-items: center;
+    padding: 72px 0;
+  }
+  .index-list { margin-top: 64px; max-width: 40rem; }
+  .index-list li {
+    padding: 18px 0;
+    border-top: 1px solid var(--line);
+    font-size: clamp(18px, 2vw, 22px);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+  }
+  .index-list li:first-child { border-top-color: var(--gold); }
+  .index-list li:last-child { border-bottom: 1px solid var(--line); }
+
+  .services { position: relative; background: #000; color: #fff; overflow: hidden; }
+  .services h2, .services h3 { color: #fff; }
+  .services .sub { color: var(--muted-dark); }
+  .services-bg, .services-bg picture, .services-bg img,
+  .services-overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .services-bg { z-index: 0; }
+  .services-bg img { object-fit: cover; object-position: center; }
+  .services-overlay {
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(0,0,0,.78) 0%, rgba(0,0,0,.58) 42%, rgba(0,0,0,.78) 100%);
+  }
+  .services .wrap { position: relative; z-index: 2; }
+  .cards, .steps, .about-grid, .contact-grid { min-width: 0; }
+  .cards > *, .steps > *, .about-grid > *, .contact-grid > * { min-width: 0; }
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 48px;
+  }
+  @media (min-width: 800px) {
+    .cards { grid-template-columns: 1fr 1fr; gap: 16px; }
+  }
+  .card {
+    background: rgba(0, 0, 0, .55);
+    border: 1px solid rgba(255, 255, 255, .14);
+    border-radius: 20px;
+    padding: 28px 26px 32px;
+    transition: border-color .25s ease;
+  }
+  .card:hover { border-color: var(--gold); }
+  .card h3 { font-size: 22px; letter-spacing: -0.025em; line-height: 1.2; }
+  .card p { margin-top: 12px; color: #d2d2d7; font-size: 16px; line-height: 1.5; font-weight: 400; letter-spacing: 0; }
+  .card p.entity {
+    margin-top: 14px;
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .04em;
+  }
+
+  .indep-media img { display: block; width: 100%; height: auto; }
+  .indep-copy { padding: 56px 0 8px; }
+  @media (min-width: 900px) { .indep-copy { padding-top: 72px; } }
+
+  .sector-list { margin-top: 56px; }
+  .sector-list li {
+    padding: 22px 0;
+    border-top: 1px solid var(--line);
+    font-size: clamp(32px, 5vw, 64px);
+    font-weight: 600;
+    letter-spacing: -0.035em;
+    line-height: 1.05;
+  }
+  .sector-list li:first-child { border-top-color: var(--gold); }
+  .sector-list li:last-child { border-bottom: 1px solid var(--line); }
+
+  .steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 36px 28px;
+    margin-top: 56px;
+  }
+  @media (min-width: 700px) { .steps { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 1100px) { .steps { grid-template-columns: repeat(4, 1fr); } }
+  .step { padding-top: 20px; border-top: 1px solid rgba(196, 165, 116, .9); }
+  .step h3 { font-size: 22px; letter-spacing: -0.025em; line-height: 1.25; }
+  .step p { margin-top: 14px; color: var(--muted-dark); font-size: 16px; line-height: 1.55; font-weight: 400; letter-spacing: 0; }
+  .tone-ink .sub { color: var(--muted-dark); }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 36px;
+    margin-top: 48px;
+    align-items: start;
+  }
+  @media (min-width: 860px) {
+    .about-grid { grid-template-columns: 260px 1fr; gap: 80px; }
+  }
+  .portrait {
+    display: block;
+    width: min(260px, 72%);
+    height: auto;
+    filter: grayscale(1) contrast(1.14) brightness(0.97);
+    background: #fff;
+  }
+  .name {
+    margin-top: 22px;
+    font-family: var(--serif);
+    font-size: clamp(32px, 4vw, 44px);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    color: var(--ink);
+  }
+  .role { margin-top: 8px; font-size: 15px; color: var(--muted); }
+  .rule {
+    width: 40px;
+    height: 1px;
+    margin-top: 16px;
+    background: var(--gold);
+    border: 0;
+  }
+  figure { margin: 0; }
+
+  .band {
+    position: relative;
+    min-height: 560px;
+    display: flex;
+    align-items: flex-start;
+    overflow: hidden;
+    background: #000;
+    color: #fff;
+  }
+  .band picture, .band img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 70%;
+  }
+  .band-copy { position: relative; z-index: 1; padding: 72px 0 48px; }
+  .band h2 { color: #fff; max-width: 12em; }
+  .band .sub { color: rgba(255,255,255,.82); }
+  @media (min-width: 900px) {
+    .band { min-height: 0; aspect-ratio: 21 / 9; }
+    .band img { object-position: center center; }
+    .band-copy { padding-top: 8%; }
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 48px;
+  }
+  @media (min-width: 860px) {
+    .contact-grid { grid-template-columns: 1.35fr .75fr; gap: 24px; align-items: start; }
+  }
+  .form, .panel {
+    background: #fff;
+    border-radius: 20px;
+    padding: 28px 24px 32px;
+  }
+  .panel { border-top: 1px solid var(--gold); }
+  .panel h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 28px;
+    letter-spacing: .14em;
+  }
+  .panel p { margin-top: 12px; color: var(--muted); }
+  .panel a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+  }
+  .panel a:hover { border-bottom-color: var(--gold); }
+  .fields { display: grid; grid-template-columns: 1fr; gap: 18px; }
+  @media (min-width: 640px) {
+    .fields { grid-template-columns: 1fr 1fr; }
+    .span-2 { grid-column: span 2; }
+  }
+  .field label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .field input, .field textarea {
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    border-radius: 0;
+    background: transparent;
+    padding: 12px 0;
+    font-size: 17px;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+  .field textarea { min-height: 120px; resize: vertical; }
+  .field input:focus-visible, .field textarea:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 4px;
+    border-bottom-color: var(--gold);
+  }
+  .form .btn { margin-top: 22px; }
+  .privacy { margin-top: 10px; font-size: 12px; line-height: 1.45; color: var(--muted); }
+  #formStatus { min-height: 1.25em; margin-top: 12px; font-size: 14px; color: var(--ink); }
+  .hp { display: none !important; }
+
+  .footer { background: #000; color: #fff; padding-top: 72px; }
+  .footer-brand {
+    font-family: var(--serif);
+    font-size: 22px;
+    letter-spacing: .2em;
+  }
+  .footer .tagline { font-size: 20px; margin-top: 10px; }
+  .footer-address {
+    max-width: 36rem;
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, .8);
+  }
+  .footer-address:first-of-type { margin-top: 28px; }
+  .footer-bottom { margin-top: 48px; border-top: 1px solid rgba(255, 255, 255, .14); }
+  .footer-bottom-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px 28px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 0 28px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, .8);
+  }
+  .footer-links { display: flex; flex-wrap: wrap; gap: 10px 22px; }
+  .footer a { color: #fff; text-decoration: none; }
+  .footer a:hover { color: var(--gold); }
+  section, #pedir-proposta { scroll-margin-top: calc(var(--nav-offset) + 12px); }
+
+  .anim .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity .9s cubic-bezier(.22, .61, .36, 1), transform .9s cubic-bezier(.22, .61, .36, 1);
+  }
+  .anim .reveal.in { opacity: 1; transform: none; }
+  .anim .d1 { transition-delay: .08s; }
+  .anim .d2 { transition-delay: .16s; }
+  .anim .d3 { transition-delay: .24s; }
+  .anim .d4 { transition-delay: .32s; }
+  .anim .d5 { transition-delay: .4s; }
+  .anim .d6 { transition-delay: .48s; }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(22px); }
+    to { opacity: 1; transform: none; }
+  }
+  .anim .hero-copy > * { animation: rise 1s cubic-bezier(.22, .61, .36, 1) both; }
+  .anim .hero-copy > *:nth-child(1) { animation-delay: .12s; }
+  .anim .hero-copy > *:nth-child(2) { animation-delay: .26s; }
+  .anim .hero-copy > *:nth-child(3) { animation-delay: .4s; }
+  @keyframes heroScale {
+    from { transform: scale(1.12); }
+    to { transform: scale(1.045); }
+  }
+  .anim .hero-parallax img,
+  .anim .hero-parallax video,
+  .anim .hero-poster { animation: heroScale 2.2s cubic-bezier(.22, .61, .36, 1) both; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+    .btn:hover { transform: none; }
+  }
+</style>
+<script>
+  try {
+    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var saveData = false;
+    try {
+      saveData = !!(navigator.connection && navigator.connection.saveData) || window.matchMedia("(prefers-reduced-data: reduce)").matches;
+    } catch (err) {}
+    if (reduceMotion || saveData) document.documentElement.classList.add("hero-still");
+    if (!reduceMotion) document.documentElement.classList.add("anim");
+  } catch (e) {}
+</script>
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#home"><span data-i18n="brand">BA AUDIT</span></a>
+      <nav class="nav-links" aria-label="Menu">
+        <a href="#servicos" data-i18n="nav.services">Serviços</a>
+        <a href="#setores" data-i18n="nav.sectors">Setores</a>
+        <a href="#metodologia" data-i18n="nav.methodology">Metodologia</a>
+        <a href="#equipa" data-i18n="nav.about">Quem somos</a>
+        <a href="#pedir-proposta" data-i18n="nav.proposal">Pedir proposta</a>
       </nav>
-      <div id="mobileNav" class="hidden md:hidden border-t border-ba-line py-3">
-        <div class="flex flex-col gap-2">
-          <div class="flex items-center gap-2 pb-2">
-            <button id="mlang-pt" class="px-2 py-1 rounded hover:bg-ba-cream font-medium">PT</button>
-            <span class="text-gray-300">|</span>
-            <button id="mlang-en" class="px-2 py-1 rounded hover:bg-ba-cream">EN</button>
-          </div>
-          <a href="#servicos" class="py-2" data-i18n="nav.services">Serviços</a>
-          <a href="#setores" class="py-2" data-i18n="nav.sectors">Setores</a>
-          <a href="#metodologia" class="py-2" data-i18n="nav.methodology">Metodologia</a>
-          <a href="#equipa" class="py-2" data-i18n="nav.about">Quem somos</a>
-          <a href="#pedir-proposta" class="ba-btn mt-2 px-5 py-2 rounded-sm bg-ba-blue text-white text-center" data-i18n="nav.proposal">Pedir proposta</a>
+      <div class="nav-tools">
+        <div class="langs" role="group" aria-label="PT / EN">
+          <button type="button" id="lang-pt" class="is-active" aria-pressed="true">PT</button>
+          <button type="button" id="lang-en" aria-pressed="false">EN</button>
         </div>
+        <button type="button" id="navBtn" class="nav-toggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Menu">
+          <span class="burger" aria-hidden="true"></span>
+        </button>
       </div>
     </div>
+  </header>
+
+  <div id="mobileNav" class="mobile-nav" aria-hidden="true" inert>
+    <nav aria-label="Menu">
+      <a href="#servicos" data-i18n="nav.services">Serviços</a>
+      <a href="#setores" data-i18n="nav.sectors">Setores</a>
+      <a href="#metodologia" data-i18n="nav.methodology">Metodologia</a>
+      <a href="#equipa" data-i18n="nav.about">Quem somos</a>
+      <a class="btn" href="#pedir-proposta" data-i18n="nav.proposal">Pedir proposta</a>
+    </nav>
   </div>
 
-  <!-- Hero -->
-  <section id="home" class="bg-white border-b border-ba-line">
-    <div class="max-w-7xl mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-10 items-center py-16 md:py-24">
-      <div>
-        <div class="ba-eyebrow mb-5">Delivering Trust</div>
-        <h1 class="text-3xl md:text-5xl leading-tight text-ba-blue" data-i18n="hero.title">A revisão legal das contas, com independência e rigor.</h1>
-        <p class="mt-6 text-lg text-ba-muted leading-relaxed max-w-xl" data-i18n="hero.identification">A BA AUDIT é a denominação da prática individual de Manuel Borges, Revisor Oficial de Contas, inscrito na OROC sob o n.º 1067. A prática teve início em 1 de outubro de 2026 e tem sede em Almada, com atuação em Portugal.</p>
-        <p class="mt-4 text-ba-gray leading-relaxed max-w-xl" data-i18n="hero.coverage">Acompanhamos empresas em todo o país, bem como grupos e filiais de multinacionais com presença em Portugal. As reuniões são no cliente, em qualquer ponto do território, ou online (Microsoft Teams, Google Meet ou Skype).</p>
-        <div class="mt-8 flex flex-wrap gap-3">
-          <a href="#pedir-proposta" class="ba-btn px-5 sm:px-6 py-3 rounded-sm bg-ba-blue text-white hover:bg-ba-mid" data-i18n="hero.cta1">Pedir proposta</a>
-          <a href="#pedir-proposta" class="ba-btn px-5 sm:px-6 py-3 rounded-sm border border-ba-gold text-ba-blue hover:bg-ba-cream" data-i18n="hero.cta2">Marcar reunião</a>
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-parallax" id="heroParallax">
+        <picture class="hero-fallback" id="heroFallback">
+          <source type="image/webp" sizes="100vw" data-srcset="assets/img/hero-800.webp 800w, assets/img/hero-1600.webp 1600w, assets/img/hero-2560.webp 2560w" />
+          <img alt="" width="2560" height="1440" decoding="async" data-src="assets/img/hero-1600.jpg" data-srcset="assets/img/hero-800.jpg 800w, assets/img/hero-1600.jpg 1600w, assets/img/hero-2560.jpg 2560w" sizes="100vw" />
+        </picture>
+        <noscript>
+          <picture class="hero-fallback">
+            <source type="image/webp" srcset="assets/img/hero-800.webp 800w, assets/img/hero-1600.webp 1600w, assets/img/hero-2560.webp 2560w" sizes="100vw" />
+            <img src="assets/img/hero-1600.jpg" srcset="assets/img/hero-800.jpg 800w, assets/img/hero-1600.jpg 1600w, assets/img/hero-2560.jpg 2560w" sizes="100vw" alt="" width="2560" height="1440" />
+          </picture>
+        </noscript>
+        <img class="hero-poster" src="assets/video/hero-poster.jpg" alt="" width="1920" height="1080" decoding="async" fetchpriority="high" />
+        <video id="heroVideo" class="hero-video" autoplay muted loop playsinline preload="none" poster="assets/video/hero-poster.jpg" width="1920" height="1080" aria-hidden="true"></video>
+        <script>
+          (function () {
+            var v = document.getElementById('heroVideo');
+            if (!v) return;
+            if (document.documentElement.classList.contains('hero-still')) {
+              v.removeAttribute('autoplay');
+              v.preload = 'none';
+              return;
+            }
+            v.preload = 'auto';
+            var webm = document.createElement('source');
+            webm.src = 'assets/video/hero-loop.webm';
+            webm.type = 'video/webm';
+            var mp4 = document.createElement('source');
+            mp4.src = 'assets/video/hero-loop.mp4';
+            mp4.type = 'video/mp4';
+            v.muted = true;
+            v.appendChild(webm);
+            v.appendChild(mp4);
+            var showStill = function () {
+              var pic = document.getElementById('heroFallback');
+              if (!pic || pic.dataset.ready) return;
+              pic.dataset.ready = '1';
+              pic.querySelectorAll('[data-srcset]').forEach(function (el) {
+                el.setAttribute('srcset', el.getAttribute('data-srcset'));
+              });
+              var img = pic.querySelector('img');
+              if (img) {
+                img.src = img.getAttribute('data-src');
+                img.srcset = img.getAttribute('data-srcset');
+              }
+              document.documentElement.classList.add('hero-fallback');
+            };
+            v.addEventListener('error', showStill);
+            v.load();
+            var play = v.play();
+            if (play && play.catch) play.catch(function () {});
+          })();
+        </script>
+      </div>
+      <div class="hero-scrim" aria-hidden="true"></div>
+      <div class="wrap hero-copy">
+        <p class="tagline">Delivering Trust</p>
+        <h1 data-i18n="hero.title">A revisão legal das contas, com independência e rigor.</h1>
+        <div class="actions">
+          <a class="btn" href="#pedir-proposta" data-i18n="hero.cta1">Pedir proposta</a>
+          <a class="btn btn-ghost" href="#pedir-proposta" data-i18n="hero.cta2">Marcar reunião</a>
         </div>
       </div>
-      <div class="relative">
-        <div class="rounded-sm bg-ba-cream border border-ba-line p-8 md:p-10" style="border-left:3px solid #C4A574">
-          <img src="BA_AUDIT_logo_transparent.png" alt="BA AUDIT" class="mx-auto h-32 w-auto"/>
-          <ul class="mt-6 space-y-3 text-ba-gray list-disc pl-5 marker:text-ba-gold">
-            <li data-i18n="hero.list1">Revisão legal das contas e auditoria estatutária</li>
-            <li data-i18n="hero.list2">Outros trabalhos com intervenção legal de um ROC</li>
-            <li data-i18n="hero.list3">Conselhos fiscais</li>
-            <li data-i18n="hero.list4">Due diligence / M&amp;A</li>
-            <li data-i18n="hero.list5">Consultoria e fiscalidade — BA CONSULTING Lda</li>
-          </ul>
+    </section>
+
+    <section class="tone-white">
+      <div class="wrap screen">
+        <p class="statement reveal" data-i18n="hero.identification">A BA AUDIT é a denominação da prática individual de Manuel Borges, Revisor Oficial de Contas, inscrito na OROC sob o n.º 1067. A prática teve início em 1 de outubro de 2026 e tem sede em Almada, com atuação em Portugal.</p>
+      </div>
+    </section>
+
+    <section class="section tone-snow">
+      <div class="wrap">
+        <p class="statement reveal" data-i18n="hero.coverage">Acompanhamos empresas em todo o país, bem como grupos e filiais de multinacionais com presença em Portugal. As reuniões são no cliente, em qualquer ponto do território, ou online (Microsoft Teams, Google Meet ou Skype).</p>
+        <ul class="index-list">
+          <li class="reveal d1" data-i18n="hero.list1">Revisão legal das contas e auditoria estatutária</li>
+          <li class="reveal d2" data-i18n="hero.list2">Outros trabalhos com intervenção legal de um ROC</li>
+          <li class="reveal d3" data-i18n="hero.list3">Conselhos fiscais</li>
+          <li class="reveal d4" data-i18n="hero.list4">Due diligence / M&amp;A</li>
+          <li class="reveal d5" data-i18n="hero.list5">Consultoria e fiscalidade — BA CONSULTING Lda</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="servicos" class="section services" aria-labelledby="servicos-title">
+      <div class="services-bg" aria-hidden="true">
+        <picture>
+          <source type="image/webp" srcset="assets/img/servicos-800.webp 800w, assets/img/servicos-1600.webp 1600w, assets/img/servicos-2560.webp 2560w" sizes="100vw" />
+          <img src="assets/img/servicos-1600.jpg" srcset="assets/img/servicos-800.jpg 800w, assets/img/servicos-1600.jpg 1600w, assets/img/servicos-2560.jpg 2560w" sizes="100vw" alt="" width="2560" height="1440" loading="lazy" decoding="async" />
+        </picture>
+      </div>
+      <div class="services-overlay" aria-hidden="true"></div>
+      <div class="wrap">
+        <h2 id="servicos-title" class="reveal" data-i18n="services.title">Serviços</h2>
+        <p class="sub reveal" data-i18n="services.subtitle">Revisão legal das contas, outros trabalhos com intervenção legal de um ROC, conselhos fiscais e due diligence. A consultoria e a fiscalidade, quando prestadas, são serviços da BA CONSULTING Lda.</p>
+        <div class="cards">
+          <article class="card reveal d1">
+            <h3 data-i18n="services.audit.title">Revisão legal das contas e auditoria estatutária</h3>
+            <p data-i18n="services.audit.text">Revisão legal das contas, auditoria estatutária, auditorias voluntárias, procedimentos acordados, auditorias a subsídios e projetos, e revisão de controlos internos (ISA 315).</p>
+          </article>
+          <article class="card reveal d2">
+            <h3 data-i18n="services.reserved.title">Outros trabalhos com intervenção legal de um ROC</h3>
+            <p data-i18n="services.reserved.text">Outros trabalhos em que a lei exige a intervenção de um Revisor Oficial de Contas.</p>
+          </article>
+          <article class="card reveal d3">
+            <h3 data-i18n="services.boards.title">Conselhos fiscais</h3>
+            <p data-i18n="services.boards.text">Participação em conselhos fiscais.</p>
+          </article>
+          <article class="card reveal d4">
+            <h3 data-i18n="services.dd.title">Due diligence / M&amp;A</h3>
+            <p data-i18n="services.dd.text">Due diligence e apoio em processos de fusões e aquisições.</p>
+          </article>
+          <article class="card reveal d5">
+            <h3 data-i18n="services.consulting.title">Consultoria</h3>
+            <p class="entity" data-i18n="services.entity">BA CONSULTING Lda</p>
+            <p data-i18n="services.consulting.text">Mapeamento e otimização de processos, encerramento contabilístico e fiscal mensal, políticas e manuais.</p>
+          </article>
+          <article class="card reveal d6">
+            <h3 data-i18n="services.tax.title">Fiscalidade</h3>
+            <p class="entity" data-i18n="services.entity">BA CONSULTING Lda</p>
+            <p data-i18n="services.tax.text">Apoio ao cumprimento declarativo, revisão fiscal e consultoria em IVA, IRC e preços de transferência.</p>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Serviços -->
-  <section id="servicos" class="py-20 md:py-28">
-    <div class="max-w-7xl mx-auto px-4 md:px-6">
-      <h2 class="ba-title text-2xl md:text-4xl text-ba-blue" data-i18n="services.title">Serviços</h2>
-      <p class="mt-6 text-ba-muted max-w-3xl leading-relaxed" data-i18n="services.subtitle">Revisão legal das contas, outros trabalhos com intervenção legal de um ROC, conselhos fiscais e due diligence. A consultoria e a fiscalidade, quando prestadas, são serviços da BA CONSULTING Lda.</p>
+    <section class="tone-white" aria-labelledby="independencia-title">
+      <div class="indep-media reveal">
+        <picture>
+          <source type="image/webp" srcset="assets/img/independencia-800.webp 800w, assets/img/independencia-1600.webp 1600w, assets/img/independencia-2560.webp 2560w" sizes="100vw" />
+          <img src="assets/img/independencia-1600.jpg" srcset="assets/img/independencia-800.jpg 800w, assets/img/independencia-1600.jpg 1600w, assets/img/independencia-2560.jpg 2560w" sizes="100vw" alt="" width="2560" height="1440" loading="lazy" decoding="async" />
+        </picture>
+      </div>
+      <div class="wrap indep-copy">
+        <h2 id="independencia-title" class="reveal" data-i18n="independence.title">Independência</h2>
+        <p class="legal reveal" data-i18n="services.independence">A aceitação de qualquer trabalho de consultoria ou de fiscalidade está sujeita a análise prévia de independência e de incompatibilidades. Estes serviços não são prestados a entidades cuja revisão legal das contas esteja a cargo de Manuel Borges (BA AUDIT), nem a entidades com elas relacionadas, quando essa cumulação for incompatível com as normas de independência aplicáveis, nomeadamente o Estatuto da OROC e o Código de Ética. Quando prestados, são-no pela BA CONSULTING Lda, entidade distinta da prática de revisão legal das contas.</p>
+      </div>
+    </section>
 
-      <div class="mt-10 grid md:grid-cols-2 gap-6">
-        <div class="ba-card bg-white rounded-sm p-6 border shadow-soft">
-          <h3 class="text-xl text-ba-blue" data-i18n="services.audit.title">Revisão legal das contas e auditoria estatutária</h3>
-          <p class="mt-2 text-ba-muted leading-relaxed" data-i18n="services.audit.text">Revisão legal das contas, auditoria estatutária, auditorias voluntárias, procedimentos acordados, auditorias a subsídios e projetos, e revisão de controlos internos (ISA 315).</p>
-        </div>
-        <div class="ba-card bg-white rounded-sm p-6 border shadow-soft">
-          <h3 class="text-xl text-ba-blue" data-i18n="services.reserved.title">Outros trabalhos com intervenção legal de um ROC</h3>
-          <p class="mt-2 text-ba-muted leading-relaxed" data-i18n="services.reserved.text">Outros trabalhos em que a lei exige a intervenção de um Revisor Oficial de Contas.</p>
-        </div>
-        <div class="ba-card bg-white rounded-sm p-6 border shadow-soft">
-          <h3 class="text-xl text-ba-blue" data-i18n="services.boards.title">Conselhos fiscais</h3>
-          <p class="mt-2 text-ba-muted leading-relaxed" data-i18n="services.boards.text">Participação em conselhos fiscais.</p>
-        </div>
-        <div class="ba-card bg-white rounded-sm p-6 border shadow-soft">
-          <h3 class="text-xl text-ba-blue" data-i18n="services.dd.title">Due diligence / M&amp;A</h3>
-          <p class="mt-2 text-ba-muted leading-relaxed" data-i18n="services.dd.text">Due diligence e apoio em processos de fusões e aquisições.</p>
-        </div>
-        <div class="ba-card bg-white rounded-sm p-6 border shadow-soft">
-          <h3 class="text-xl text-ba-blue" data-i18n="services.consulting.title">Consultoria</h3>
-          <p class="mt-1 text-sm font-semibold tracking-wide text-ba-gold" data-i18n="services.entity">BA CONSULTING Lda</p>
-          <p class="mt-2 text-ba-muted leading-relaxed" data-i18n="services.consulting.text">Mapeamento e otimização de processos, encerramento contabilístico e fiscal mensal, políticas e manuais.</p>
-        </div>
-        <div class="ba-card bg-white rounded-sm p-6 border shadow-soft">
-          <h3 class="text-xl text-ba-blue" data-i18n="services.tax.title">Fiscalidade</h3>
-          <p class="mt-1 text-sm font-semibold tracking-wide text-ba-gold" data-i18n="services.entity">BA CONSULTING Lda</p>
-          <p class="mt-2 text-ba-muted leading-relaxed" data-i18n="services.tax.text">Apoio ao cumprimento declarativo, revisão fiscal e consultoria em IVA, IRC e preços de transferência.</p>
+    <section id="setores" class="section tone-snow" aria-labelledby="setores-title">
+      <div class="wrap">
+        <h2 id="setores-title" class="reveal" data-i18n="sectors.title">Setores de atuação</h2>
+        <p class="sub reveal" data-i18n="sectors.subtitle">Experiência com grupos nacionais e internacionais em diversos setores de atividade.</p>
+        <ul class="sector-list">
+          <li class="reveal d1" data-i18n="sectors.item1">Hotéis &amp; Turismo</li>
+          <li class="reveal d2" data-i18n="sectors.item2">Retalho &amp; e‑Commerce</li>
+          <li class="reveal d3" data-i18n="sectors.item3">Serviços &amp; Tecnologias</li>
+          <li class="reveal d4" data-i18n="sectors.item4">Indústria &amp; Logística</li>
+          <li class="reveal d5" data-i18n="sectors.item5">Saúde &amp; Educação</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="metodologia" class="section tone-ink" aria-labelledby="metodologia-title">
+      <div class="wrap">
+        <h2 id="metodologia-title" class="reveal" data-i18n="method.title">A nossa Metodologia</h2>
+        <div class="steps">
+          <article class="step reveal d1">
+            <h3 data-i18n="method.step1.title">1. Entendimento &amp; Riscos</h3>
+            <p data-i18n="method.step1.text">Compreensão do negócio e identificação de riscos significativos (ISA 315) para planear procedimentos eficientes.</p>
+          </article>
+          <article class="step reveal d2">
+            <h3 data-i18n="method.step2.title">2. Controlos</h3>
+            <p data-i18n="method.step2.text">Testes a controlos chave e análises substantivas (amostragem, outliers, tendências).</p>
+          </article>
+          <article class="step reveal d3">
+            <h3 data-i18n="method.step3.title">3. Evidência &amp; Conclusões</h3>
+            <p data-i18n="method.step3.text">Documentação clara de evidência, papéis de trabalho e conclusões alinhadas com as Normas internacionais de auditoria (ISA) e o normativo contabilístico nacional (SNC) e internacional (IFRS).</p>
+          </article>
+          <article class="step reveal d4">
+            <h3 data-i18n="method.step4.title">4. Recomendações</h3>
+            <p data-i18n="method.step4.text">Relatórios com oportunidades de melhoria, cumprimento dos prazos, priorizando a eficiência e o compliance.</p>
+          </article>
         </div>
       </div>
+    </section>
 
-      <div class="mt-8 border border-ba-line bg-white rounded-sm p-6 md:p-8" style="border-left:3px solid #C4A574">
-        <p class="text-sm leading-relaxed text-ba-gray" data-i18n="services.independence">A aceitação de qualquer trabalho de consultoria ou de fiscalidade está sujeita a análise prévia de independência e de incompatibilidades. Estes serviços não são prestados a entidades cuja revisão legal das contas esteja a cargo de Manuel Borges (BA AUDIT), nem a entidades com elas relacionadas, quando essa cumulação for incompatível com as normas de independência aplicáveis, nomeadamente o Estatuto da OROC e o Código de Ética. Quando prestados, são-no pela BA CONSULTING Lda, entidade distinta da prática de revisão legal das contas.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Setores -->
-  <section id="setores" class="py-20 md:py-28 bg-white border-y border-ba-line">
-    <div class="max-w-7xl mx-auto px-4 md:px-6">
-      <h2 class="ba-title text-2xl md:text-4xl text-ba-blue" data-i18n="sectors.title">Setores de atuação</h2>
-      <p class="mt-6 text-ba-muted max-w-3xl leading-relaxed" data-i18n="sectors.subtitle">Experiência com grupos nacionais e internacionais em diversos setores de atividade.</p>
-      <div class="mt-10 grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-        <div class="p-5 border border-ba-line rounded-sm bg-ba-cream" data-i18n="sectors.item1">Hotéis &amp; Turismo</div>
-        <div class="p-5 border border-ba-line rounded-sm bg-ba-cream" data-i18n="sectors.item2">Retalho &amp; e‑Commerce</div>
-        <div class="p-5 border border-ba-line rounded-sm bg-ba-cream" data-i18n="sectors.item3">Serviços &amp; Tecnologias</div>
-        <div class="p-5 border border-ba-line rounded-sm bg-ba-cream" data-i18n="sectors.item4">Indústria &amp; Logística</div>
-        <div class="p-5 border border-ba-line rounded-sm bg-ba-cream" data-i18n="sectors.item5">Saúde &amp; Educação</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Metodologia -->
-  <section id="metodologia" class="py-20 md:py-28">
-    <div class="max-w-7xl mx-auto px-4 md:px-6">
-      <h2 class="ba-title text-2xl md:text-4xl text-ba-blue" data-i18n="method.title">A nossa Metodologia</h2>
-      <div class="mt-10 grid md:grid-cols-4 gap-6">
-        <div class="ba-card bg-white rounded-sm p-6 border shadow-soft">
-          <div class="text-ba-blue font-serif text-lg" data-i18n="method.step1.title">1. Entendimento &amp; Riscos</div>
-          <p class="mt-2 text-ba-muted leading-relaxed" data-i18n="method.step1.text">Compreensão do negócio e identificação de riscos significativos (ISA 315) para planear procedimentos eficientes.</p>
-        </div>
-        <div class="ba-card bg-white rounded-sm p-6 border shadow-soft">
-          <div class="text-ba-blue font-serif text-lg" data-i18n="method.step2.title">2. Controlos</div>
-          <p class="mt-2 text-ba-muted leading-relaxed" data-i18n="method.step2.text">Testes a controlos chave e análises substantivas (amostragem, outliers, tendências).</p>
-        </div>
-        <div class="ba-card bg-white rounded-sm p-6 border shadow-soft">
-          <div class="text-ba-blue font-serif text-lg" data-i18n="method.step3.title">3. Evidência &amp; Conclusões</div>
-          <p class="mt-2 text-ba-muted leading-relaxed" data-i18n="method.step3.text">Documentação clara de evidência, papéis de trabalho e conclusões alinhadas com as Normas internacionais de auditoria (ISA) e o normativo contabilístico nacional (SNC) e internacional (IFRS).</p>
-        </div>
-        <div class="ba-card bg-white rounded-sm p-6 border shadow-soft">
-          <div class="text-ba-blue font-serif text-lg" data-i18n="method.step4.title">4. Recomendações</div>
-          <p class="mt-2 text-ba-muted leading-relaxed" data-i18n="method.step4.text">Relatórios com oportunidades de melhoria, cumprimento dos prazos, priorizando a eficiência e o compliance.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Quem somos -->
-  <section id="equipa" class="py-20 md:py-28 bg-white border-y border-ba-line">
-    <div class="max-w-7xl mx-auto px-4 md:px-6">
-      <h2 class="ba-title text-2xl md:text-4xl text-ba-blue" data-i18n="about.title">Quem somos</h2>
-      <p class="mt-6 text-ba-muted max-w-4xl leading-relaxed" data-i18n="about.identification">A BA AUDIT é a denominação da prática individual de Manuel Borges, Revisor Oficial de Contas, inscrito na OROC sob o n.º 1067. A prática teve início em 1 de outubro de 2026 e tem sede em Almada, com atuação em Portugal.</p>
-
-      <div class="mt-10 grid md:grid-cols-[280px_1fr] gap-8 items-start">
-        <div>
-          <img src="Foto_MB.png" alt="Manuel Borges, Revisor Oficial de Contas" data-i18n-alt="about.photoAlt" class="w-full max-w-xs object-cover rounded-sm border border-ba-line" style="border-top:2px solid #C4A574">
-          <div class="mt-4 font-serif text-xl text-ba-blue" data-i18n="about.name">Manuel Borges</div>
-          <div class="mt-1 text-ba-blue" data-i18n="about.role">Revisor Oficial de Contas</div>
-        </div>
-        <p class="text-ba-muted leading-relaxed" data-i18n="about.bio">Manuel Borges é Revisor Oficial de Contas, inscrito na OROC sob o n.º 1067 desde 2000 e registado na CMVM sob o n.º 20160679. Dirige a BA AUDIT, prática individual com sede em Almada e atuação em todo o território nacional. Acompanha empresas em todo o país, bem como grupos e filiais de multinacionais com presença em Portugal, e realiza reuniões no cliente ou online. Exerceu funções de responsabilidade em firma multinacional de auditoria e consultoria, em Portugal e no estrangeiro, junto de grupos e de empresas de diversos setores — entre os quais o imobiliário, a distribuição e o comércio, o grande consumo, as telecomunicações, a logística, a energia e a hotelaria. Teve também experiência em empresas públicas e em Angola. O trabalho é feito com independência, rigor e proximidade.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Call to action -->
-  <section class="py-16 md:py-20">
-    <div class="max-w-7xl mx-auto px-4 md:px-6">
-      <div class="bg-ba-blue text-white p-8 md:p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6" style="border-top:2px solid #C4A574">
-        <div>
-          <h3 class="text-2xl" data-i18n="cta.title">Pedir proposta</h3>
-          <p class="mt-2 text-white/90 leading-relaxed" data-i18n="cta.text">Acompanhamos empresas em todo o país. As reuniões são no cliente, em qualquer ponto do território, ou online.</p>
-        </div>
-        <div class="flex flex-wrap gap-3">
-          <a href="#pedir-proposta" class="ba-btn px-6 py-3 rounded-sm bg-white text-ba-blue hover:bg-ba-cream" data-i18n="cta.primary">Pedir proposta</a>
-          <a href="#pedir-proposta" class="ba-btn px-6 py-3 rounded-sm border border-ba-gold text-white hover:bg-ba-mid" data-i18n="cta.secondary">Marcar reunião</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contactos / pedido de proposta -->
-  <section id="contactos" class="py-20 md:py-28 bg-white border-t border-ba-line">
-    <div id="pedir-proposta" class="max-w-7xl mx-auto px-4 md:px-6">
-      <h2 class="ba-title text-2xl md:text-4xl text-ba-blue" data-i18n="contact.title">Contactos</h2>
-      <p class="mt-6 text-ba-muted max-w-3xl leading-relaxed" data-i18n="contact.intro">Para pedir uma proposta ou marcar uma reunião, utilize os formulários do sítio ou escreva para info@ba-audit.pt. Acompanhamos empresas em todo o país. As reuniões são no cliente, em qualquer ponto do território, ou online. A morada abaixo é a identificação legal da prática; não é local de reunião.</p>
-      <p class="mt-4 text-sm text-ba-gray leading-relaxed" data-i18n="footer.address">BA AUDIT – Rua São Salvador da Baía, 7, 1D - 2800-201 Almada</p>
-      <p class="text-sm text-ba-gray leading-relaxed" data-i18n="footer.registration">Manuel Borges, ROC, inscrito na OROC sob o n.º 1067 e registado na CMVM sob o n.º 20160679</p>
-
-      <div class="mt-10 grid md:grid-cols-2 gap-8 md:items-start">
-        <form id="contactForm" class="bg-ba-cream border border-ba-line rounded-sm p-6 shadow-soft">
-          <div class="grid sm:grid-cols-2 gap-4">
-            <div>
-              <label class="block text-sm mb-1" data-i18n="contact.name">Nome</label>
-              <input required name="user_name" type="text" class="w-full rounded-sm border border-ba-line bg-white px-3 py-2"/>
-            </div>
-            <div>
-              <label class="block text-sm mb-1" data-i18n="contact.email">Email</label>
-              <input required name="user_email" type="email" class="w-full rounded-sm border border-ba-line bg-white px-3 py-2"/>
-            </div>
-            <div class="sm:col-span-2">
-              <label class="block text-sm mb-1" data-i18n="contact.company">Empresa</label>
-              <input name="company" type="text" class="w-full rounded-sm border border-ba-line bg-white px-3 py-2"/>
-            </div>
-            <div class="sm:col-span-2">
-              <label class="block text-sm mb-1" data-i18n="contact.message">Mensagem</label>
-              <textarea required name="message" rows="4" class="w-full rounded-sm border border-ba-line bg-white px-3 py-2"></textarea>
-            </div>
-            <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off"/>
+    <section id="equipa" class="section tone-white" aria-labelledby="equipa-title">
+      <div class="wrap">
+        <h2 id="equipa-title" class="reveal" data-i18n="about.title">Quem somos</h2>
+        <div class="about-grid">
+          <figure class="reveal">
+            <picture>
+              <source type="image/webp" srcset="assets/img/manuel.webp" />
+              <img class="portrait" src="assets/img/manuel.jpg" alt="Manuel Borges, Revisor Oficial de Contas" data-i18n-alt="about.photoAlt" width="292" height="372" loading="lazy" decoding="async" />
+            </picture>
+            <figcaption>
+              <div class="name" data-i18n="about.name">Manuel Borges</div>
+              <hr class="rule" />
+              <div class="role" data-i18n="about.role">Revisor Oficial de Contas</div>
+            </figcaption>
+          </figure>
+          <div class="reveal d2">
+            <p class="prose" data-i18n="about.identification">A BA AUDIT é a denominação da prática individual de Manuel Borges, Revisor Oficial de Contas, inscrito na OROC sob o n.º 1067. A prática teve início em 1 de outubro de 2026 e tem sede em Almada, com atuação em Portugal.</p>
+            <p class="prose" data-i18n="about.bio">Manuel Borges é Revisor Oficial de Contas, inscrito na OROC sob o n.º 1067 desde 2000 e registado na CMVM sob o n.º 20160679. Dirige a BA AUDIT, prática individual com sede em Almada e atuação em todo o território nacional. Acompanha empresas em todo o país, bem como grupos e filiais de multinacionais com presença em Portugal, e realiza reuniões no cliente ou online. Exerceu funções de responsabilidade em firma multinacional de auditoria e consultoria, em Portugal e no estrangeiro, junto de grupos e de empresas de diversos setores — entre os quais o imobiliário, a distribuição e o comércio, o grande consumo, as telecomunicações, a logística, a energia e a hotelaria. Teve também experiência em empresas públicas e em Angola. O trabalho é feito com independência, rigor e proximidade.</p>
           </div>
-          <button id="submitBtn" class="ba-btn mt-4 px-6 py-3 rounded-sm bg-ba-blue text-white hover:bg-ba-mid" data-i18n="contact.send">Enviar</button>
-          <p id="formStatus" class="mt-3 text-sm text-ba-muted"></p>
-          <p class="mt-1 text-xs text-ba-muted" data-i18n="contact.privacy">Ao enviar, concorda com a nossa política de privacidade.</p>
-        </form>
-        <div class="bg-white rounded-sm p-6 border border-ba-line shadow-soft ba-card">
-          <h3 class="text-xl text-ba-blue">BA AUDIT</h3>
-          <p class="mt-2 text-ba-muted" data-i18n="contact.location">Lisboa, Portugal</p>
-          <p class="mt-2"><a class="text-ba-blue underline decoration-ba-gold underline-offset-2" href="mailto:info@ba-audit.pt">info@ba-audit.pt</a></p>
-          <p class="mt-1"><a class="text-ba-blue" href="tel:+351917647323">+351 917 647 323</a></p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <footer class="ba-footer border-t border-ba-line bg-ba-cream" style="border-top:3px solid #0E2744">
-    <div class="max-w-7xl mx-auto px-4 md:px-6 py-12">
-      <div class="text-ba-blue font-semibold tracking-[.2em]">BA&nbsp;AUDIT</div>
-      <div class="mt-1 font-serif italic text-ba-gold">Delivering Trust</div>
-      <p class="mt-4 text-sm text-ba-muted leading-relaxed" data-i18n="footer.address">BA AUDIT – Rua São Salvador da Baía, 7, 1D - 2800-201 Almada</p>
-      <p class="text-sm text-ba-muted leading-relaxed" data-i18n="footer.registration">Manuel Borges, ROC, inscrito na OROC sob o n.º 1067 e registado na CMVM sob o n.º 20160679</p>
-    </div>
-    <div class="border-t border-ba-line">
-      <div class="max-w-7xl mx-auto px-4 md:px-6 py-6 flex flex-col md:flex-row gap-6 md:items-center md:justify-between">
-        <div class="flex items-center gap-3">
-          <img src="BA_AUDIT_logo_transparent.png" class="h-7" alt="BA AUDIT"/>
-          <span class="text-sm">© <span id="y"></span> <span data-i18n="footer.copy"> BA AUDIT. Todos os direitos reservados.</span></span>
+    <section class="band" aria-labelledby="cta-title">
+      <picture>
+        <source type="image/webp" srcset="assets/img/faixa-800.webp 800w, assets/img/faixa-1600.webp 1600w, assets/img/faixa-2560.webp 2560w" sizes="100vw" />
+        <img src="assets/img/faixa-1600.jpg" srcset="assets/img/faixa-800.jpg 800w, assets/img/faixa-1600.jpg 1600w, assets/img/faixa-2560.jpg 2560w" sizes="100vw" alt="" width="2560" height="1099" loading="lazy" decoding="async" />
+      </picture>
+      <div class="wrap band-copy">
+        <h2 id="cta-title" class="reveal" data-i18n="cta.title">Pedir proposta</h2>
+        <p class="sub reveal" data-i18n="cta.text">Acompanhamos empresas em todo o país. As reuniões são no cliente, em qualquer ponto do território, ou online.</p>
+        <div class="actions reveal">
+          <a class="btn" href="#pedir-proposta" data-i18n="cta.primary">Pedir proposta</a>
+          <a class="btn btn-ghost" href="#pedir-proposta" data-i18n="cta.secondary">Marcar reunião</a>
         </div>
-        <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+      </div>
+    </section>
+
+    <section id="contactos" class="section tone-snow" aria-labelledby="contactos-title">
+      <div id="pedir-proposta" class="wrap">
+        <h2 id="contactos-title" class="reveal" data-i18n="contact.title">Contactos</h2>
+        <p class="prose reveal" style="margin-top:22px" data-i18n="contact.intro">Para pedir uma proposta ou marcar uma reunião, utilize os formulários do sítio ou escreva para info@ba-audit.pt. Acompanhamos empresas em todo o país. As reuniões são no cliente, em qualquer ponto do território, ou online. A morada abaixo é a identificação legal da prática; não é local de reunião.</p>
+        <p class="fine" data-i18n="footer.address">BA AUDIT – Rua São Salvador da Baía, 7, 1D - 2800-201 Almada</p>
+        <p class="fine" data-i18n="footer.registration">Manuel Borges, ROC, inscrito na OROC sob o n.º 1067 e registado na CMVM sob o n.º 20160679</p>
+
+        <div class="contact-grid">
+          <form id="contactForm" class="form reveal">
+            <div class="fields">
+              <div class="field">
+                <label for="user_name" data-i18n="contact.name">Nome</label>
+                <input id="user_name" required name="user_name" type="text" autocomplete="name" />
+              </div>
+              <div class="field">
+                <label for="user_email" data-i18n="contact.email">Email</label>
+                <input id="user_email" required name="user_email" type="email" autocomplete="email" />
+              </div>
+              <div class="field span-2">
+                <label for="company" data-i18n="contact.company">Empresa</label>
+                <input id="company" name="company" type="text" autocomplete="organization" />
+              </div>
+              <div class="field span-2">
+                <label for="message" data-i18n="contact.message">Mensagem</label>
+                <textarea id="message" required name="message" rows="4"></textarea>
+              </div>
+              <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+            </div>
+            <button id="submitBtn" class="btn btn-dark" type="submit" data-i18n="contact.send">Enviar</button>
+            <p id="formStatus" role="status" aria-live="polite"></p>
+            <p class="privacy" data-i18n="contact.privacy">Ao enviar, concorda com a nossa política de privacidade.</p>
+          </form>
+          <aside class="panel reveal d2">
+            <h3 data-i18n="brand">BA AUDIT</h3>
+            <p data-i18n="contact.location">Lisboa, Portugal</p>
+            <p><a href="mailto:info@ba-audit.pt">info@ba-audit.pt</a></p>
+            <p><a href="tel:+351917647323">+351 917 647 323</a></p>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-brand" data-i18n="brand">BA AUDIT</div>
+      <div class="tagline">Delivering Trust</div>
+      <p class="footer-address" data-i18n="footer.address">BA AUDIT – Rua São Salvador da Baía, 7, 1D - 2800-201 Almada</p>
+      <p class="footer-address" data-i18n="footer.registration">Manuel Borges, ROC, inscrito na OROC sob o n.º 1067 e registado na CMVM sob o n.º 20160679</p>
+    </div>
+    <div class="footer-bottom">
+      <div class="wrap footer-bottom-inner">
+        <span>© <span id="y"></span> <span data-i18n="footer.copy"> BA AUDIT. Todos os direitos reservados.</span></span>
+        <nav class="footer-links" aria-label="Menu">
           <a href="https://www.iubenda.com/privacy-policy/47280304" class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe" title="Política de Privacidade" data-i18n="footer.privacy">Política de Privacidade</a>
           <a href="https://www.iubenda.com/privacy-policy/47280304/cookie-policy" class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe" title="Política de Cookies" data-i18n="footer.cookies">Política de Cookies</a>
           <a href="#pedir-proposta" data-i18n="nav.proposal">Pedir proposta</a>
-        </div>
+        </nav>
       </div>
     </div>
   </footer>
@@ -324,11 +1011,12 @@
 
   <!-- i18n -->
   <script>
-    const i18n = {
+        const i18n = {
       pt: {
         'meta.title': 'BA AUDIT — Revisão legal das contas',
         'meta.description': 'A BA AUDIT é a denominação da prática individual de Manuel Borges, Revisor Oficial de Contas, inscrito na OROC sob o n.º 1067. Revisão legal das contas, com independência e rigor. Delivering Trust.',
         brand: 'BA AUDIT',
+        'independence.title': 'Independência',
         'nav.services': 'Serviços',
         'nav.sectors': 'Setores',
         'nav.methodology': 'Metodologia',
@@ -408,6 +1096,7 @@
         'meta.title': 'BA AUDIT — Statutory audit',
         'meta.description': 'BA AUDIT is the trading name of the individual practice of Manuel Borges, Statutory Auditor (Revisor Oficial de Contas), registered with the OROC under no. 1067. Statutory audit, with independence and rigour. Delivering Trust.',
         brand: 'BA AUDIT',
+        'independence.title': 'Independence',
         'nav.services': 'Services',
         'nav.sectors': 'Sectors',
         'nav.methodology': 'Methodology',
@@ -501,23 +1190,113 @@
         const key = el.getAttribute('data-i18n-alt');
         if(i18n[lang][key] !== undefined){ el.setAttribute('alt', i18n[lang][key]); }
       });
-      document.getElementById('lang-pt')?.classList.toggle('font-bold', lang==='pt');
-      document.getElementById('lang-en')?.classList.toggle('font-bold', lang==='en');
+      document.getElementById('lang-pt')?.classList.toggle('is-active', lang==='pt');
+      document.getElementById('lang-en')?.classList.toggle('is-active', lang==='en');
+      document.getElementById('lang-pt')?.setAttribute('aria-pressed', lang==='pt' ? 'true' : 'false');
+      document.getElementById('lang-en')?.setAttribute('aria-pressed', lang==='en' ? 'true' : 'false');
       document.getElementById('mlang-pt')?.classList.toggle('font-bold', lang==='pt');
       document.getElementById('mlang-en')?.classList.toggle('font-bold', lang==='en');
+    }
+
+    function closeNav(){
+      const mobile = document.getElementById('mobileNav');
+      const btn = document.getElementById('navBtn');
+      mobile.classList.remove('open');
+      mobile.setAttribute('aria-hidden', 'true');
+      mobile.inert = true;
+      btn.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('nav-open');
+    }
+
+    function openNav(){
+      const mobile = document.getElementById('mobileNav');
+      const btn = document.getElementById('navBtn');
+      mobile.classList.add('open');
+      mobile.setAttribute('aria-hidden', 'false');
+      mobile.inert = false;
+      btn.setAttribute('aria-expanded', 'true');
+      document.body.classList.add('nav-open');
     }
 
     window.addEventListener('DOMContentLoaded', () => {
       applyI18n('pt');
       const btn = document.getElementById('navBtn');
       const mobile = document.getElementById('mobileNav');
-      btn?.addEventListener('click', () => mobile.classList.toggle('hidden'));
+      btn?.addEventListener('click', () => {
+        const open = btn.getAttribute('aria-expanded') === 'true';
+        if (open) { closeNav(); }
+        else {
+          openNav();
+          mobile.querySelector('a')?.focus();
+        }
+      });
       document.getElementById('y').textContent = new Date().getFullYear();
       document.getElementById('lang-pt')?.addEventListener('click', ()=>applyI18n('pt'));
       document.getElementById('lang-en')?.addEventListener('click', ()=>applyI18n('en'));
       document.getElementById('mlang-pt')?.addEventListener('click', ()=>applyI18n('pt'));
       document.getElementById('mlang-en')?.addEventListener('click', ()=>applyI18n('en'));
-      document.querySelectorAll('#mobileNav a').forEach(a => a.addEventListener('click', () => mobile.classList.add('hidden')));
+      document.querySelectorAll('#mobileNav a').forEach(a => a.addEventListener('click', () => closeNav()));
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeNav(); });
+      window.addEventListener('resize', () => { if (window.innerWidth >= 980) closeNav(); });
+
+      const reduceMq = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const clearMotion = () => {
+        document.documentElement.classList.remove('anim');
+        document.documentElement.classList.add('hero-still');
+        document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+        const parallax = document.getElementById('heroParallax');
+        if (parallax) parallax.style.transform = '';
+        const heroVideo = document.getElementById('heroVideo');
+        if (heroVideo) {
+          heroVideo.pause();
+          heroVideo.removeAttribute('autoplay');
+          heroVideo.querySelectorAll('source').forEach(source => source.remove());
+          heroVideo.load();
+        }
+      };
+      if (!reduceMq.matches && 'IntersectionObserver' in window) {
+        const nodes = Array.from(document.querySelectorAll('.reveal'));
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach(e => {
+            if (e.isIntersecting) {
+              e.target.classList.add('in');
+              io.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0, rootMargin: '0px 0px -6% 0px' });
+        nodes.forEach(el => io.observe(el));
+        // Fast scrolls can pass a section between observer callbacks.
+        // Anything already inside the viewport is revealed on the next frame.
+        const revealInView = () => {
+          const limit = (window.innerHeight || 0) * 0.92;
+          nodes.forEach(el => {
+            if (el.classList.contains('in')) return;
+            if (el.getBoundingClientRect().top < limit) el.classList.add('in');
+          });
+        };
+        revealInView();
+        window.addEventListener('scroll', () => requestAnimationFrame(revealInView), { passive: true });
+        window.addEventListener('resize', revealInView);
+        window.addEventListener('hashchange', revealInView);
+
+        const parallax = document.getElementById('heroParallax');
+        if (parallax) {
+          let ticking = false;
+          window.addEventListener('scroll', () => {
+            if (ticking) return;
+            ticking = true;
+            requestAnimationFrame(() => {
+              const y = window.scrollY || 0;
+              const shift = Math.min(y * 0.15, 80);
+              parallax.style.transform = 'translate3d(0,' + shift + 'px,0)';
+              ticking = false;
+            });
+          }, { passive: true });
+        }
+      } else {
+        clearMotion();
+      }
+      reduceMq.addEventListener?.('change', (e) => { if (e.matches) clearMotion(); });
     });
   </script>
 
