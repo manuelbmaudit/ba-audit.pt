@@ -20,7 +20,7 @@ window.__BA_PUBS = [
     "id": "tributacao-autonoma-2026",
     "date": "2026-11-13",
     "title": "Tributação autónoma: cinco perguntas antes do fecho de 2026.",
-    "titleEn": "Autonomous taxation: five questions before the close of 2026.",
+    "titleEn": "Autonomous taxation: five questions before the 2026 year-end close.",
     "summary": [
       "Tributação autónoma: cinco perguntas antes do fecho de 2026.",
       "É um imposto que se paga mesmo sem lucro e que depende das despesas do ano."
@@ -44,7 +44,7 @@ window.__BA_PUBS = [
     "id": "inventario-obsoleto",
     "date": "2026-11-11",
     "title": "Inventário obsoleto: o valor no balanço ainda é recuperável?",
-    "titleEn": "Obsolete inventory: is the balance-sheet amount still recoverable?",
+    "titleEn": "Obsolete inventory: is its carrying amount still recoverable?",
     "summary": [
       "Inventário obsoleto: o valor no balanço ainda é recuperável?",
       "Artigos sem rotação, danificados ou descontinuados devem ser mensurados ao valor realizável líquido quando este é inferior ao custo."
@@ -56,7 +56,7 @@ window.__BA_PUBS = [
     "id": "creditos-cobranca-duvidosa",
     "date": "2026-11-10",
     "title": "Faturas por cobrar: o IRC e o IVA podem já ter sido pagos sobre receita que não entrou.",
-    "titleEn": "Uncollected invoices: corporate income tax and VAT may already have been paid on revenue that never came in.",
+    "titleEn": "Unpaid invoices: corporate income tax and VAT may already have been paid on revenue not yet collected.",
     "summary": [
       "Faturas por cobrar: o IRC e o IVA podem já ter sido pagos sobre receita que não entrou.",
       "A lei permite reconhecer fiscalmente a imparidade de créditos em mora e recuperar o IVA liquidado, desde que existam provas objetivas e diligências de cobrança documentadas."
@@ -68,7 +68,7 @@ window.__BA_PUBS = [
     "id": "prazos-9-13-novembro",
     "date": "2026-11-09",
     "title": "Prazos fiscais e contributivos da semana de 9 a 13 de novembro",
-    "titleEn": "Tax and social-security deadlines for the week of 9 to 13 November",
+    "titleEn": "Tax and social-security deadlines for the week of 9–13 November 2026",
     "summary": [
       "Prazos fiscais e contributivos da semana de 9 a 13 de novembro.",
       "Até 10 de novembro: Declaração Mensal de Remunerações à AT e declaração de remunerações à Segurança Social, para quem ainda não aderiu ao novo ciclo contributivo."
@@ -80,7 +80,7 @@ window.__BA_PUBS = [
     "id": "pagamento-por-conta-irc",
     "date": null,
     "title": "A 3.ª prestação do pagamento por conta de IRC vence a 15 de dezembro.",
-    "titleEn": "The third corporate-tax payment on account is due on 15 December.",
+    "titleEn": "The third corporate income tax payment on account is due on 15 December 2026.",
     "summary": [
       "A 3.ª prestação do pagamento por conta de IRC vence a 15 de dezembro.",
       "E pode não ter de ser paga por inteiro."
@@ -92,7 +92,7 @@ window.__BA_PUBS = [
     "id": "beneficios-fiscais-2026",
     "date": null,
     "title": "Benefícios fiscais a não deixar caducar em 2026",
-    "titleEn": "Tax incentives not to let lapse in 2026",
+    "titleEn": "Tax benefits not to let lapse in 2026",
     "summary": [
       "Há benefícios fiscais que se decidem antes de 31 de dezembro.",
       "SIFIDE II, RFAI, incentivo à capitalização das empresas e incentivo à valorização salarial: em todos, o que se faz ou documenta até ao fecho do ano pesa no IRC de 2026."
@@ -104,7 +104,7 @@ window.__BA_PUBS = [
     "id": "roc-obrigatorio",
     "date": null,
     "title": "A sua empresa pode já ser obrigada a ter ROC — e não saber.",
-    "titleEn": "Your company may already be required to have a statutory auditor — and not know it.",
+    "titleEn": "Your company may already be required to have a statutory auditor without knowing it.",
     "summary": [
       "A sua empresa pode já ser obrigada a ter ROC — e não saber.",
       "Em 2026 subiram os limites das micro, pequenas e médias entidades do SNC."
