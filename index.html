@@ -274,8 +274,48 @@
     padding: calc(var(--nav-offset) + 12px) 0 56px;
     background: var(--black);
     color: #fff;
+    overflow: hidden;
+  }
+  .hero-media {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    background: var(--black);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1.1s cubic-bezier(.22, 1, .36, 1);
+  }
+  .hero-media.is-on,
+  html:not(.anim) .hero-media {
+    opacity: 1;
+  }
+  .hero-poster,
+  .hero-poster img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .hero-media-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(0,0,0,.50) 0%, rgba(0,0,0,.28) 42%, rgba(0,0,0,.58) 100%);
   }
   .hero-layout {
+    position: relative;
+    z-index: 2;
     width: var(--wrap);
     margin-inline: auto;
     display: flex;
@@ -797,6 +837,8 @@
       opacity: 0 !important;
       animation: none !important;
     }
+    .hero-media { opacity: 1 !important; }
+    .hero-video { display: none !important; }
   }
 </style>
 <script>
@@ -846,6 +888,18 @@
 
   <main>
     <section class="hero" id="home">
+      <div class="hero-media" aria-hidden="true">
+        <picture class="hero-poster">
+          <source type="image/webp" srcset="assets/img/hero-fachada-1280.webp 1280w, assets/img/hero-fachada-1920.webp 1920w" sizes="100vw" />
+          <img src="assets/img/hero-fachada-1920.jpg" srcset="assets/img/hero-fachada-1280.jpg 1280w, assets/img/hero-fachada-1920.jpg 1920w" sizes="100vw" alt="" width="1920" height="1080" decoding="async" />
+        </picture>
+        <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="metadata" poster="assets/img/hero-fachada-1920.jpg">
+          <source src="assets/video/hero-fachada-1920.webm" type="video/webm" media="(min-width: 980px)">
+          <source src="assets/video/hero-fachada-1920.mp4" type="video/mp4" media="(min-width: 980px)">
+          <source src="assets/video/hero-fachada-1280.mp4" type="video/mp4">
+        </video>
+        <div class="hero-media-overlay"></div>
+      </div>
       <div class="hero-layout">
 <svg id="logoLockup" class="logo-lockup" viewBox="670 190 580 660" width="580" height="660" role="img" aria-label="BA AUDIT, Delivering Trust" preserveAspectRatio="xMidYMid meet">
   <title>BA AUDIT — Delivering Trust</title>
@@ -1581,6 +1635,34 @@
 
       const logo = document.getElementById('logoLockup');
       const reduceMq = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const heroMedia = document.querySelector('.hero-media');
+      const heroVideo = document.getElementById('heroVideo');
+      const pickHeroSrc = () => {
+        if (window.matchMedia('(max-width: 979px)').matches) {
+          return 'assets/video/hero-fachada-1280.mp4';
+        }
+        const probe = document.createElement('video');
+        if (probe.canPlayType('video/webm; codecs="vp9"')) {
+          return 'assets/video/hero-fachada-1920.webm';
+        }
+        return 'assets/video/hero-fachada-1920.mp4';
+      };
+      const stopHeroVideo = () => {
+        if (!heroVideo) return;
+        heroVideo.pause();
+        heroVideo.removeAttribute('src');
+        heroVideo.querySelectorAll('source').forEach((s) => s.removeAttribute('src'));
+        try { heroVideo.load(); } catch (e) {}
+      };
+      const revealHeroVideo = () => {
+        if (!heroMedia || heroMedia.classList.contains('is-on')) return;
+        if (heroVideo) {
+          try { heroVideo.currentTime = 0; } catch (e) {}
+          const playPromise = heroVideo.play();
+          if (playPromise && playPromise.catch) playPromise.catch(() => {});
+        }
+        heroMedia.classList.add('is-on');
+      };
       const clearMotion = () => {
         document.documentElement.classList.remove('anim');
         document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
@@ -1588,9 +1670,29 @@
           logo.classList.remove('play');
           logo.classList.add('is-final');
         }
+        stopHeroVideo();
       };
+      if (heroVideo && !reduceMq.matches) {
+        heroVideo.autoplay = false;
+        heroVideo.preload = 'auto';
+        heroVideo.src = pickHeroSrc();
+        heroVideo.load();
+        heroVideo.pause();
+      } else {
+        stopHeroVideo();
+      }
       if (logo && !reduceMq.matches) {
         requestAnimationFrame(() => requestAnimationFrame(() => logo.classList.add('play')));
+        // Fade the hero video in only after the logo sequence ends
+        // (shimmer-move lasts 1.6s and starts at 4.85s).
+        const sweep = logo.querySelector('.shimmer-sweep');
+        const onLogoDone = () => revealHeroVideo();
+        if (sweep) {
+          sweep.addEventListener('animationend', (e) => {
+            if (e.animationName === 'shimmer-move') onLogoDone();
+          });
+        }
+        window.setTimeout(onLogoDone, 6650);
       } else if (logo) {
         logo.classList.add('is-final');
       }
