@@ -500,6 +500,70 @@
     .sector-list li:nth-last-child(-n+3) { border-bottom: 1px solid var(--line); }
   }
 
+  .why-eyebrow {
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+  }
+  .why-open {
+    margin-top: 16px;
+    max-width: 16em;
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(28px, 4vw, 44px);
+    letter-spacing: -0.02em;
+    line-height: 1.18;
+    color: #fff;
+  }
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 48px;
+  }
+  @media (min-width: 700px) {
+    .why-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+  }
+  @media (min-width: 1100px) {
+    .why-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  }
+  .why-card {
+    min-width: 0;
+    padding: 28px 22px 32px;
+    border-top: 1px solid rgba(255, 255, 255, .16);
+  }
+  .why-index {
+    font-family: var(--serif);
+    color: var(--gold);
+    font-size: 15px;
+    letter-spacing: .12em;
+  }
+  .why-card h3 {
+    margin-top: 14px;
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(22px, 2vw, 28px);
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    color: #fff;
+  }
+  .why-card p {
+    margin-top: 12px;
+    color: rgba(255, 255, 255, .82);
+    font-size: 16px;
+    line-height: 1.45;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+  .why-card .why-proof {
+    margin-top: 14px;
+    color: rgba(255, 255, 255, .72);
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
   .steps {
     display: grid;
     grid-template-columns: 1fr;
@@ -749,6 +813,7 @@
       <a class="brand" href="#home"><span data-i18n="brand">BA AUDIT</span></a>
       <nav class="nav-links" aria-label="Menu">
         <a href="#servicos" data-i18n="nav.services">Serviços</a>
+        <a href="#porque" data-i18n="nav.why">Porquê</a>
         <a href="#setores" data-i18n="nav.sectors">Setores</a>
         <a href="#metodologia" data-i18n="nav.methodology">Metodologia</a>
         <a href="#equipa" data-i18n="nav.about">Quem somos</a>
@@ -770,6 +835,7 @@
   <div id="mobileNav" class="mobile-nav" aria-hidden="true" inert>
     <nav aria-label="Menu">
       <a href="#servicos" data-i18n="nav.services">Serviços</a>
+      <a href="#porque" data-i18n="nav.why">Porquê</a>
       <a href="#setores" data-i18n="nav.sectors">Setores</a>
       <a href="#metodologia" data-i18n="nav.methodology">Metodologia</a>
       <a href="#equipa" data-i18n="nav.about">Quem somos</a>
@@ -967,6 +1033,56 @@
           <article class="card reveal d6">
             <h3 data-i18n="services.tax.title">Consultoria fiscal</h3>
             <p data-i18n="services.tax.text">Encerramento fiscal mensal, apoio ao cumprimento declarativo, revisão fiscal e consultoria em IVA, IRC e preços de transferência.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="porque" class="section tone-ink" aria-labelledby="porque-title">
+      <div class="wrap">
+        <p class="why-eyebrow reveal" data-i18n="why.eyebrow">Porquê a BA AUDIT</p>
+        <h2 id="porque-title" class="why-open reveal" data-i18n="why.opening">Porque a revisão legal das contas pede uma firma que responde pelo trabalho que assina.</h2>
+        <div class="why-grid">
+          <article class="why-card reveal">
+            <p class="why-index">01</p>
+            <h3 data-i18n="why.1.title">Desde 2000.</h3>
+            <p data-i18n="why.1.text">A liderança da firma está inscrita na Ordem dos Revisores Oficiais de Contas desde 2000 e é também Contabilista Certificado.</p>
+            <p class="why-proof" data-i18n="why.1.proof">OROC n.º 1067, desde 2000 · CMVM n.º 20160679, desde 2016.</p>
+          </article>
+          <article class="why-card reveal">
+            <p class="why-index">02</p>
+            <h3 data-i18n="why.2.title">Acompanhamento do sócio.</h3>
+            <p data-i18n="why.2.text">O trabalho é acompanhado de perto pelo sócio, com a atenção que a revisão legal das contas exige.</p>
+          </article>
+          <article class="why-card reveal">
+            <p class="why-index">03</p>
+            <h3 data-i18n="why.3.title">Em todo o país.</h3>
+            <p data-i18n="why.3.text">Acompanhamos empresas em todo o território nacional.</p>
+          </article>
+          <article class="why-card reveal">
+            <p class="why-index">04</p>
+            <h3 data-i18n="why.4.title">Grupos e filiais.</h3>
+            <p data-i18n="why.4.text">Trabalhamos com grupos e com filiais de multinacionais com presença em Portugal, no relato que a empresa-mãe e a lei portuguesa exigem.</p>
+          </article>
+          <article class="why-card reveal">
+            <p class="why-index">05</p>
+            <h3 data-i18n="why.5.title">Uma oferta integrada.</h3>
+            <p data-i18n="why.5.text">Sob a mesma marca, a firma presta revisão legal das contas e auditoria, fiscalidade, consultoria contabilística e financeira, due diligences e participação em conselhos fiscais.</p>
+          </article>
+          <article class="why-card reveal">
+            <p class="why-index">06</p>
+            <h3 data-i18n="why.6.title">Independência, caso a caso.</h3>
+            <p data-i18n="why.6.text">A prestação de serviços a clientes de auditoria é sempre apreciada caso a caso, à luz das regras de independência e de ética aplicáveis.</p>
+          </article>
+          <article class="why-card reveal">
+            <p class="why-index">07</p>
+            <h3 data-i18n="why.7.title">Capacidade de equipa.</h3>
+            <p data-i18n="why.7.text">Quando a dimensão ou a complexidade do trabalho o exigem, a firma mobiliza a equipa necessária.</p>
+          </article>
+          <article class="why-card reveal">
+            <p class="why-index">08</p>
+            <h3 data-i18n="why.8.title">Rigor e normas.</h3>
+            <p data-i18n="why.8.text">O trabalho segue as normas internacionais de auditoria e o normativo contabilístico aplicável, SNC ou IFRS.</p>
           </article>
         </div>
       </div>
@@ -1170,6 +1286,7 @@
         brand: 'BA AUDIT',
         'independence.title': 'Independência',
         'nav.services': 'Serviços',
+        'nav.why': 'Porquê',
         'nav.sectors': 'Setores',
         'nav.methodology': 'Metodologia',
         'nav.about': 'Quem somos',
@@ -1191,6 +1308,25 @@
         'hero.list4': 'Due diligence / M&amp;A',
         'hero.list5': 'Consultoria contabilística e financeira',
         'hero.list6': 'Consultoria fiscal',
+        'why.eyebrow': 'Porquê a BA AUDIT',
+        'why.opening': 'Porque a revisão legal das contas pede uma firma que responde pelo trabalho que assina.',
+        'why.1.title': 'Desde 2000.',
+        'why.1.text': 'A liderança da firma está inscrita na Ordem dos Revisores Oficiais de Contas desde 2000 e é também Contabilista Certificado.',
+        'why.1.proof': 'OROC n.º 1067, desde 2000 · CMVM n.º 20160679, desde 2016.',
+        'why.2.title': 'Acompanhamento do sócio.',
+        'why.2.text': 'O trabalho é acompanhado de perto pelo sócio, com a atenção que a revisão legal das contas exige.',
+        'why.3.title': 'Em todo o país.',
+        'why.3.text': 'Acompanhamos empresas em todo o território nacional.',
+        'why.4.title': 'Grupos e filiais.',
+        'why.4.text': 'Trabalhamos com grupos e com filiais de multinacionais com presença em Portugal, no relato que a empresa-mãe e a lei portuguesa exigem.',
+        'why.5.title': 'Uma oferta integrada.',
+        'why.5.text': 'Sob a mesma marca, a firma presta revisão legal das contas e auditoria, fiscalidade, consultoria contabilística e financeira, due diligences e participação em conselhos fiscais.',
+        'why.6.title': 'Independência, caso a caso.',
+        'why.6.text': 'A prestação de serviços a clientes de auditoria é sempre apreciada caso a caso, à luz das regras de independência e de ética aplicáveis.',
+        'why.7.title': 'Capacidade de equipa.',
+        'why.7.text': 'Quando a dimensão ou a complexidade do trabalho o exigem, a firma mobiliza a equipa necessária.',
+        'why.8.title': 'Rigor e normas.',
+        'why.8.text': 'O trabalho segue as normas internacionais de auditoria e o normativo contabilístico aplicável, SNC ou IFRS.',
         'services.title': 'Serviços',
         'services.subtitle': 'Revisão legal das contas e auditoria, outros trabalhos com intervenção legal de um ROC, participação em Conselhos fiscais como membro efetivo, due diligence, consultoria contabilística e financeira e consultoria fiscal.',
         'services.audit.title': 'Revisão legal das contas e auditoria estatutária',
@@ -1260,6 +1396,7 @@
         brand: 'BA AUDIT',
         'independence.title': 'Independence',
         'nav.services': 'Services',
+        'nav.why': 'Why BA AUDIT?',
         'nav.sectors': 'Sectors',
         'nav.methodology': 'Methodology',
         'nav.about': 'About',
@@ -1281,6 +1418,25 @@
         'hero.list4': 'Due diligence / M&amp;A',
         'hero.list5': 'Accounting and financial advisory',
         'hero.list6': 'Tax advisory',
+        'why.eyebrow': 'Why BA AUDIT',
+        'why.opening': 'Because a statutory audit calls for a firm that will stand behind the work it signs.',
+        'why.1.title': 'Since 2000.',
+        'why.1.text': 'The firm\'s leadership has been registered with the Portuguese Institute of Statutory Auditors since 2000 and is also a Certified Accountant.',
+        'why.1.proof': 'OROC no. 1067, since 2000 · CMVM no. 20160679, since 2016.',
+        'why.2.title': 'Partner involvement.',
+        'why.2.text': 'The work is followed closely by a partner, with the attention that a statutory audit requires.',
+        'why.3.title': 'Nationwide coverage.',
+        'why.3.text': 'We work with companies throughout Portugal.',
+        'why.4.title': 'Groups and subsidiaries.',
+        'why.4.text': 'We work with groups and with subsidiaries of multinational companies in Portugal, on the reporting that the parent and Portuguese law require.',
+        'why.5.title': 'An integrated offering.',
+        'why.5.text': 'Under a single brand, the firm provides statutory and voluntary audit, tax, accounting and financial advisory, due diligence and membership of supervisory boards.',
+        'why.6.title': 'Independence, case by case.',
+        'why.6.text': 'Services to audit clients are always assessed case by case, in the light of the applicable independence and ethics rules.',
+        'why.7.title': 'A team when needed.',
+        'why.7.text': 'When the size or complexity of the work so requires, the firm brings in the team the engagement needs.',
+        'why.8.title': 'Professional standards.',
+        'why.8.text': 'The work follows the International Standards on Auditing and the applicable financial reporting framework, SNC or IFRS.',
         'services.title': 'Services',
         'services.subtitle': 'Statutory and voluntary audit, other engagements where the law requires a statutory auditor, participation in supervisory boards as a full member, due diligence, accounting and financial advisory, and tax advisory.',
         'services.audit.title': 'Statutory audit',
