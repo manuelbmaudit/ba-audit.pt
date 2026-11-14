@@ -10,7 +10,7 @@
   }
 </script>
 <title>BA AUDIT — Auditoria, fiscalidade e consultoria</title>
-<meta name="description" content="A BA AUDIT presta revisão legal das contas e auditoria, fiscalidade, consultoria contabilística e financeira e due diligence, com independência e rigor. Delivering Trust." />
+<meta name="description" content="A BA AUDIT presta serviços de revisão legal das contas e auditoria, fiscalidade, consultoria contabilística e financeira e due diligence, com independência e rigor. Delivering Trust." />
 <link rel="canonical" href="https://ba-audit.pt/" />
 <link rel="icon" type="image/x-icon" href="BA_AUDIT_logo.ico" />
 <meta name="theme-color" content="#000000" />
@@ -479,17 +479,26 @@
   .indep-copy { padding: 56px 0 8px; }
   @media (min-width: 900px) { .indep-copy { padding-top: 72px; } }
 
-  .sector-list { margin-top: 56px; }
+  .sector-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 56px;
+  }
   .sector-list li {
     padding: 22px 0;
     border-top: 1px solid var(--line);
-    font-size: clamp(32px, 5vw, 64px);
+    font-size: clamp(28px, 3.2vw, 40px);
     font-weight: 600;
-    letter-spacing: -0.035em;
-    line-height: 1.05;
+    letter-spacing: -0.03em;
+    line-height: 1.12;
   }
   .sector-list li:first-child { border-top-color: var(--gold); }
   .sector-list li:last-child { border-bottom: 1px solid var(--line); }
+  @media (min-width: 800px) {
+    .sector-list { grid-template-columns: 1fr 1fr 1fr; column-gap: 36px; }
+    .sector-list li:nth-child(-n+3) { border-top-color: var(--gold); }
+    .sector-list li:nth-last-child(-n+3) { border-bottom: 1px solid var(--line); }
+  }
 
   .steps {
     display: grid;
@@ -905,19 +914,20 @@
 
     <section class="tone-white">
       <div class="wrap screen">
-        <p class="statement reveal" data-i18n="hero.identification">A BA AUDIT presta revisão legal das contas e auditoria, fiscalidade, consultoria contabilística e financeira e due diligence, com atuação em Portugal.</p>
+        <p class="statement reveal" data-i18n="hero.identification">A BA AUDIT presta serviços de revisão legal das contas e auditoria, fiscalidade, consultoria contabilística e financeira e due diligence.</p>
       </div>
     </section>
 
     <section class="section tone-snow">
       <div class="wrap">
-        <p class="statement reveal" data-i18n="hero.coverage">Acompanhamos empresas em todo o país, bem como grupos e filiais de multinacionais com presença em Portugal. As reuniões são no cliente, em qualquer ponto do território, ou online (Microsoft Teams, Google Meet ou Skype).</p>
+        <p class="statement reveal" data-i18n="hero.coverage">Acompanhamos empresas em todo o país, incluindo grupos e filiais de multinacionais com presença em Portugal.</p>
         <ul class="index-list">
           <li class="reveal d1" data-i18n="hero.list1">Revisão legal das contas e auditoria estatutária</li>
           <li class="reveal d2" data-i18n="hero.list2">Outros trabalhos com intervenção legal de um ROC</li>
-          <li class="reveal d3" data-i18n="hero.list3">Conselhos fiscais</li>
+          <li class="reveal d3" data-i18n="hero.list3">Participação em Conselhos fiscais como membro efetivo</li>
           <li class="reveal d4" data-i18n="hero.list4">Due diligence / M&amp;A</li>
-          <li class="reveal d5" data-i18n="hero.list5">Consultoria contabilística e financeira e fiscalidade</li>
+          <li class="reveal d5" data-i18n="hero.list5">Consultoria contabilística e financeira</li>
+          <li class="reveal d6" data-i18n="hero.list6">Consultoria fiscal</li>
         </ul>
       </div>
     </section>
@@ -932,7 +942,7 @@
       <div class="services-overlay" aria-hidden="true"></div>
       <div class="wrap">
         <h2 id="servicos-title" class="reveal" data-i18n="services.title">Serviços</h2>
-        <p class="sub reveal" data-i18n="services.subtitle">Revisão legal das contas e auditoria, outros trabalhos com intervenção legal de um ROC, conselhos fiscais, due diligence, consultoria contabilística e financeira e fiscalidade.</p>
+        <p class="sub reveal" data-i18n="services.subtitle">Revisão legal das contas e auditoria, outros trabalhos com intervenção legal de um ROC, participação em Conselhos fiscais como membro efetivo, due diligence, consultoria contabilística e financeira e consultoria fiscal.</p>
         <div class="cards">
           <article class="card reveal d1">
             <h3 data-i18n="services.audit.title">Revisão legal das contas e auditoria estatutária</h3>
@@ -940,11 +950,11 @@
           </article>
           <article class="card reveal d2">
             <h3 data-i18n="services.reserved.title">Outros trabalhos com intervenção legal de um ROC</h3>
-            <p data-i18n="services.reserved.text">Outros trabalhos em que a lei exige a intervenção de um Revisor Oficial de Contas.</p>
+            <p data-i18n="services.reserved.text">Outros trabalhos em que a lei exige a intervenção de um Revisor Oficial de Contas, como sejam os aumentos de capital com entradas em espécie (art.º 28.º do CSC) e as reestruturações societárias – fusão, cisão e transformação de sociedades (art.ºs 99.º, 120.º e 132.º do CSC).</p>
           </article>
           <article class="card reveal d3">
-            <h3 data-i18n="services.boards.title">Conselhos fiscais</h3>
-            <p data-i18n="services.boards.text">Participação em conselhos fiscais.</p>
+            <h3 data-i18n="services.boards.title">Participação em Conselhos fiscais como membro efetivo</h3>
+            <p data-i18n="services.boards.text">Participação em Conselhos fiscais como membro efetivo.</p>
           </article>
           <article class="card reveal d4">
             <h3 data-i18n="services.dd.title">Due diligence / M&amp;A</h3>
@@ -952,11 +962,11 @@
           </article>
           <article class="card reveal d5">
             <h3 data-i18n="services.consulting.title">Consultoria contabilística e financeira</h3>
-            <p data-i18n="services.consulting.text">Mapeamento e otimização de processos, encerramento contabilístico e fiscal mensal, políticas e manuais.</p>
+            <p data-i18n="services.consulting.text">Mapeamento e otimização de processos, encerramento contabilístico mensal, políticas e manuais.</p>
           </article>
           <article class="card reveal d6">
-            <h3 data-i18n="services.tax.title">Fiscalidade</h3>
-            <p data-i18n="services.tax.text">Apoio ao cumprimento declarativo, revisão fiscal e consultoria em IVA, IRC e preços de transferência.</p>
+            <h3 data-i18n="services.tax.title">Consultoria fiscal</h3>
+            <p data-i18n="services.tax.text">Encerramento fiscal mensal, apoio ao cumprimento declarativo, revisão fiscal e consultoria em IVA, IRC e preços de transferência.</p>
           </article>
         </div>
       </div>
@@ -971,7 +981,7 @@
       </div>
       <div class="wrap indep-copy">
         <h2 id="independencia-title" class="reveal" data-i18n="independence.title">Independência</h2>
-        <p class="legal reveal" data-i18n="services.independence">A prestação de serviços a clientes de auditoria é sempre apreciada caso a caso, à luz das regras de independência e de ética aplicáveis, nomeadamente o Regulamento (UE) n.º 537/2014, o Estatuto da OROC e o Código de Ética. Os serviços não permitidos não são prestados a clientes de auditoria.</p>
+        <p class="legal reveal" data-i18n="services.independence">A prestação de serviços a clientes de auditoria é sempre apreciada caso a caso, à luz das regras de independência e de ética aplicáveis, nomeadamente o Regulamento (UE) n.º 537/2014, o Estatuto da OROC e o Código de Ética.</p>
       </div>
     </section>
 
@@ -981,10 +991,14 @@
         <p class="sub reveal" data-i18n="sectors.subtitle">Experiência com grupos nacionais e internacionais em diversos setores de atividade.</p>
         <ul class="sector-list">
           <li class="reveal d1" data-i18n="sectors.item1">Hotéis &amp; Turismo</li>
-          <li class="reveal d2" data-i18n="sectors.item2">Retalho &amp; e‑Commerce</li>
-          <li class="reveal d3" data-i18n="sectors.item3">Serviços &amp; Tecnologias</li>
-          <li class="reveal d4" data-i18n="sectors.item4">Indústria &amp; Logística</li>
-          <li class="reveal d5" data-i18n="sectors.item5">Saúde &amp; Educação</li>
+          <li class="reveal d2" data-i18n="sectors.item2">Promoção imobiliária e construção</li>
+          <li class="reveal d3" data-i18n="sectors.item3">Retalho &amp; e‑Commerce</li>
+          <li class="reveal d4" data-i18n="sectors.item4">Serviços</li>
+          <li class="reveal d5" data-i18n="sectors.item5">IT e IA</li>
+          <li class="reveal d6" data-i18n="sectors.item6">Indústria</li>
+          <li class="reveal" data-i18n="sectors.item7">Logística</li>
+          <li class="reveal" data-i18n="sectors.item8">Saúde</li>
+          <li class="reveal" data-i18n="sectors.item9">Educação</li>
         </ul>
       </div>
     </section>
@@ -1029,8 +1043,8 @@
             </figcaption>
           </figure>
           <div class="reveal d2">
-            <p class="prose" data-i18n="about.identification">A BA AUDIT presta revisão legal das contas e auditoria, fiscalidade, consultoria contabilística e financeira e due diligence, com atuação em Portugal.</p>
-            <p class="prose" data-i18n="about.bio">Manuel Borges é Revisor Oficial de Contas. Dirige a BA AUDIT, com atuação em todo o território nacional. Acompanha empresas em todo o país, bem como grupos e filiais de multinacionais com presença em Portugal, e realiza reuniões no cliente ou online. Exerceu funções de responsabilidade em firma multinacional de auditoria e consultoria, em Portugal e no estrangeiro, junto de grupos e de empresas de diversos setores — entre os quais o imobiliário, a distribuição e o comércio, o grande consumo, as telecomunicações, a logística, a energia e a hotelaria. Teve também experiência em empresas públicas e em Angola. O trabalho é feito com independência, rigor e proximidade.</p>
+            <p class="prose" data-i18n="about.identification">A BA AUDIT presta serviços de revisão legal das contas e auditoria, outros trabalhos em que a lei exige a intervenção de um Revisor Oficial de Contas, participação em Conselhos fiscais como membro efetivo, due diligence, consultoria contabilística e financeira e consultoria fiscal.</p>
+            <p class="prose" data-i18n="about.bio">Manuel Borges é Revisor Oficial de Contas. Dirige a BA AUDIT, com atuação em todo o território nacional. Acompanha empresas em todo o país, incluindo grupos e filiais de multinacionais com presença em Portugal. Exerceu funções de responsabilidade em firma multinacional de auditoria e consultoria, em Portugal e no estrangeiro, junto de grupos e de empresas de diversos setores — entre os quais o imobiliário, a distribuição e o comércio, o grande consumo, as telecomunicações, a logística, a energia e a hotelaria. Teve também experiência em empresas públicas e em Angola. O trabalho é feito com independência, rigor e proximidade.</p>
           </div>
         </div>
       </div>
@@ -1052,7 +1066,7 @@
       </picture>
       <div class="wrap band-copy">
         <h2 id="cta-title" class="reveal" data-i18n="cta.title">Pedir proposta</h2>
-        <p class="sub reveal" data-i18n="cta.text">Acompanhamos empresas em todo o país. As reuniões são no cliente, em qualquer ponto do território, ou online.</p>
+        <p class="sub reveal" data-i18n="cta.text">Acompanhamos empresas em todo o país.</p>
         <div class="actions reveal">
           <a class="btn" href="#pedir-proposta" data-i18n="cta.primary">Pedir proposta</a>
           <a class="btn btn-ghost" href="#pedir-proposta" data-i18n="cta.secondary">Marcar reunião</a>
@@ -1063,7 +1077,7 @@
     <section id="contactos" class="section tone-snow" aria-labelledby="contactos-title">
       <div id="pedir-proposta" class="wrap">
         <h2 id="contactos-title" class="reveal" data-i18n="contact.title">Contactos</h2>
-        <p class="prose reveal" style="margin-top:22px" data-i18n="contact.intro">Para pedir uma proposta ou marcar uma reunião, utilize os formulários do sítio ou escreva para info@ba-audit.pt. Acompanhamos empresas em todo o país. As reuniões são no cliente, em qualquer ponto do território, ou online.</p>
+        <p class="prose reveal" style="margin-top:22px" data-i18n="contact.intro">Para pedir uma proposta ou marcar uma reunião, utilize os formulários do sítio ou escreva para info@ba-audit.pt. Acompanhamos empresas em todo o país.</p>
 
         <div class="contact-grid">
           <form id="contactForm" class="form reveal">
@@ -1152,7 +1166,7 @@
         const i18n = {
       pt: {
         'meta.title': 'BA AUDIT — Auditoria, fiscalidade e consultoria',
-        'meta.description': 'A BA AUDIT presta revisão legal das contas e auditoria, fiscalidade, consultoria contabilística e financeira e due diligence, com independência e rigor. Delivering Trust.',
+        'meta.description': 'A BA AUDIT presta serviços de revisão legal das contas e auditoria, fiscalidade, consultoria contabilística e financeira e due diligence, com independência e rigor. Delivering Trust.',
         brand: 'BA AUDIT',
         'independence.title': 'Independência',
         'nav.services': 'Serviços',
@@ -1167,37 +1181,42 @@
         'pubs.allHref': 'publicacoes/',
         'nav.proposal': 'Pedir proposta',
         'hero.title': 'Auditoria, fiscalidade e consultoria, com independência e rigor.',
-        'hero.identification': 'A BA AUDIT presta revisão legal das contas e auditoria, fiscalidade, consultoria contabilística e financeira e due diligence, com atuação em Portugal.',
-        'hero.coverage': 'Acompanhamos empresas em todo o país, bem como grupos e filiais de multinacionais com presença em Portugal. As reuniões são no cliente, em qualquer ponto do território, ou online (Microsoft Teams, Google Meet ou Skype).',
+        'hero.identification': 'A BA AUDIT presta serviços de revisão legal das contas e auditoria, fiscalidade, consultoria contabilística e financeira e due diligence.',
+        'hero.coverage': 'Acompanhamos empresas em todo o país, incluindo grupos e filiais de multinacionais com presença em Portugal.',
         'hero.cta1': 'Pedir proposta',
         'hero.cta2': 'Marcar reunião',
         'hero.list1': 'Revisão legal das contas e auditoria estatutária',
         'hero.list2': 'Outros trabalhos com intervenção legal de um ROC',
-        'hero.list3': 'Conselhos fiscais',
+        'hero.list3': 'Participação em Conselhos fiscais como membro efetivo',
         'hero.list4': 'Due diligence / M&amp;A',
-        'hero.list5': 'Consultoria contabilística e financeira e fiscalidade',
+        'hero.list5': 'Consultoria contabilística e financeira',
+        'hero.list6': 'Consultoria fiscal',
         'services.title': 'Serviços',
-        'services.subtitle': 'Revisão legal das contas e auditoria, outros trabalhos com intervenção legal de um ROC, conselhos fiscais, due diligence, consultoria contabilística e financeira e fiscalidade.',
+        'services.subtitle': 'Revisão legal das contas e auditoria, outros trabalhos com intervenção legal de um ROC, participação em Conselhos fiscais como membro efetivo, due diligence, consultoria contabilística e financeira e consultoria fiscal.',
         'services.audit.title': 'Revisão legal das contas e auditoria estatutária',
         'services.audit.text': 'Revisão legal das contas, auditoria estatutária, auditorias voluntárias, procedimentos acordados, auditorias a subsídios e projetos, e revisão de controlos internos (ISA 315).',
         'services.reserved.title': 'Outros trabalhos com intervenção legal de um ROC',
-        'services.reserved.text': 'Outros trabalhos em que a lei exige a intervenção de um Revisor Oficial de Contas.',
-        'services.boards.title': 'Conselhos fiscais',
-        'services.boards.text': 'Participação em conselhos fiscais.',
+        'services.reserved.text': 'Outros trabalhos em que a lei exige a intervenção de um Revisor Oficial de Contas, como sejam os aumentos de capital com entradas em espécie (art.º 28.º do CSC) e as reestruturações societárias – fusão, cisão e transformação de sociedades (art.ºs 99.º, 120.º e 132.º do CSC).',
+        'services.boards.title': 'Participação em Conselhos fiscais como membro efetivo',
+        'services.boards.text': 'Participação em Conselhos fiscais como membro efetivo.',
         'services.dd.title': 'Due diligence / M&amp;A',
         'services.dd.text': 'Due diligence e apoio em processos de fusões e aquisições.',
         'services.consulting.title': 'Consultoria contabilística e financeira',
-        'services.consulting.text': 'Mapeamento e otimização de processos, encerramento contabilístico e fiscal mensal, políticas e manuais.',
-        'services.tax.title': 'Fiscalidade',
-        'services.tax.text': 'Apoio ao cumprimento declarativo, revisão fiscal e consultoria em IVA, IRC e preços de transferência.',
-        'services.independence': 'A prestação de serviços a clientes de auditoria é sempre apreciada caso a caso, à luz das regras de independência e de ética aplicáveis, nomeadamente o Regulamento (UE) n.º 537/2014, o Estatuto da OROC e o Código de Ética. Os serviços não permitidos não são prestados a clientes de auditoria.',
+        'services.consulting.text': 'Mapeamento e otimização de processos, encerramento contabilístico mensal, políticas e manuais.',
+        'services.tax.title': 'Consultoria fiscal',
+        'services.tax.text': 'Encerramento fiscal mensal, apoio ao cumprimento declarativo, revisão fiscal e consultoria em IVA, IRC e preços de transferência.',
+        'services.independence': 'A prestação de serviços a clientes de auditoria é sempre apreciada caso a caso, à luz das regras de independência e de ética aplicáveis, nomeadamente o Regulamento (UE) n.º 537/2014, o Estatuto da OROC e o Código de Ética.',
         'sectors.title': 'Setores de atuação',
         'sectors.subtitle': 'Experiência com grupos nacionais e internacionais em diversos setores de atividade.',
         'sectors.item1': 'Hotéis &amp; Turismo',
-        'sectors.item2': 'Retalho &amp; e‑Commerce',
-        'sectors.item3': 'Serviços &amp; Tecnologias',
-        'sectors.item4': 'Indústria &amp; Logística',
-        'sectors.item5': 'Saúde &amp; Educação',
+        'sectors.item2': 'Promoção imobiliária e construção',
+        'sectors.item3': 'Retalho &amp; e‑Commerce',
+        'sectors.item4': 'Serviços',
+        'sectors.item5': 'IT e IA',
+        'sectors.item6': 'Indústria',
+        'sectors.item7': 'Logística',
+        'sectors.item8': 'Saúde',
+        'sectors.item9': 'Educação',
         'method.title': 'A nossa Metodologia',
         'method.step1.title': '1. Entendimento &amp; Riscos',
         'method.step1.text': 'Compreensão do negócio e identificação de riscos significativos (ISA 315) para planear procedimentos eficientes.',
@@ -1208,17 +1227,17 @@
         'method.step4.title': '4. Recomendações',
         'method.step4.text': 'Relatórios com oportunidades de melhoria, cumprimento dos prazos, priorizando a eficiência e o compliance.',
         'about.title': 'Quem somos',
-        'about.identification': 'A BA AUDIT presta revisão legal das contas e auditoria, fiscalidade, consultoria contabilística e financeira e due diligence, com atuação em Portugal.',
+        'about.identification': 'A BA AUDIT presta serviços de revisão legal das contas e auditoria, outros trabalhos em que a lei exige a intervenção de um Revisor Oficial de Contas, participação em Conselhos fiscais como membro efetivo, due diligence, consultoria contabilística e financeira e consultoria fiscal.',
         'about.photoAlt': 'Manuel Borges, Revisor Oficial de Contas',
         'about.name': 'Manuel Borges',
         'about.role': 'Revisor Oficial de Contas',
-        'about.bio': 'Manuel Borges é Revisor Oficial de Contas. Dirige a BA AUDIT, com atuação em todo o território nacional. Acompanha empresas em todo o país, bem como grupos e filiais de multinacionais com presença em Portugal, e realiza reuniões no cliente ou online. Exerceu funções de responsabilidade em firma multinacional de auditoria e consultoria, em Portugal e no estrangeiro, junto de grupos e de empresas de diversos setores — entre os quais o imobiliário, a distribuição e o comércio, o grande consumo, as telecomunicações, a logística, a energia e a hotelaria. Teve também experiência em empresas públicas e em Angola. O trabalho é feito com independência, rigor e proximidade.',
+        'about.bio': 'Manuel Borges é Revisor Oficial de Contas. Dirige a BA AUDIT, com atuação em todo o território nacional. Acompanha empresas em todo o país, incluindo grupos e filiais de multinacionais com presença em Portugal. Exerceu funções de responsabilidade em firma multinacional de auditoria e consultoria, em Portugal e no estrangeiro, junto de grupos e de empresas de diversos setores — entre os quais o imobiliário, a distribuição e o comércio, o grande consumo, as telecomunicações, a logística, a energia e a hotelaria. Teve também experiência em empresas públicas e em Angola. O trabalho é feito com independência, rigor e proximidade.',
         'cta.title': 'Pedir proposta',
-        'cta.text': 'Acompanhamos empresas em todo o país. As reuniões são no cliente, em qualquer ponto do território, ou online.',
+        'cta.text': 'Acompanhamos empresas em todo o país.',
         'cta.primary': 'Pedir proposta',
         'cta.secondary': 'Marcar reunião',
         'contact.title': 'Contactos',
-        'contact.intro': 'Para pedir uma proposta ou marcar uma reunião, utilize os formulários do sítio ou escreva para info@ba-audit.pt. Acompanhamos empresas em todo o país. As reuniões são no cliente, em qualquer ponto do território, ou online.',
+        'contact.intro': 'Para pedir uma proposta ou marcar uma reunião, utilize os formulários do sítio ou escreva para info@ba-audit.pt. Acompanhamos empresas em todo o país.',
         'contact.name': 'Nome',
         'contact.email': 'Email',
         'contact.company': 'Empresa',
@@ -1237,7 +1256,7 @@
       },
       en: {
         'meta.title': 'BA AUDIT — Audit, tax and advisory',
-        'meta.description': 'BA AUDIT provides statutory and voluntary audit, tax, accounting and financial advisory, and due diligence, with independence and rigour. Delivering Trust.',
+        'meta.description': 'BA AUDIT provides statutory and voluntary audit services, tax, accounting and financial advisory, and due diligence, with independence and rigour. Delivering Trust.',
         brand: 'BA AUDIT',
         'independence.title': 'Independence',
         'nav.services': 'Services',
@@ -1252,37 +1271,42 @@
         'pubs.allHref': 'en/insights/',
         'nav.proposal': 'Request a proposal',
         'hero.title': 'Audit, tax and advisory, with independence and rigour.',
-        'hero.identification': 'BA AUDIT provides statutory and voluntary audit, tax, accounting and financial advisory, and due diligence, with activity in Portugal.',
-        'hero.coverage': 'We work with companies across the country, as well as groups and subsidiaries of multinational companies with a presence in Portugal. Meetings are held at the client\'s premises, anywhere in the country, or online (Microsoft Teams, Google Meet or Skype).',
+        'hero.identification': 'BA AUDIT provides statutory and voluntary audit services, tax, accounting and financial advisory, and due diligence.',
+        'hero.coverage': 'We work with companies across the country, including groups and subsidiaries of multinational companies with a presence in Portugal.',
         'hero.cta1': 'Request a proposal',
         'hero.cta2': 'Book a meeting',
         'hero.list1': 'Statutory audit',
         'hero.list2': 'Other engagements that legally require a statutory auditor',
-        'hero.list3': 'Supervisory boards',
+        'hero.list3': 'Participation in supervisory boards as a full member',
         'hero.list4': 'Due diligence / M&amp;A',
-        'hero.list5': 'Accounting and financial advisory, and tax',
+        'hero.list5': 'Accounting and financial advisory',
+        'hero.list6': 'Tax advisory',
         'services.title': 'Services',
-        'services.subtitle': 'Statutory and voluntary audit, other engagements that legally require a statutory auditor, supervisory boards, due diligence, accounting and financial advisory, and tax.',
+        'services.subtitle': 'Statutory and voluntary audit, other engagements where the law requires a statutory auditor, participation in supervisory boards as a full member, due diligence, accounting and financial advisory, and tax advisory.',
         'services.audit.title': 'Statutory audit',
         'services.audit.text': 'Statutory audit, voluntary audits, agreed-upon procedures, grants and project audits, and internal controls review (ISA 315).',
         'services.reserved.title': 'Other engagements that legally require a statutory auditor',
-        'services.reserved.text': 'Other engagements in which the law requires the involvement of a Statutory Auditor (<em>Revisor Oficial de Contas</em>).',
-        'services.boards.title': 'Supervisory boards',
-        'services.boards.text': 'Participation in supervisory boards (<em>conselhos fiscais</em>).',
+        'services.reserved.text': 'Other engagements where the law requires the involvement of a statutory auditor, such as capital increases through contributions in kind (Article 28 of the Portuguese Companies Code) and corporate restructurings – mergers, demergers and transformations of companies (Articles 99, 120 and 132 of the Portuguese Companies Code).',
+        'services.boards.title': 'Participation in supervisory boards as a full member',
+        'services.boards.text': 'Participation in supervisory boards as a full member.',
         'services.dd.title': 'Due diligence / M&amp;A',
         'services.dd.text': 'Due diligence and support in mergers and acquisitions.',
         'services.consulting.title': 'Accounting and financial advisory',
-        'services.consulting.text': 'Process mapping and optimisation, monthly accounting and tax close, policies and manuals.',
-        'services.tax.title': 'Tax',
-        'services.tax.text': 'Declarative compliance support, tax review, and VAT, corporate income tax and transfer pricing advisory.',
-        'services.independence': 'Services to audit clients are always assessed case by case against the applicable independence and ethics rules, including EU Regulation No 537/2014, the Statute of the OROC and the Code of Ethics. Non-permitted services are never provided to audit clients.',
+        'services.consulting.text': 'Process mapping and optimisation, monthly accounting close, policies and manuals.',
+        'services.tax.title': 'Tax advisory',
+        'services.tax.text': 'Monthly tax close, declarative compliance support, tax review, and VAT, corporate income tax and transfer pricing advisory.',
+        'services.independence': 'Services to audit clients are always assessed case by case against the applicable independence and ethics rules, including EU Regulation No 537/2014, the Statute of the OROC and the Code of Ethics.',
         'sectors.title': 'Sectors',
         'sectors.subtitle': 'Experience with national and international groups across multiple industries.',
         'sectors.item1': 'Hotels &amp; Tourism',
-        'sectors.item2': 'Retail &amp; e‑Commerce',
-        'sectors.item3': 'Services &amp; Technology',
-        'sectors.item4': 'Industry &amp; Logistics',
-        'sectors.item5': 'Healthcare &amp; Education',
+        'sectors.item2': 'Real estate development &amp; construction',
+        'sectors.item3': 'Retail &amp; e‑Commerce',
+        'sectors.item4': 'Services',
+        'sectors.item5': 'IT &amp; AI',
+        'sectors.item6': 'Industry',
+        'sectors.item7': 'Logistics',
+        'sectors.item8': 'Healthcare',
+        'sectors.item9': 'Education',
         'method.title': 'Our Methodology',
         'method.step1.title': '1. Understanding &amp; Risks',
         'method.step1.text': 'Understanding the business and identifying significant risks (ISA 315) to plan efficient procedures.',
@@ -1293,17 +1317,17 @@
         'method.step4.title': '4. Recommendations',
         'method.step4.text': 'Reports with improvement opportunities, meeting deadlines, prioritising efficiency and compliance.',
         'about.title': 'About',
-        'about.identification': 'BA AUDIT provides statutory and voluntary audit, tax, accounting and financial advisory, and due diligence, with activity in Portugal.',
+        'about.identification': 'BA AUDIT provides statutory and voluntary audit services, other engagements where the law requires a statutory auditor, participation in supervisory boards as a full member, due diligence, accounting and financial advisory, and tax advisory.',
         'about.photoAlt': 'Manuel Borges, Statutory Auditor',
         'about.name': 'Manuel Borges',
         'about.role': 'Statutory Auditor',
-        'about.bio': 'Manuel Borges is a Statutory Auditor (<em>Revisor Oficial de Contas</em>). He leads BA AUDIT, active throughout Portugal. He works with companies across the country, as well as groups and subsidiaries of multinational companies with a presence in Portugal, and holds meetings at the client\'s premises or online. He has held positions of responsibility in a multinational audit and advisory firm, in Portugal and abroad, with groups and companies in various sectors — including real estate, distribution and retail, consumer goods, telecommunications, logistics, energy and hospitality. He has also worked with public-sector companies and in Angola. The work is carried out with independence, rigour and proximity.',
+        'about.bio': 'Manuel Borges is a Statutory Auditor (<em>Revisor Oficial de Contas</em>). He leads BA AUDIT, active throughout Portugal. He works with companies across the country, including groups and subsidiaries of multinational companies with a presence in Portugal. He has held positions of responsibility in a multinational audit and advisory firm, in Portugal and abroad, with groups and companies in various sectors — including real estate, distribution and retail, consumer goods, telecommunications, logistics, energy and hospitality. He has also worked with public-sector companies and in Angola. The work is carried out with independence, rigour and proximity.',
         'cta.title': 'Request a proposal',
-        'cta.text': 'We work with companies across the country. Meetings are held at the client\'s premises, anywhere in the country, or online.',
+        'cta.text': 'We work with companies across the country.',
         'cta.primary': 'Request a proposal',
         'cta.secondary': 'Book a meeting',
         'contact.title': 'Contact',
-        'contact.intro': 'To request a proposal or book a meeting, please use the website forms or write to info@ba-audit.pt. We work with companies across the country. Meetings are held at the client\'s premises, anywhere in the country, or online.',
+        'contact.intro': 'To request a proposal or book a meeting, please use the website forms or write to info@ba-audit.pt. We work with companies across the country.',
         'contact.name': 'Name',
         'contact.email': 'Email',
         'contact.company': 'Company',
