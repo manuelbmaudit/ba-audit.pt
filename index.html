@@ -64,7 +64,6 @@
   .mobile-nav :focus-visible,
   .footer :focus-visible { outline-color: #fff; }
 
-  .serif { font-family: var(--serif); font-weight: 400; }
   .wrap { width: var(--wrap); margin-inline: auto; }
   .section { padding: 96px 0; }
   @media (min-width: 900px) { .section { padding: 132px 0; } }
@@ -522,13 +521,6 @@
       border-top-color: var(--gold);
     }
   }
-  .ident-year {
-    margin: 0 0 12px;
-    font-size: clamp(52px, 6vw, 68px);
-    letter-spacing: -0.04em;
-    line-height: 0.95;
-    color: var(--ink);
-  }
   .ident-pillar-title {
     font-family: var(--sans);
     font-size: 17px;
@@ -547,8 +539,6 @@
     letter-spacing: -0.01em;
     color: var(--muted);
   }
-  .ident-pillar:first-child .ident-pillar-text { margin-top: 10px; }
-
   .index-list { margin-top: 64px; max-width: 40rem; }
   .index-list li {
     padding: 18px 0;
@@ -1137,8 +1127,8 @@
         </div>
         <ul class="ident-pillars">
           <li class="ident-pillar reveal">
-            <p class="ident-year serif" data-i18n="ident.pillar1.year">2000</p>
-            <p class="ident-pillar-text" data-i18n="ident.pillar1.text">Experiência profissional única desde 2000</p>
+            <h3 class="ident-pillar-title" data-i18n="ident.pillar1.title">Experiência profissional</h3>
+            <p class="ident-pillar-text" data-i18n="ident.pillar1.text">Mais de 25 anos de experiência profissional única, desde 2000</p>
           </li>
           <li class="ident-pillar reveal d1">
             <h3 class="ident-pillar-title" data-i18n="ident.pillar2.title">Equipa multidisciplinar</h3>
@@ -1472,8 +1462,8 @@
         'hero.title': 'Auditoria, fiscalidade e consultoria, com independência e rigor.',
         'hero.identification': 'A BA AUDIT presta serviços de revisão legal das contas e auditoria, fiscalidade, consultoria contabilística e financeira e due diligence.',
         'ident.imageAlt': 'Pormenor de uma fachada de vidro contemporânea',
-        'ident.pillar1.year': '2000',
-        'ident.pillar1.text': 'Experiência profissional única desde 2000',
+        'ident.pillar1.title': 'Experiência profissional',
+        'ident.pillar1.text': 'Mais de 25 anos de experiência profissional única, desde 2000',
         'ident.pillar2.title': 'Equipa multidisciplinar',
         'ident.pillar2.text': 'Equipa multidisciplinar com especialização em auditoria, consultoria e fiscalidade',
         'ident.pillar3.title': 'Foco nos riscos',
@@ -1591,8 +1581,8 @@
         'hero.title': 'Audit, tax and advisory, with independence and rigour.',
         'hero.identification': 'BA AUDIT provides statutory and voluntary audit services, tax, accounting and financial advisory, and due diligence.',
         'ident.imageAlt': 'Detail of a contemporary glass façade',
-        'ident.pillar1.year': '2000',
-        'ident.pillar1.text': 'Unique professional experience since 2000',
+        'ident.pillar1.title': 'Professional experience',
+        'ident.pillar1.text': 'More than 25 years of unique professional experience, since 2000',
         'ident.pillar2.title': 'Multidisciplinary team',
         'ident.pillar2.text': 'Multidisciplinary team specialised in audit, advisory and tax',
         'ident.pillar3.title': 'Risk-focused approach',
