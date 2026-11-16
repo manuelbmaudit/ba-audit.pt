@@ -1,5 +1,22 @@
 window.__BA_PUBS = [
   {
+    "id": "prazos-16-20-novembro",
+    "pin": true,
+    "date": "2026-11-16",
+    "title": "Prazos fiscais e contributivos da semana de 16 a 20 de novembro",
+    "titleEn": "Tax and social security deadlines for the week of 16 to 20 November",
+    "summary": [
+      "Esta semana, as obrigações de aplicação geral concentram-se na sexta-feira, 20: entrega das retenções na fonte e do Imposto do Selo de outubro, declaração periódica de IVA e, para quem aderiu ao novo ciclo contributivo, confirmação dos valores à Segurança Social.",
+      "Neste conjunto de slides reunimos também as datas de dezembro e o que a lei prevê quando um prazo não é cumprido."
+    ],
+    "summaryEn": [
+      "This week, the obligations of general application fall on Friday the 20th: submission of October withholding tax and stamp duty, the periodic VAT return and, for those who have joined the new contributory cycle, confirmation of the amounts to Social Security.",
+      "This slide deck also brings together the December dates and what the law provides when a deadline is not met."
+    ],
+    "slides": 6,
+    "pdf": "publicacoes/pdf/prazos-16-20-novembro.pdf"
+  },
+  {
     "id": "newsletter-2026-11",
     "kind": "newsletter",
     "pin": true,
