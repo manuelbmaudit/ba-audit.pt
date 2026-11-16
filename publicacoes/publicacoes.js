@@ -34,7 +34,7 @@
     });
   }
   function summary(item) {
-    if (lang() === 'en') return '';
+    if (lang() === 'en') return (item.summaryEn || []).join(' ');
     return (item.summary || []).join(' ');
   }
   function cover(item, eager) {
