@@ -1,7 +1,25 @@
 [
   {
-    "id": "prazos-16-20-novembro",
+    "id": "iva-obras-autoliquidacao-2027",
     "pin": true,
+    "date": "2026-11-17",
+    "title": "IVA nas obras: autoliquidação a partir de 2027",
+    "titleEn": "VAT on construction works: reverse charge from 2027",
+    "summary": [
+      "Obras a partir de 1 de janeiro de 2027: o IVA passa a ser devido pelo adquirente sempre que este seja sujeito passivo de IVA.",
+      "A Lei n.º 65/2026 alarga a autoliquidação a todos os adquirentes sujeitos passivos de IVA de serviços de construção civil, incluindo quem só pratica operações isentas sem direito à dedução. Muda quem liquida o imposto e o prazo de pagamento.",
+      "Os slides resumem o que muda, quem é afetado e o que preparar até 31 de dezembro."
+    ],
+    "summaryEn": [
+      "For works from 1 January 2027, VAT becomes due from the acquirer whenever the acquirer is a VAT taxable person.",
+      "Law no. 65/2026 extends the reverse charge to all VAT taxable persons acquiring civil construction services, including those who only carry out exempt transactions with no right to deduct. It changes who accounts for the tax and the payment deadline.",
+      "The slides summarise what changes, who is affected and what to prepare by 31 December."
+    ],
+    "slides": 6,
+    "pdf": "publicacoes/pdf/iva-obras-autoliquidacao-2027.pdf"
+  },
+  {
+    "id": "prazos-16-20-novembro",
     "date": "2026-11-16",
     "title": "Prazos fiscais e contributivos da semana de 16 a 20 de novembro",
     "titleEn": "Tax and social security deadlines for the week of 16 to 20 November",
