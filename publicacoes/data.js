@@ -1,7 +1,23 @@
 window.__BA_PUBS = [
   {
-    "id": "iva-obras-autoliquidacao-2027",
+    "id": "provisoes-contingencias",
     "pin": true,
+    "date": "2026-11-18",
+    "title": "Litígios, garantias e reestruturações: provisão, nota no anexo ou nada?",
+    "titleEn": "Litigation, guarantees and restructurings: provision, disclosure note or nothing?",
+    "summary": [
+      "No fecho de 2026, a resposta depende de três critérios da NCRF 21: obrigação presente, saída de recursos provável e estimativa fiável. Para efeitos de IRC, apenas algumas provisões são dedutíveis, e o auditor vai procurar evidência junto da gestão e dos advogados externos.",
+      "Neste conjunto de slides resumimos os critérios, as situações mais frequentes e o efeito fiscal."
+    ],
+    "summaryEn": [
+      "At the 2026 year-end close, the answer depends on three criteria in NCRF 21: a present obligation, a probable outflow of resources and a reliable estimate. For corporate income tax (IRC) purposes, only some provisions are deductible, and the auditor will look for evidence from management and from the external lawyers.",
+      "This slide deck summarises the criteria, the most frequent situations and the tax effect."
+    ],
+    "slides": 6,
+    "pdf": "publicacoes/pdf/provisoes-contingencias.pdf"
+  },
+  {
+    "id": "iva-obras-autoliquidacao-2027",
     "date": "2026-11-17",
     "title": "IVA nas obras: autoliquidação a partir de 2027",
     "titleEn": "VAT on construction works: reverse charge from 2027",
