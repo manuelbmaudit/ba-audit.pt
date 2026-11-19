@@ -1,7 +1,23 @@
 [
   {
-    "id": "provisoes-contingencias",
+    "id": "premios-isentos-2026",
     "pin": true,
+    "date": "2026-11-19",
+    "title": "Prémios de fim de ano: até 6% da retribuição base anual sem IRS nem contribuições",
+    "titleEn": "Year-end bonuses: up to 6% of annual base pay free of IRS and social security contributions",
+    "summary": [
+      "Em 2026, prémios de produtividade e de desempenho, participações nos lucros e gratificações de balanço podem beneficiar desta isenção, desde que sejam voluntários, sem caráter regular, pagos até 31 de dezembro e a empresa tenha efetuado um aumento salarial elegível.",
+      "Neste conjunto de slides resumimos as condições e os pontos a confirmar antes de decidir."
+    ],
+    "summaryEn": [
+      "In 2026, productivity and performance bonuses, profit-sharing and balance-sheet gratuities may benefit from this exemption, provided they are voluntary, not of a regular nature, paid by 31 December and the company has made an eligible pay increase.",
+      "This slide deck summarises the conditions and the points to confirm before deciding."
+    ],
+    "slides": 6,
+    "pdf": "publicacoes/pdf/premios-isentos-2026.pdf"
+  },
+  {
+    "id": "provisoes-contingencias",
     "date": "2026-11-18",
     "title": "Litígios, garantias e reestruturações: provisão, nota no anexo ou nada?",
     "titleEn": "Litigation, guarantees and restructurings: provision, disclosure note or nothing?",
