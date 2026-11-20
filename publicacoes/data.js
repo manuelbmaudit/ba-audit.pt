@@ -1,7 +1,23 @@
 window.__BA_PUBS = [
   {
-    "id": "premios-isentos-2026",
+    "id": "ofertas-natal-faq",
     "pin": true,
+    "date": "2026-11-20",
+    "title": "Ofertas de Natal: quatro perguntas antes de encomendar",
+    "titleEn": "Christmas gifts: four questions before you order",
+    "summary": [
+      "Ofertas a clientes até 50 € por unidade, dentro do limite anual de 5 por mil do volume de negócios do ano anterior, não obrigam a liquidar IVA. Acima disso, as regras mudam. Os cabazes a colaboradores e a identificação dos beneficiários têm também consequências em IRS e IRC.",
+      "Neste conjunto de slides respondemos às perguntas mais frequentes desta época."
+    ],
+    "summaryEn": [
+      "Gifts to clients of up to €50 per unit, within the annual limit of 5 per thousand of the previous year's turnover, do not require VAT to be charged. Above that, the rules change. Hampers for employees and the identification of the beneficiaries also have consequences for IRS and IRC.",
+      "This slide deck answers the most frequent questions of this season."
+    ],
+    "slides": 6,
+    "pdf": "publicacoes/pdf/ofertas-natal-faq.pdf"
+  },
+  {
+    "id": "premios-isentos-2026",
     "date": "2026-11-19",
     "title": "Prémios de fim de ano: até 6% da retribuição base anual sem IRS nem contribuições",
     "titleEn": "Year-end bonuses: up to 6% of annual base pay free of IRS and social security contributions",
