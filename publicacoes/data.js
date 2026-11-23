@@ -1,7 +1,23 @@
 window.__BA_PUBS = [
   {
-    "id": "ofertas-natal-faq",
+    "id": "prazos-23-27-novembro",
     "pin": true,
+    "date": "2026-11-23",
+    "title": "Prazos fiscais e contributivos da semana de 23 a 27 de novembro",
+    "titleEn": "Tax and social security deadlines for the week of 23 to 27 November",
+    "summary": [
+      "Esta semana, as obrigações de aplicação geral concentram-se na quarta-feira, 25: pagamento do IVA de setembro e do 3.º trimestre e pagamento das contribuições de outubro à Segurança Social. Na segunda-feira, 30, seguem-se a Declaração Modelo 30, o IMI e o IUC.",
+      "Neste conjunto de slides reunimos também as regras do IVA em prestações e as datas de dezembro que mudam por causa de feriados e fins de semana."
+    ],
+    "summaryEn": [
+      "This week, the obligations of general application fall on Wednesday the 25th: payment of September VAT and of third-quarter VAT, and payment of October contributions to Social Security. On Monday the 30th come the Modelo 30 return, IMI and IUC.",
+      "This slide deck also brings together the rules on VAT in instalments and the December dates that change because of public holidays and weekends."
+    ],
+    "slides": 6,
+    "pdf": "publicacoes/pdf/prazos-23-27-novembro.pdf"
+  },
+  {
+    "id": "ofertas-natal-faq",
     "date": "2026-11-20",
     "title": "Ofertas de Natal: quatro perguntas antes de encomendar",
     "titleEn": "Christmas gifts: four questions before you order",
