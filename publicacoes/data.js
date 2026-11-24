@@ -1,7 +1,23 @@
 window.__BA_PUBS = [
   {
-    "id": "prazos-23-27-novembro",
+    "id": "fct-mobilizacao-2026",
     "pin": true,
+    "date": "2026-11-24",
+    "title": "Fundo de Compensação do Trabalho: pedido de mobilização até 31 de dezembro de 2026",
+    "titleEn": "Work Compensation Fund (FCT): mobilisation request by 31 December 2026",
+    "summary": [
+      "O regime legal consultado prevê o pedido de mobilização até 31 de dezembro de 2026, sem prejuízo de alterações legislativas entretanto publicadas. Este é o prazo para pedir a mobilização — não necessariamente para gastar as verbas. A utilização efetiva deve ocorrer até à extinção do FCT.",
+      "As finalidades previstas incluem habitação dos trabalhadores, qualificação e formação certificada, outros investimentos acordados nos termos legais, como creches e refeitórios, e até 50% da compensação devida por cessação do contrato, apenas para trabalhadores abrangidos pelo FCT. Cada finalidade tem condições, limites e procedimentos próprios."
+    ],
+    "summaryEn": [
+      "The legal regime consulted provides for the mobilisation request to be made by 31 December 2026, without prejudice to any legislative changes published in the meantime. This is the deadline to request mobilisation — not necessarily to spend the funds. Actual use must take place by the time the FCT is wound up.",
+      "The permitted purposes include workers' housing, qualifications and certified training, other investments agreed under the law, such as nurseries and canteens, and up to 50% of the compensation due on termination of the contract, only for workers covered by the FCT. Each purpose has its own conditions, limits and procedures."
+    ],
+    "slides": 1,
+    "pdf": "publicacoes/pdf/fct-mobilizacao-2026.pdf"
+  },
+  {
+    "id": "prazos-23-27-novembro",
     "date": "2026-11-23",
     "title": "Prazos fiscais e contributivos da semana de 23 a 27 de novembro",
     "titleEn": "Tax and social security deadlines for the week of 23 to 27 November",

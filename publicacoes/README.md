@@ -8,6 +8,7 @@ Para acrescentar um conjunto:
 2. Guardar o PDF em `publicacoes/pdf/<id>.pdf`.
 3. Inserir um objeto no topo de `publicacoes.json`:
    - `id`, `date` (`AAAA-MM-DD` ou `null`), `title` (texto do slide 1), `titleEn` (título em inglês, a validar), `summary` (uma ou duas frases copiadas do texto validado), `summaryEn` (tradução fiel, só quando existir), `slides`, `pdf`.
+   - Com `slides: 1` basta a imagem `1-*`. A página não mostra setas, contador nem a indicação «conjunto de slides».
 
 A página inicial, `/publicacoes/` e `/en/insights/` leem este ficheiro. `data.js` repete o mesmo JSON em `window.__BA_PUBS` para a lista aparecer no primeiro ecrã, sem espera. Ao gravar `publicacoes.json`, atualize também `data.js` com o mesmo array.
 

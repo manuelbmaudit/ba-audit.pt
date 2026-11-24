@@ -159,6 +159,7 @@
     document.title = t(item) + ' — BA AUDIT';
     var index = 0;
     var total = item.slides || 6;
+    var single = total < 2;
     root.innerHTML = '';
     var back = document.createElement('a');
     back.className = 'back';
@@ -178,27 +179,35 @@
     pic.appendChild(source);
     pic.appendChild(img);
     viewer.appendChild(pic);
-    var bar = document.createElement('div');
-    bar.className = 'viewer-bar';
-    var prev = document.createElement('button');
-    prev.type = 'button';
-    prev.setAttribute('aria-label', ui.prev);
-    prev.textContent = '←';
-    var count = document.createElement('p');
-    count.setAttribute('aria-live', 'polite');
-    var next = document.createElement('button');
-    next.type = 'button';
-    next.setAttribute('aria-label', ui.next);
-    next.textContent = '→';
-    bar.appendChild(prev); bar.appendChild(count); bar.appendChild(next);
+    var bar = null;
+    var prev = null;
+    var count = null;
+    var next = null;
+    if (!single) {
+      bar = document.createElement('div');
+      bar.className = 'viewer-bar';
+      prev = document.createElement('button');
+      prev.type = 'button';
+      prev.setAttribute('aria-label', ui.prev);
+      prev.textContent = '←';
+      count = document.createElement('p');
+      count.setAttribute('aria-live', 'polite');
+      next = document.createElement('button');
+      next.type = 'button';
+      next.setAttribute('aria-label', ui.next);
+      next.textContent = '→';
+      bar.appendChild(prev); bar.appendChild(count); bar.appendChild(next);
+    }
     var side = document.createElement('div');
     side.className = 'deck-side';
-    var kicker = document.createElement('p');
-    kicker.className = 'kicker';
-    kicker.textContent = ui.deck;
+    if (!single) {
+      var kicker = document.createElement('p');
+      kicker.className = 'kicker';
+      kicker.textContent = ui.deck;
+      side.appendChild(kicker);
+    }
     var h = document.createElement('h1');
     h.textContent = t(item);
-    side.appendChild(kicker);
     var date = formatDate(item.date);
     if (date) {
       var dp = document.createElement('p');
@@ -227,7 +236,7 @@
     side.appendChild(pdf);
     layout.appendChild(viewer);
     var col = document.createElement('div');
-    col.appendChild(bar);
+    if (bar) col.appendChild(bar);
     col.appendChild(side);
     layout.appendChild(col);
     root.appendChild(back);
@@ -241,23 +250,25 @@
       img.src = s.jpg;
       img.srcset = s.jpgset;
       img.sizes = source.sizes;
-      img.alt = ui.slide + ' ' + (index + 1) + ' / ' + total + '. ' + t(item);
-      count.textContent = (index + 1) + ' / ' + total;
+      img.alt = single ? t(item) : (ui.slide + ' ' + (index + 1) + ' / ' + total + '. ' + t(item));
+      if (count) count.textContent = (index + 1) + ' / ' + total;
     }
-    prev.addEventListener('click', function () { show(index - 1); });
-    next.addEventListener('click', function () { show(index + 1); });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'ArrowLeft') { show(index - 1); e.preventDefault(); }
-      if (e.key === 'ArrowRight') { show(index + 1); e.preventDefault(); }
-    });
-    var startX = null;
-    viewer.addEventListener('touchstart', function (e) { startX = e.changedTouches[0].clientX; }, { passive: true });
-    viewer.addEventListener('touchend', function (e) {
-      if (startX == null) return;
-      var dx = e.changedTouches[0].clientX - startX;
-      if (Math.abs(dx) > 40) show(index + (dx < 0 ? 1 : -1));
-      startX = null;
-    }, { passive: true });
+    if (!single) {
+      prev.addEventListener('click', function () { show(index - 1); });
+      next.addEventListener('click', function () { show(index + 1); });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowLeft') { show(index - 1); e.preventDefault(); }
+        if (e.key === 'ArrowRight') { show(index + 1); e.preventDefault(); }
+      });
+      var startX = null;
+      viewer.addEventListener('touchstart', function (e) { startX = e.changedTouches[0].clientX; }, { passive: true });
+      viewer.addEventListener('touchend', function (e) {
+        if (startX == null) return;
+        var dx = e.changedTouches[0].clientX - startX;
+        if (Math.abs(dx) > 40) show(index + (dx < 0 ? 1 : -1));
+        startX = null;
+      }, { passive: true });
+    }
     show(0);
   }
 
