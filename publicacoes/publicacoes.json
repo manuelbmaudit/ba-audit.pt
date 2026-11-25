@@ -1,7 +1,23 @@
 [
   {
-    "id": "fct-mobilizacao-2026",
+    "id": "lucro-tributavel-ajustamentos",
     "pin": true,
+    "date": "2026-11-25",
+    "title": "Resultado contabilístico e lucro tributável: os ajustamentos que fazem a diferença",
+    "titleEn": "Accounting profit and taxable profit: the adjustments that make the difference",
+    "summary": [
+      "O IRC não se calcula sobre o resultado do período. Gastos não aceites, rendimentos excluídos, prejuízos fiscais dedutíveis só até 65% do lucro tributável e derramas que incidem antes dessa dedução explicam grande parte da diferença.",
+      "Neste conjunto de slides resumimos os ajustamentos mais frequentes, as taxas de 2026 e o que preparar para estimar o imposto antes de 31 de dezembro."
+    ],
+    "summaryEn": [
+      "Corporate income tax (IRC) is not calculated on the profit for the period. Non-deductible expenses, excluded income, tax losses deductible only up to 65% of taxable profit and municipal and state surcharges levied before that deduction explain much of the difference.",
+      "This slide deck summarises the most frequent adjustments, the 2026 rates and what to prepare to estimate the tax before 31 December."
+    ],
+    "slides": 6,
+    "pdf": "publicacoes/pdf/lucro-tributavel-ajustamentos.pdf"
+  },
+  {
+    "id": "fct-mobilizacao-2026",
     "date": "2026-11-24",
     "title": "Fundo de Compensação do Trabalho: pedido de mobilização até 31 de dezembro de 2026",
     "titleEn": "Work Compensation Fund (FCT): mobilisation request by 31 December 2026",
