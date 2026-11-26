@@ -1,7 +1,21 @@
 window.__BA_PUBS = [
   {
-    "id": "lucro-tributavel-ajustamentos",
+    "id": "mais-valias-reinvestidas",
     "pin": true,
+    "date": "2026-11-26",
+    "title": "Vender e reinvestir: metade da mais-valia fora do IRC",
+    "titleEn": "Sell and reinvest: half of the capital gain outside corporate income tax",
+    "summary": [
+      "Quando o valor de realização de ativos fixos é reinvestido nos prazos legais, só metade do saldo positivo entre mais-valias e menos-valias concorre para o lucro tributável. Para vendas de 2024, o prazo termina a 31 de dezembro de 2026, tal como o reinvestimento dos lucros retidos de 2022 ao abrigo da DLRR. Neste conjunto de slides resumimos as condições, as exclusões e o efeito de não reinvestir."
+    ],
+    "summaryEn": [
+      "When the realisation value of fixed assets is reinvested within the legal deadlines, only half of the positive balance between capital gains and capital losses counts towards taxable profit. For 2024 sales, the deadline ends on 31 December 2026, as does the reinvestment of 2022 retained profits under the DLRR. In this slide set we summarise the conditions, the exclusions and the effect of not reinvesting."
+    ],
+    "slides": 6,
+    "pdf": "publicacoes/pdf/mais-valias-reinvestidas.pdf"
+  },
+  {
+    "id": "lucro-tributavel-ajustamentos",
     "date": "2026-11-25",
     "title": "Resultado contabilístico e lucro tributável: os ajustamentos que fazem a diferença",
     "titleEn": "Accounting profit and taxable profit: the adjustments that make the difference",
