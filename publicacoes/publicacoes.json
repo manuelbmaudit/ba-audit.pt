@@ -1,7 +1,21 @@
 [
   {
-    "id": "mais-valias-reinvestidas",
+    "id": "faq-jantar-natal",
     "pin": true,
+    "date": "2026-11-27",
+    "title": "Jantar de Natal: IRC, tributação autónoma e IVA",
+    "titleEn": "Christmas dinner: corporate income tax, autonomous taxation and VAT",
+    "summary": [
+      "Um jantar destinado aos trabalhadores, com caráter geral, é em regra um gasto dedutível em IRC e não constitui despesa de representação. Já o IVA da alimentação e das bebidas não é dedutível, e a presença de convidados externos pode alterar o enquadramento. Neste conjunto de slides respondemos às perguntas mais frequentes desta época e indicamos a documentação a guardar."
+    ],
+    "summaryEn": [
+      "A dinner intended for employees, of a general nature, is as a rule a deductible expense for corporate income tax purposes and does not constitute an entertainment expense. VAT on food and drinks, however, is not deductible, and the presence of external guests may change the treatment. In this slide set we answer the most frequent questions of this season and indicate the documentation to keep."
+    ],
+    "slides": 6,
+    "pdf": "publicacoes/pdf/faq-jantar-natal.pdf"
+  },
+  {
+    "id": "mais-valias-reinvestidas",
     "date": "2026-11-26",
     "title": "Vender e reinvestir: metade da mais-valia fora do IRC",
     "titleEn": "Sell and reinvest: half of the capital gain outside corporate income tax",
