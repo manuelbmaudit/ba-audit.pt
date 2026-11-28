@@ -12,7 +12,8 @@
       "A dinner intended for employees, of a general nature, is as a rule a deductible expense for corporate income tax purposes and does not constitute an entertainment expense. VAT on food and drinks, however, is not deductible, and the presence of external guests may change the treatment. In this slide set we answer the most frequent questions of this season and indicate the documentation to keep."
     ],
     "slides": 6,
-    "pdf": "publicacoes/pdf/faq-jantar-natal.pdf"
+    "pdf": "publicacoes/pdf/faq-jantar-natal.pdf",
+    "pdfEn": "publicacoes/pdf/faq-jantar-natal-en.pdf"
   },
   {
     "id": "mais-valias-reinvestidas",
@@ -26,7 +27,8 @@
       "When the realisation value of fixed assets is reinvested within the legal deadlines, only half of the positive balance between capital gains and capital losses counts towards taxable profit. For 2024 sales, the deadline ends on 31 December 2026, as does the reinvestment of 2022 retained profits under the DLRR (deduction for retained and reinvested profits). In this slide set we summarise the conditions, the exclusions and the effect of not reinvesting."
     ],
     "slides": 6,
-    "pdf": "publicacoes/pdf/mais-valias-reinvestidas.pdf"
+    "pdf": "publicacoes/pdf/mais-valias-reinvestidas.pdf",
+    "pdfEn": "publicacoes/pdf/mais-valias-reinvestidas-en.pdf"
   },
   {
     "id": "lucro-tributavel-ajustamentos",
@@ -42,7 +44,8 @@
       "This slide deck summarises the most frequent adjustments, the 2026 rates and what to prepare to estimate the tax before 31 December."
     ],
     "slides": 6,
-    "pdf": "publicacoes/pdf/lucro-tributavel-ajustamentos.pdf"
+    "pdf": "publicacoes/pdf/lucro-tributavel-ajustamentos.pdf",
+    "pdfEn": "publicacoes/pdf/lucro-tributavel-ajustamentos-en.pdf"
   },
   {
     "id": "fct-mobilizacao-2026",
@@ -58,7 +61,8 @@
       "The permitted purposes include workers' housing, qualifications and certified training, other investments agreed under the law, such as nurseries and canteens, and up to 50% of the compensation due on termination of the contract, only for workers covered by the FCT. Each purpose has its own conditions, limits and procedures."
     ],
     "slides": 1,
-    "pdf": "publicacoes/pdf/fct-mobilizacao-2026.pdf"
+    "pdf": "publicacoes/pdf/fct-mobilizacao-2026.pdf",
+    "pdfEn": "publicacoes/pdf/fct-mobilizacao-2026-en.pdf"
   },
   {
     "id": "prazos-23-27-novembro",
@@ -74,7 +78,8 @@
       "This slide deck also brings together the rules on VAT in instalments and the December dates that change because of public holidays and weekends."
     ],
     "slides": 6,
-    "pdf": "publicacoes/pdf/prazos-23-27-novembro.pdf"
+    "pdf": "publicacoes/pdf/prazos-23-27-novembro.pdf",
+    "pdfEn": "publicacoes/pdf/prazos-23-27-novembro-en.pdf"
   },
   {
     "id": "ofertas-natal-faq",
@@ -90,7 +95,8 @@
       "This slide deck answers the most frequent questions of this season."
     ],
     "slides": 6,
-    "pdf": "publicacoes/pdf/ofertas-natal-faq.pdf"
+    "pdf": "publicacoes/pdf/ofertas-natal-faq.pdf",
+    "pdfEn": "publicacoes/pdf/ofertas-natal-faq-en.pdf"
   },
   {
     "id": "premios-isentos-2026",
@@ -106,7 +112,8 @@
       "This slide deck summarises the conditions and the points to confirm before deciding."
     ],
     "slides": 6,
-    "pdf": "publicacoes/pdf/premios-isentos-2026.pdf"
+    "pdf": "publicacoes/pdf/premios-isentos-2026.pdf",
+    "pdfEn": "publicacoes/pdf/premios-isentos-2026-en.pdf"
   },
   {
     "id": "provisoes-contingencias",
@@ -122,7 +129,8 @@
       "This slide deck summarises the criteria, the most frequent situations and the tax effect."
     ],
     "slides": 6,
-    "pdf": "publicacoes/pdf/provisoes-contingencias.pdf"
+    "pdf": "publicacoes/pdf/provisoes-contingencias.pdf",
+    "pdfEn": "publicacoes/pdf/provisoes-contingencias-en.pdf"
   },
   {
     "id": "iva-obras-autoliquidacao-2027",
@@ -140,7 +148,8 @@
       "The slides summarise what changes, who is affected and what to prepare by 31 December."
     ],
     "slides": 6,
-    "pdf": "publicacoes/pdf/iva-obras-autoliquidacao-2027.pdf"
+    "pdf": "publicacoes/pdf/iva-obras-autoliquidacao-2027.pdf",
+    "pdfEn": "publicacoes/pdf/iva-obras-autoliquidacao-2027-en.pdf"
   },
   {
     "id": "prazos-16-20-novembro",
@@ -156,7 +165,8 @@
       "This slide deck also brings together the December dates and what the law provides when a deadline is not met."
     ],
     "slides": 6,
-    "pdf": "publicacoes/pdf/prazos-16-20-novembro.pdf"
+    "pdf": "publicacoes/pdf/prazos-16-20-novembro.pdf",
+    "pdfEn": "publicacoes/pdf/prazos-16-20-novembro-en.pdf"
   },
   {
     "id": "newsletter-2026-11",
@@ -194,7 +204,8 @@
     "summaryEn": [
       "Autonomous taxation: five questions before the 2026 year-end close.",
       "It is a tax that is payable even without a profit and that depends on the year's expenses."
-    ]
+    ],
+    "pdfEn": "publicacoes/pdf/tributacao-autonoma-2026-en.pdf"
   },
   {
     "id": "remunerar-socios",
@@ -210,7 +221,8 @@
     "summaryEn": [
       "Paying shareholders: a dividend is not the only route.",
       "Dividends, management remuneration, interest on shareholders' loans (suprimentos) and subsistence allowances have different treatments under personal income tax (IRS), corporate income tax (IRC) and social security."
-    ]
+    ],
+    "pdfEn": "publicacoes/pdf/remunerar-socios-en.pdf"
   },
   {
     "id": "inventario-obsoleto",
@@ -226,7 +238,8 @@
     "summaryEn": [
       "Obsolete inventory: is its carrying amount still recoverable?",
       "Items with no turnover, damaged or discontinued must be measured at net realisable value when this is lower than cost."
-    ]
+    ],
+    "pdfEn": "publicacoes/pdf/inventario-obsoleto-en.pdf"
   },
   {
     "id": "creditos-cobranca-duvidosa",
@@ -242,7 +255,8 @@
     "summaryEn": [
       "Unpaid invoices: corporate income tax (IRC) and VAT may already have been paid on revenue that has not been received.",
       "The law allows the impairment of overdue receivables to be recognised for tax purposes and the VAT charged to be recovered, provided there is objective evidence and documented collection efforts."
-    ]
+    ],
+    "pdfEn": "publicacoes/pdf/creditos-cobranca-duvidosa-en.pdf"
   },
   {
     "id": "prazos-9-13-novembro",
@@ -258,7 +272,8 @@
     "summaryEn": [
       "Tax and social security deadlines for the week of 9 to 13 November.",
       "By 10 November: the Monthly Remuneration Return (Declaração Mensal de Remunerações) to the Tax and Customs Authority (AT) and the remuneration return to Social Security, for those who have not yet joined the new contributory cycle."
-    ]
+    ],
+    "pdfEn": "publicacoes/pdf/prazos-9-13-novembro-en.pdf"
   },
   {
     "id": "pagamento-por-conta-irc",
@@ -274,7 +289,8 @@
     "summaryEn": [
       "The third corporate income tax (IRC) payment on account is due on 15 December.",
       "And it may not have to be paid in full."
-    ]
+    ],
+    "pdfEn": "publicacoes/pdf/pagamento-por-conta-irc-en.pdf"
   },
   {
     "id": "beneficios-fiscais-2026",
@@ -290,7 +306,8 @@
     "summaryEn": [
       "There are tax benefits that are decided before 31 December.",
       "SIFIDE II (the system of tax incentives for business research and development), the RFAI (investment support tax scheme), the incentive to the capitalisation of companies and the salary-increase incentive: for all of them, what is done or documented by the year-end weighs on 2026 corporate income tax (IRC)."
-    ]
+    ],
+    "pdfEn": "publicacoes/pdf/beneficios-fiscais-2026-en.pdf"
   },
   {
     "id": "roc-obrigatorio",
@@ -306,6 +323,7 @@
     "summaryEn": [
       "Your company may already be required to have a statutory auditor (ROC) — and not know it.",
       "In 2026 the thresholds for micro, small and medium-sized entities under the SNC (Portuguese accounting standards) were raised."
-    ]
+    ],
+    "pdfEn": "publicacoes/pdf/roc-obrigatorio-en.pdf"
   }
 ]

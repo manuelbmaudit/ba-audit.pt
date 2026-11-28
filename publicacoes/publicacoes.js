@@ -37,9 +37,11 @@
     if (lang() === 'en') return (item.summaryEn || []).join(' ');
     return (item.summary || []).join(' ');
   }
-  function slidesNote(item) {
-    if (lang() !== 'en' || !item || !item.slides) return '';
-    return 'Slides in Portuguese';
+  function useEn(item) {
+    return lang() === 'en' && item && item.pdfEn;
+  }
+  function imgDir(item) {
+    return base() + 'publicacoes/' + (useEn(item) ? 'img-en/' : 'img/') + item.id + '/';
   }
   function cover(item, eager) {
     if (item.kind === 'newsletter') {
@@ -55,8 +57,7 @@
       box.appendChild(num);
       return box;
     }
-    var id = item.id;
-    var root = base() + 'publicacoes/img/' + id + '/';
+    var root = imgDir(item);
     var pic = document.createElement('picture');
     var source = document.createElement('source');
     source.type = 'image/webp';
@@ -90,13 +91,6 @@
     var h = document.createElement(document.body.getAttribute('data-pub-page') === 'home' ? 'h3' : 'h2');
     h.textContent = t(item);
     a.appendChild(h);
-    var note = slidesNote(item);
-    if (note) {
-      var n = document.createElement('p');
-      n.className = 'pub-note';
-      n.textContent = note;
-      a.appendChild(n);
-    }
     var text = summary(item);
     if (text) {
       var p = document.createElement('p');
@@ -143,8 +137,8 @@
     });
     reveal(Array.prototype.slice.call(mount.children));
   }
-  function slideSrc(id, n) {
-    var root = base() + 'publicacoes/img/' + id + '/' + n;
+  function slideSrc(item, n) {
+    var root = imgDir(item) + n;
     return {
       webp: root + '-540.webp 540w, ' + root + '-1080.webp 1080w',
       jpg: root + '-1080.jpg',
@@ -220,13 +214,6 @@
       dp.textContent = date;
       side.appendChild(dp);
     }
-    var noteText = slidesNote(item);
-    if (noteText) {
-      var note = document.createElement('p');
-      note.className = 'pub-note';
-      note.textContent = noteText;
-      side.appendChild(note);
-    }
     side.appendChild(h);
     var sum = summary(item);
     if (sum) {
@@ -237,7 +224,7 @@
     }
     var pdf = document.createElement('a');
     pdf.className = 'pdf';
-    pdf.href = base() + item.pdf;
+    pdf.href = base() + (useEn(item) ? item.pdfEn : item.pdf);
     pdf.textContent = ui.pdf;
     side.appendChild(pdf);
     layout.appendChild(viewer);
@@ -250,7 +237,7 @@
 
     function show(n) {
       index = (n + total) % total;
-      var s = slideSrc(item.id, index + 1);
+      var s = slideSrc(item, index + 1);
       source.srcset = s.webp;
       source.sizes = '(max-width: 700px) 92vw, 520px';
       img.src = s.jpg;
