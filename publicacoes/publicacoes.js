@@ -4,8 +4,8 @@
     en: ['January','February','March','April','May','June','July','August','September','October','November','December']
   };
   var UI = {
-    pt: { note: '', deck: 'Conjunto de slides', pdf: 'Descarregar PDF', prev: 'Slide anterior', next: 'Slide seguinte', back: 'Publicações', slide: 'Slide' },
-    en: { note: 'Published in Portuguese', deck: 'Slide deck', pdf: 'Download PDF', prev: 'Previous slide', next: 'Next slide', back: 'Insights', slide: 'Slide' }
+    pt: { deck: 'Conjunto de slides', pdf: 'Descarregar PDF', prev: 'Slide anterior', next: 'Slide seguinte', back: 'Publicações', slide: 'Slide' },
+    en: { deck: 'Slide deck', pdf: 'Download PDF', prev: 'Previous slide', next: 'Next slide', back: 'Insights', slide: 'Slide' }
   };
 
   function base() {
@@ -36,6 +36,10 @@
   function summary(item) {
     if (lang() === 'en') return (item.summaryEn || []).join(' ');
     return (item.summary || []).join(' ');
+  }
+  function slidesNote(item) {
+    if (lang() !== 'en' || !item || !item.slides) return '';
+    return 'Slides in Portuguese';
   }
   function cover(item, eager) {
     if (item.kind === 'newsletter') {
@@ -86,7 +90,7 @@
     var h = document.createElement(document.body.getAttribute('data-pub-page') === 'home' ? 'h3' : 'h2');
     h.textContent = t(item);
     a.appendChild(h);
-    var note = UI[lang()].note;
+    var note = slidesNote(item);
     if (note) {
       var n = document.createElement('p');
       n.className = 'pub-note';
@@ -103,6 +107,7 @@
     return a;
   }
   function hrefFor(item) {
+    if (lang() === 'en' && item.hrefEn) return item.hrefEn;
     if (item.href) return item.href;
     var id = item.id;
     var page = document.body.getAttribute('data-pub-page');
@@ -215,10 +220,11 @@
       dp.textContent = date;
       side.appendChild(dp);
     }
-    if (ui.note) {
+    var noteText = slidesNote(item);
+    if (noteText) {
       var note = document.createElement('p');
       note.className = 'pub-note';
-      note.textContent = ui.note;
+      note.textContent = noteText;
       side.appendChild(note);
     }
     side.appendChild(h);

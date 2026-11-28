@@ -23,7 +23,7 @@ window.__BA_PUBS = [
       "Quando o valor de realização de ativos fixos é reinvestido nos prazos legais, só metade do saldo positivo entre mais-valias e menos-valias concorre para o lucro tributável. Para vendas de 2024, o prazo termina a 31 de dezembro de 2026, tal como o reinvestimento dos lucros retidos de 2022 ao abrigo da DLRR. Neste conjunto de slides resumimos as condições, as exclusões e o efeito de não reinvestir."
     ],
     "summaryEn": [
-      "When the realisation value of fixed assets is reinvested within the legal deadlines, only half of the positive balance between capital gains and capital losses counts towards taxable profit. For 2024 sales, the deadline ends on 31 December 2026, as does the reinvestment of 2022 retained profits under the DLRR. In this slide set we summarise the conditions, the exclusions and the effect of not reinvesting."
+      "When the realisation value of fixed assets is reinvested within the legal deadlines, only half of the positive balance between capital gains and capital losses counts towards taxable profit. For 2024 sales, the deadline ends on 31 December 2026, as does the reinvestment of 2022 retained profits under the DLRR (deduction for retained and reinvested profits). In this slide set we summarise the conditions, the exclusions and the effect of not reinvesting."
     ],
     "slides": 6,
     "pdf": "publicacoes/pdf/mais-valias-reinvestidas.pdf"
@@ -70,7 +70,7 @@ window.__BA_PUBS = [
       "Neste conjunto de slides reunimos também as regras do IVA em prestações e as datas de dezembro que mudam por causa de feriados e fins de semana."
     ],
     "summaryEn": [
-      "This week, the obligations of general application fall on Wednesday the 25th: payment of September VAT and of third-quarter VAT, and payment of October contributions to Social Security. On Monday the 30th come the Modelo 30 return, IMI and IUC.",
+      "This week, the obligations of general application fall on Wednesday the 25th: payment of September VAT and of third-quarter VAT, and payment of October contributions to Social Security. On Monday the 30th come the Modelo 30 return, municipal property tax (IMI) and the single vehicle tax (IUC).",
       "This slide deck also brings together the rules on VAT in instalments and the December dates that change because of public holidays and weekends."
     ],
     "slides": 6,
@@ -86,7 +86,7 @@ window.__BA_PUBS = [
       "Neste conjunto de slides respondemos às perguntas mais frequentes desta época."
     ],
     "summaryEn": [
-      "Gifts to clients of up to €50 per unit, within the annual limit of 5 per thousand of the previous year's turnover, do not require VAT to be charged. Above that, the rules change. Hampers for employees and the identification of the beneficiaries also have consequences for IRS and IRC.",
+      "Gifts to clients of up to €50 per unit, within the annual limit of 5 per thousand of the previous year's turnover, do not require VAT to be charged. Above that, the rules change. Hampers for employees and the identification of the beneficiaries also have consequences for personal income tax (IRS) and corporate income tax (IRC).",
       "This slide deck answers the most frequent questions of this season."
     ],
     "slides": 6,
@@ -96,7 +96,7 @@ window.__BA_PUBS = [
     "id": "premios-isentos-2026",
     "date": "2026-11-19",
     "title": "Prémios de fim de ano: até 6% da retribuição base anual sem IRS nem contribuições",
-    "titleEn": "Year-end bonuses: up to 6% of annual base pay free of IRS and social security contributions",
+    "titleEn": "Year-end bonuses: up to 6% of annual base pay free of personal income tax (IRS) and social security contributions",
     "summary": [
       "Em 2026, prémios de produtividade e de desempenho, participações nos lucros e gratificações de balanço podem beneficiar desta isenção, desde que sejam voluntários, sem caráter regular, pagos até 31 de dezembro e a empresa tenha efetuado um aumento salarial elegível.",
       "Neste conjunto de slides resumimos as condições e os pontos a confirmar antes de decidir."
@@ -118,7 +118,7 @@ window.__BA_PUBS = [
       "Neste conjunto de slides resumimos os critérios, as situações mais frequentes e o efeito fiscal."
     ],
     "summaryEn": [
-      "At the 2026 year-end close, the answer depends on three criteria in NCRF 21: a present obligation, a probable outflow of resources and a reliable estimate. For corporate income tax (IRC) purposes, only some provisions are deductible, and the auditor will look for evidence from management and from the external lawyers.",
+      "At the 2026 year-end close, the answer depends on three criteria in NCRF 21 (Portuguese financial reporting standard 21): a present obligation, a probable outflow of resources and a reliable estimate. For corporate income tax (IRC) purposes, only some provisions are deductible, and the auditor will look for evidence from management and from the external lawyers.",
       "This slide deck summarises the criteria, the most frequent situations and the tax effect."
     ],
     "slides": 6,
@@ -173,7 +173,12 @@ window.__BA_PUBS = [
       "Esta é a primeira edição da newsletter mensal da BA AUDIT.",
       "No início de cada mês, reunirei aqui os prazos fiscais e contributivos que contam, um tema em destaque e as novidades com impacto nas decisões das empresas."
     ],
-    "href": "/publicacoes/newsletter-2026-11/"
+    "href": "/publicacoes/newsletter-2026-11/",
+    "summaryEn": [
+      "This is the first issue of the BA AUDIT monthly newsletter.",
+      "At the start of each month, I will bring together here the tax and social security deadlines that matter, a featured topic and the developments that have an impact on business decisions."
+    ],
+    "hrefEn": "/en/insights/newsletter-2026-11/"
   },
   {
     "id": "tributacao-autonoma-2026",
@@ -185,7 +190,11 @@ window.__BA_PUBS = [
       "É um imposto que se paga mesmo sem lucro e que depende das despesas do ano."
     ],
     "slides": 6,
-    "pdf": "publicacoes/pdf/tributacao-autonoma-2026.pdf"
+    "pdf": "publicacoes/pdf/tributacao-autonoma-2026.pdf",
+    "summaryEn": [
+      "Autonomous taxation: five questions before the 2026 year-end close.",
+      "It is a tax that is payable even without a profit and that depends on the year's expenses."
+    ]
   },
   {
     "id": "remunerar-socios",
@@ -197,7 +206,11 @@ window.__BA_PUBS = [
       "Dividendos, remuneração de gerência, juros de suprimentos e ajudas de custo têm enquadramentos diferentes em IRS, IRC e Segurança Social."
     ],
     "slides": 6,
-    "pdf": "publicacoes/pdf/remunerar-socios.pdf"
+    "pdf": "publicacoes/pdf/remunerar-socios.pdf",
+    "summaryEn": [
+      "Paying shareholders: a dividend is not the only route.",
+      "Dividends, management remuneration, interest on shareholders' loans (suprimentos) and subsistence allowances have different treatments under personal income tax (IRS), corporate income tax (IRC) and social security."
+    ]
   },
   {
     "id": "inventario-obsoleto",
@@ -209,66 +222,90 @@ window.__BA_PUBS = [
       "Artigos sem rotação, danificados ou descontinuados devem ser mensurados ao valor realizável líquido quando este é inferior ao custo."
     ],
     "slides": 6,
-    "pdf": "publicacoes/pdf/inventario-obsoleto.pdf"
+    "pdf": "publicacoes/pdf/inventario-obsoleto.pdf",
+    "summaryEn": [
+      "Obsolete inventory: is its carrying amount still recoverable?",
+      "Items with no turnover, damaged or discontinued must be measured at net realisable value when this is lower than cost."
+    ]
   },
   {
     "id": "creditos-cobranca-duvidosa",
     "date": "2026-11-10",
     "title": "Faturas por cobrar: o IRC e o IVA podem já ter sido pagos sobre receita que não entrou.",
-    "titleEn": "Unpaid invoices: corporate income tax and VAT may already have been paid on revenue not yet collected.",
+    "titleEn": "Unpaid invoices: corporate income tax (IRC) and VAT may already have been paid on revenue that has not been received.",
     "summary": [
       "Faturas por cobrar: o IRC e o IVA podem já ter sido pagos sobre receita que não entrou.",
       "A lei permite reconhecer fiscalmente a imparidade de créditos em mora e recuperar o IVA liquidado, desde que existam provas objetivas e diligências de cobrança documentadas."
     ],
     "slides": 6,
-    "pdf": "publicacoes/pdf/creditos-cobranca-duvidosa.pdf"
+    "pdf": "publicacoes/pdf/creditos-cobranca-duvidosa.pdf",
+    "summaryEn": [
+      "Unpaid invoices: corporate income tax (IRC) and VAT may already have been paid on revenue that has not been received.",
+      "The law allows the impairment of overdue receivables to be recognised for tax purposes and the VAT charged to be recovered, provided there is objective evidence and documented collection efforts."
+    ]
   },
   {
     "id": "prazos-9-13-novembro",
     "date": "2026-11-09",
     "title": "Prazos fiscais e contributivos da semana de 9 a 13 de novembro",
-    "titleEn": "Tax and social-security deadlines for the week of 9–13 November 2026",
+    "titleEn": "Tax and social security deadlines for the week of 9 to 13 November",
     "summary": [
       "Prazos fiscais e contributivos da semana de 9 a 13 de novembro.",
       "Até 10 de novembro: Declaração Mensal de Remunerações à AT e declaração de remunerações à Segurança Social, para quem ainda não aderiu ao novo ciclo contributivo."
     ],
     "slides": 6,
-    "pdf": "publicacoes/pdf/prazos-9-13-novembro.pdf"
+    "pdf": "publicacoes/pdf/prazos-9-13-novembro.pdf",
+    "summaryEn": [
+      "Tax and social security deadlines for the week of 9 to 13 November.",
+      "By 10 November: the Monthly Remuneration Return (Declaração Mensal de Remunerações) to the Tax and Customs Authority (AT) and the remuneration return to Social Security, for those who have not yet joined the new contributory cycle."
+    ]
   },
   {
     "id": "pagamento-por-conta-irc",
     "date": null,
     "title": "A 3.ª prestação do pagamento por conta de IRC vence a 15 de dezembro.",
-    "titleEn": "The third corporate income tax payment on account is due on 15 December 2026.",
+    "titleEn": "The third corporate income tax (IRC) payment on account is due on 15 December.",
     "summary": [
       "A 3.ª prestação do pagamento por conta de IRC vence a 15 de dezembro.",
       "E pode não ter de ser paga por inteiro."
     ],
     "slides": 6,
-    "pdf": "publicacoes/pdf/pagamento-por-conta-irc.pdf"
+    "pdf": "publicacoes/pdf/pagamento-por-conta-irc.pdf",
+    "summaryEn": [
+      "The third corporate income tax (IRC) payment on account is due on 15 December.",
+      "And it may not have to be paid in full."
+    ]
   },
   {
     "id": "beneficios-fiscais-2026",
     "date": null,
     "title": "Benefícios fiscais a não deixar caducar em 2026",
-    "titleEn": "Tax benefits not to let lapse in 2026",
+    "titleEn": "Tax benefits not to be allowed to lapse in 2026",
     "summary": [
       "Há benefícios fiscais que se decidem antes de 31 de dezembro.",
       "SIFIDE II, RFAI, incentivo à capitalização das empresas e incentivo à valorização salarial: em todos, o que se faz ou documenta até ao fecho do ano pesa no IRC de 2026."
     ],
     "slides": 6,
-    "pdf": "publicacoes/pdf/beneficios-fiscais-2026.pdf"
+    "pdf": "publicacoes/pdf/beneficios-fiscais-2026.pdf",
+    "summaryEn": [
+      "There are tax benefits that are decided before 31 December.",
+      "SIFIDE II (the system of tax incentives for business research and development), the RFAI (investment support tax scheme), the incentive to the capitalisation of companies and the salary-increase incentive: for all of them, what is done or documented by the year-end weighs on 2026 corporate income tax (IRC)."
+    ]
   },
   {
     "id": "roc-obrigatorio",
     "date": null,
     "title": "A sua empresa pode já ser obrigada a ter ROC — e não saber.",
-    "titleEn": "Your company may already be required to have a statutory auditor without knowing it.",
+    "titleEn": "Your company may already be required to have a statutory auditor (ROC) — and not know it.",
     "summary": [
       "A sua empresa pode já ser obrigada a ter ROC — e não saber.",
       "Em 2026 subiram os limites das micro, pequenas e médias entidades do SNC."
     ],
     "slides": 6,
-    "pdf": "publicacoes/pdf/roc-obrigatorio.pdf"
+    "pdf": "publicacoes/pdf/roc-obrigatorio.pdf",
+    "summaryEn": [
+      "Your company may already be required to have a statutory auditor (ROC) — and not know it.",
+      "In 2026 the thresholds for micro, small and medium-sized entities under the SNC (Portuguese accounting standards) were raised."
+    ]
   }
 ];
